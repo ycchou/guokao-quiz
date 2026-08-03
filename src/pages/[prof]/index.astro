@@ -1,0 +1,74 @@
+---
+import Base from '../../layouts/Base.astro';
+import { professions, examsOf, SLUG_PROF, PROF_DESC } from '../../lib/data';
+
+export function getStaticPaths() {
+  return professions().map((p) => ({ params: { prof: p.slug } }));
+}
+
+const { prof } = Astro.params;
+const name = SLUG_PROF[prof!];
+if (!name) throw new Error('unknown profession ' + prof);
+const exams = examsOf(name);
+
+// group by minguo year
+const byYear = new Map<number, [string, typeof exams[number][1]][]>();
+for (const [code, e] of exams) {
+  if (!byYear.has(e.minguo)) byYear.set(e.minguo, []);
+  byYear.get(e.minguo)!.push([code, e]);
+}
+const years = [...byYear.keys()].sort((a, b) => b - a);
+const totalQ = exams.reduce((a, [, e]) => a + e.subjects.reduce((b, s) => b + s.count, 0), 0);
+const jsonld = {
+  '@context': 'https://schema.org',
+  '@type': 'BreadcrumbList',
+  itemListElement: [
+    { '@type': 'ListItem', position: 1, name: '首頁', item: new URL('/', Astro.site).href },
+    { '@type': 'ListItem', position: 2, name: `${name}題庫`, item: new URL(`/${prof}`, Astro.site).href },
+  ],
+};
+---
+
+<Base
+  title={`${name}國考歷屆試題題庫｜線上練習與答案`}
+  description={`${PROF_DESC[name]} 共 ${exams.length} 場考試、${totalQ.toLocaleString()} 題，可線上作答與核對答案。`}
+  jsonld={jsonld}
+>
+  <div class="mx-auto max-w-5xl px-4 py-8">
+    <nav class="text-sm text-slate-500 mb-3">
+      <a href="/" class="hover:text-brand-600">首頁</a> <span class="mx-1">/</span> {name}
+    </nav>
+    <h1 class="font-display text-2xl sm:text-3xl font-bold text-brand-900 dark:text-white">{name}國考歷屆試題</h1>
+    <p class="mt-2 text-slate-600 dark:text-slate-300 leading-relaxed">{PROF_DESC[name]}</p>
+    <div class="mt-3 flex gap-4 text-sm text-slate-500">
+      <span><b class="text-slate-800 dark:text-slate-200">{exams.length}</b> 場考試</span>
+      <span><b class="text-slate-800 dark:text-slate-200">{totalQ.toLocaleString()}</b> 題</span>
+    </div>
+    <div class="mt-4 flex flex-wrap gap-2">
+      <a href={`/practice?prof=${prof}`} class="rounded-lg bg-brand-600 text-white text-sm font-semibold px-4 py-2 hover:bg-brand-700">練習此職類</a>
+      <a href={`/random?prof=${prof}`} class="rounded-lg border border-slate-200 dark:border-slate-700 text-sm font-semibold px-4 py-2 hover:border-brand-400">隨機出題</a>
+    </div>
+
+    <div class="mt-8 space-y-8">
+      {years.map((y) => (
+        <section>
+          <h2 class="text-lg font-bold text-slate-900 dark:text-white mb-3 flex items-center gap-2">
+            <span class="inline-block w-1.5 h-5 rounded bg-brand-500"></span>民國 {y} 年
+          </h2>
+          <div class="grid gap-3 sm:grid-cols-2">
+            {byYear.get(y)!.sort((a, b) => b[0].localeCompare(a[0])).map(([code, e]) => (
+              <a href={`/${prof}/${code}`} class="group rounded-xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 p-4 hover:border-brand-400 hover:shadow-sm transition">
+                <div class="flex items-center justify-between">
+                  <h3 class="font-bold text-slate-900 dark:text-white">{y} 年{e.session}</h3>
+                  <span class="text-brand-500 group-hover:translate-x-0.5 transition">→</span>
+                </div>
+                <p class="mt-1 text-xs text-slate-400 line-clamp-1">{e.examName}</p>
+                <div class="mt-2 text-sm text-slate-500">{e.subjects.length} 科．{e.subjects.reduce((a, s) => a + s.count, 0)} 題</div>
+              </a>
+            ))}
+          </div>
+        </section>
+      ))}
+    </div>
+  </div>
+</Base>

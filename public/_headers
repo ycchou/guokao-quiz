@@ -1,0 +1,12 @@
+# Cloudflare Pages 快取設定
+/data/q-img/*
+  Cache-Control: public, max-age=31536000, immutable
+
+/data/questions/*
+  Cache-Control: public, max-age=86400
+
+/pagefind/*
+  Cache-Control: public, max-age=86400
+
+/_astro/*
+  Cache-Control: public, max-age=31536000, immutable

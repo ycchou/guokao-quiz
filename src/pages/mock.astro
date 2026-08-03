@@ -1,0 +1,7 @@
+---
+import Base from '../layouts/Base.astro';
+import QuizApp from '../components/QuizApp';
+---
+<Base title="模擬考試｜國考題庫" description="比照實際國考限時作答，結束後檢視成績與詳解。" noindex>
+  <QuizApp variant="mock" client:only="react" />
+</Base>

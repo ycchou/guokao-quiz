@@ -1,0 +1,12 @@
+{
+  "name": "國考題庫",
+  "short_name": "國考題庫",
+  "description": "考選部歷屆國考試題線上練習、模擬考與答案核對",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#f1faee",
+  "theme_color": "#2E86AB",
+  "icons": [
+    { "src": "/favicon.svg", "sizes": "any", "type": "image/svg+xml", "purpose": "any" }
+  ]
+}

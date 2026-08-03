@@ -1,0 +1,117 @@
+---
+import Base from '../../../layouts/Base.astro';
+import { professions, examsOf, SLUG_PROF, loadSubject } from '../../../lib/data';
+
+export function getStaticPaths() {
+  const paths: any[] = [];
+  for (const p of professions()) {
+    const name = SLUG_PROF[p.slug];
+    for (const [code, e] of examsOf(name)) {
+      for (const s of e.subjects) {
+        paths.push({ params: { prof: p.slug, code, sub: String(s.no) }, props: { file: s.file } });
+      }
+    }
+  }
+  return paths;
+}
+
+const { prof, code, sub } = Astro.params;
+const { file } = Astro.props as { file: string };
+const name = SLUG_PROF[prof!];
+const data = loadSubject(name, file);
+const letters = ['A', 'B', 'C', 'D', 'E'];
+
+const jsonld = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  mainEntity: data.questions.filter((q) => q.mode === 'text' && q.stem && q.answer).slice(0, 40).map((q) => ({
+    '@type': 'Question',
+    name: q.stem,
+    acceptedAnswer: { '@type': 'Answer', text: `正確答案：${q.answer}. ${q.options?.[q.answer!] ?? ''}` },
+  })),
+};
+---
+
+<Base
+  title={`${name} ${data.minguo}年${data.session} ${data.subjectShort} 試題與答案`}
+  description={`${name} ${data.minguo}年${data.session}「${data.subject}」歷屆試題與標準答案全文，共 ${data.stats.total} 題，附考選部原始 PDF。`}
+  jsonld={jsonld}
+>
+  <div class="mx-auto max-w-3xl px-4 py-8">
+    <nav class="text-sm text-slate-500 mb-3">
+      <a href="/" class="hover:text-brand-600">首頁</a> /
+      <a href={`/${prof}`} class="hover:text-brand-600">{name}</a> /
+      <a href={`/${prof}/${code}`} class="hover:text-brand-600">{data.minguo}年{data.session}</a> /
+      {data.subjectShort}
+    </nav>
+    <h1 class="font-display text-xl sm:text-2xl font-bold text-brand-900 dark:text-white">
+      {name}．{data.minguo}年{data.session}．{data.subject}
+    </h1>
+    <div class="mt-2 flex flex-wrap items-center gap-3 text-sm text-slate-500">
+      <span>共 {data.stats.total} 題</span>
+      {data.timeLimitMin && <span>考試時間 {data.timeLimitMin} 分鐘</span>}
+      {data.source.question && <a href={data.source.question} target="_blank" rel="nofollow noopener" class="underline hover:text-brand-600">原始試題 PDF</a>}
+      {data.source.answer && <a href={data.source.answer} target="_blank" rel="nofollow noopener" class="underline hover:text-brand-600">標準答案 PDF</a>}
+      {data.source.errata && <a href={data.source.errata} target="_blank" rel="nofollow noopener" class="underline hover:text-amber-600">更正答案 PDF</a>}
+    </div>
+    <div class="mt-4 flex flex-wrap gap-2">
+      <a href={`/practice?prof=${prof}&code=${code}&sub=${sub}`} class="rounded-lg bg-brand-600 text-white text-sm font-semibold px-4 py-2 hover:bg-brand-700">互動練習這份考卷</a>
+    </div>
+
+    {data.scanned && data.pageImages && (
+      <div class="mt-6 rounded-xl border border-amber-300/60 bg-amber-50 dark:bg-amber-900/10 p-4 text-sm text-amber-800 dark:text-amber-300">
+        本份為掃描版試題（無文字檔），以下為原卷影像，標準答案附於文末。
+        <div class="mt-3 space-y-3">
+          {data.pageImages.map((src) => (
+            <img src={`/data/${src}`} loading="lazy" alt={`${data.subjectShort} 第 ${src} 頁`} class="w-full rounded-lg border border-slate-200 dark:border-slate-700" />
+          ))}
+        </div>
+      </div>
+    )}
+
+    <ol class="mt-6 space-y-6" data-pagefind-body>
+      {data.questions.filter((q) => q.mode !== 'scanned').map((q) => (
+        <li class="rounded-xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 p-4" id={`q${q.no}`}>
+          <div class="flex items-start gap-2">
+            <span class="text-brand-600 dark:text-brand-400 font-bold shrink-0">{q.no}.</span>
+            <div class="min-w-0 flex-1">
+              {q.stem && <p class="q-stem font-medium text-slate-900 dark:text-white">{q.stem}</p>}
+              {q.mode === 'image' && q.img && (
+                <img src={`/data/${q.img}`} loading="lazy" alt={`第 ${q.no} 題（含圖）`} class="mt-2 max-w-full rounded-lg border border-slate-200 dark:border-slate-700" />
+              )}
+              {q.options && (
+                <ul class="mt-2 space-y-1">
+                  {letters.filter((L) => q.options![L] != null).map((L) => (
+                    <li class={`flex gap-2 rounded-lg px-2 py-1 ${q.answer === L ? 'bg-emerald-50 dark:bg-emerald-900/25 text-emerald-800 dark:text-emerald-300 font-medium' : ''}`}>
+                      <span class="font-semibold shrink-0">{L}.</span>
+                      <span>{q.options![L]}</span>
+                      {q.answer === L && <span class="ml-auto text-emerald-600 text-sm shrink-0">✓ 正解</span>}
+                    </li>
+                  ))}
+                </ul>
+              )}
+              <div class="mt-2 flex flex-wrap items-center gap-2 text-sm">
+                {q.answer && !q.options && <span class="text-emerald-700 dark:text-emerald-400 font-medium">正確答案：{q.answer}</span>}
+                {q.corrected && <span class="rounded bg-amber-100 dark:bg-amber-900/40 text-amber-700 dark:text-amber-300 px-1.5 py-0.5 text-xs">更正答案</span>}
+                {q.mode === 'text_uncertain' && <span class="rounded bg-slate-100 dark:bg-slate-800 text-slate-500 px-1.5 py-0.5 text-xs">此題自動解析可能不完整，建議對照原始 PDF</span>}
+                {q.note && <span class="text-slate-400 text-xs">{q.note}</span>}
+              </div>
+            </div>
+          </div>
+        </li>
+      ))}
+    </ol>
+
+    {/* scanned answer key */}
+    {data.scanned && (
+      <div class="mt-6 rounded-xl border border-slate-200 dark:border-slate-800 p-4">
+        <h2 class="font-bold mb-2">標準答案</h2>
+        <div class="grid grid-cols-5 sm:grid-cols-10 gap-1 text-sm">
+          {data.questions.map((q) => (
+            <div class="rounded bg-slate-100 dark:bg-slate-800 px-1 py-1 text-center"><b>{q.no}</b> {q.answer}</div>
+          ))}
+        </div>
+      </div>
+    )}
+  </div>
+</Base>

@@ -1,0 +1,26 @@
+---
+import Base from '../layouts/Base.astro';
+---
+<Base title="搜尋題目｜國考題庫" description="輸入關鍵字，直接搜尋歷屆國考題目與答案。" noindex>
+  <div class="mx-auto max-w-3xl px-4 py-8">
+    <h1 class="text-2xl font-extrabold text-slate-900 dark:text-white mb-1">搜尋題目</h1>
+    <p class="text-sm text-slate-500 mb-5">輸入觀念或關鍵字（例如「腎絲球」「呼吸器」），搜尋歷屆考題。</p>
+    <div id="search"></div>
+    <noscript>搜尋功能需要開啟 JavaScript。</noscript>
+  </div>
+
+  <link rel="stylesheet" href="/pagefind/pagefind-ui.css" />
+  <script is:inline src="/pagefind/pagefind-ui.js"></script>
+  <script is:inline>
+    window.addEventListener('DOMContentLoaded', () => {
+      if (window.PagefindUI) {
+        new window.PagefindUI({ element: '#search', showSubResults: true, pageSize: 8, translations: {
+          placeholder: '搜尋題目關鍵字…', zero_results: '找不到「[SEARCH_TERM]」相關題目', clear_search: '清除',
+          load_more: '載入更多結果', search_label: '搜尋題目', results_found: '[COUNT] 筆結果',
+        }});
+      } else {
+        document.getElementById('search').innerHTML = '<p class="text-slate-400">搜尋索引尚未建立（請於正式部署後使用）。</p>';
+      }
+    });
+  </script>
+</Base>

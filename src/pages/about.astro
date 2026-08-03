@@ -1,0 +1,26 @@
+---
+import Base from '../layouts/Base.astro';
+import { professions } from '../lib/data';
+const profs = professions();
+const totalQ = profs.reduce((a, p) => a + p.qCount, 0);
+---
+<Base title="關於本站｜國考題庫" description="國考題庫的資料來源、使用方式與免責聲明。">
+  <div class="mx-auto max-w-3xl px-4 py-8 prose-slate">
+    <h1 class="text-2xl font-extrabold text-slate-900 dark:text-white">關於本站</h1>
+    <div class="mt-4 space-y-4 text-slate-700 dark:text-slate-300 leading-relaxed">
+      <p>本站是一個免費的國家考試歷屆試題練習平台，目前收錄 <b>{profs.map((p) => p.name).join('、')}</b> 共 <b>{totalQ.toLocaleString()}</b> 題（民國 100 年以後）。</p>
+      <h2 class="text-lg font-bold text-slate-900 dark:text-white">資料來源</h2>
+      <p>所有試題、標準答案與更正答案均來自
+        <a href="https://wwwq.moex.gov.tw/exam/wFrmExamQandASearch.aspx" target="_blank" rel="nofollow noopener" class="text-brand-600 underline">考選部考畢試題查詢平臺</a>，屬政府公開資料。每份考科頁面均附上考選部原始 PDF 連結供對照。</p>
+      <h2 class="text-lg font-bold text-slate-900 dark:text-white">使用方式</h2>
+      <ul class="list-disc pl-5 space-y-1">
+        <li><b>練習模式</b>：選擇年度、職類、考科作答，交卷立即核對答案。</li>
+        <li><b>模擬考</b>：比照實際考試限時作答。</li>
+        <li><b>隨機出題</b>：指定考科與年份範圍隨機抽題。</li>
+        <li><b>錯題本與紀錄</b>：資料儲存在你自己的瀏覽器（localStorage），不會上傳。</li>
+      </ul>
+      <h2 class="text-lg font-bold text-slate-900 dark:text-white">免責聲明</h2>
+      <p>本站為非官方之整理網站，題目採自動化程式解析 PDF，極少數題目（如含圖表、掃描卷）可能有解析誤差，答案一律以考選部公告之標準答案／更正答案為準。若發現錯誤，歡迎回報。</p>
+    </div>
+  </div>
+</Base>

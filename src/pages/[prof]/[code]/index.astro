@@ -1,0 +1,64 @@
+---
+import Base from '../../../layouts/Base.astro';
+import { professions, examsOf, SLUG_PROF, PROF_SLUG } from '../../../lib/data';
+
+export function getStaticPaths() {
+  const paths: any[] = [];
+  for (const p of professions()) {
+    for (const [code] of examsOf(SLUG_PROF[p.slug])) {
+      paths.push({ params: { prof: p.slug, code } });
+    }
+  }
+  return paths;
+}
+
+const { prof, code } = Astro.params;
+const name = SLUG_PROF[prof!];
+const exam = examsOf(name).find(([c]) => c === code)![1];
+const totalQ = exam.subjects.reduce((a, s) => a + s.count, 0);
+const jsonld = {
+  '@context': 'https://schema.org',
+  '@type': 'BreadcrumbList',
+  itemListElement: [
+    { '@type': 'ListItem', position: 1, name: '首頁', item: new URL('/', Astro.site).href },
+    { '@type': 'ListItem', position: 2, name: `${name}`, item: new URL(`/${prof}`, Astro.site).href },
+    { '@type': 'ListItem', position: 3, name: `${exam.minguo}年${exam.session}`, item: new URL(`/${prof}/${code}`, Astro.site).href },
+  ],
+};
+---
+
+<Base
+  title={`${name} ${exam.minguo}年${exam.session} 歷屆試題與答案`}
+  description={`${name} ${exam.minguo}年${exam.session}（${exam.examName}）各考科歷屆試題與標準答案，可線上作答核對或限時模擬考。`}
+  jsonld={jsonld}
+>
+  <div class="mx-auto max-w-5xl px-4 py-8">
+    <nav class="text-sm text-slate-500 mb-3">
+      <a href="/" class="hover:text-brand-600">首頁</a> <span class="mx-1">/</span>
+      <a href={`/${prof}`} class="hover:text-brand-600">{name}</a> <span class="mx-1">/</span>
+      {exam.minguo}年{exam.session}
+    </nav>
+    <h1 class="font-display text-2xl sm:text-3xl font-bold text-brand-900 dark:text-white">{name}．{exam.minguo}年{exam.session}</h1>
+    <p class="mt-2 text-sm text-slate-400">{exam.examName}</p>
+    <div class="mt-2 text-sm text-slate-500">{exam.subjects.length} 個考科．共 {totalQ} 題</div>
+    <div class="mt-4">
+      <a href={`/mock?prof=${prof}&code=${code}`} class="rounded-lg bg-brand-600 text-white text-sm font-semibold px-4 py-2 hover:bg-brand-700">整場模擬考</a>
+    </div>
+
+    <div class="mt-8 grid gap-3">
+      {exam.subjects.sort((a, b) => a.no - b.no).map((s) => (
+        <div class="rounded-xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 p-4">
+          <div class="flex flex-wrap items-center gap-x-3 gap-y-1">
+            <span class="inline-grid place-items-center w-7 h-7 rounded-lg bg-brand-100 dark:bg-brand-900/40 text-brand-700 dark:text-brand-300 text-sm font-bold shrink-0">{s.no}</span>
+            <h2 class="font-bold text-slate-900 dark:text-white">{s.subject}</h2>
+            <span class="text-xs text-slate-400">{s.count} 題{s.img ? `．含 ${s.img} 圖片題` : ''}</span>
+          </div>
+          <div class="mt-3 flex flex-wrap gap-2">
+            <a href={`/practice?prof=${prof}&code=${code}&sub=${s.no}`} class="rounded-lg bg-brand-600 text-white text-sm font-semibold px-3.5 py-1.5 hover:bg-brand-700">開始練習</a>
+            <a href={`/${prof}/${code}/${s.no}`} class="rounded-lg border border-slate-200 dark:border-slate-700 text-sm px-3.5 py-1.5 hover:border-brand-400">看題目與答案</a>
+          </div>
+        </div>
+      ))}
+    </div>
+  </div>
+</Base>

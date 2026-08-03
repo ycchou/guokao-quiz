@@ -1,0 +1,71 @@
+@import "tailwindcss";
+
+/* 深色模式：以 .dark class 切換（存 localStorage） */
+@custom-variant dark (&:where(.dark, .dark *));
+
+/*
+  設計語言對齊「護理職場透明化運動」(ycchou.github.io/transparent-nursing)
+  —— 相同色票、字體與圓角/陰影 token，讓題庫站成為同一家族的姊妹站。
+*/
+@theme {
+  --font-sans: "Noto Sans TC", "Inter", ui-sans-serif, system-ui, -apple-system, sans-serif;
+  --font-serif: "Lora", "Noto Serif TC", Georgia, serif;
+
+  /* 主色（primary = #2E86AB）對應 brand-* 色階 */
+  --color-brand-50: #f0f7fa;
+  --color-brand-100: #dcedf3;
+  --color-brand-200: #c7e6e8;
+  --color-brand-300: #a8dadc;
+  --color-brand-400: #5ba8c6;
+  --color-brand-500: #2e86ab;
+  --color-brand-600: #2e86ab;
+  --color-brand-700: #1f5f7a;
+  --color-brand-800: #1b4f66;
+  --color-brand-900: #1d3557;
+
+  /* 文字墨色（ink） */
+  --color-ink: #1d3557;
+  --color-ink-soft: #46557a;
+  --color-warm: #f1faee;
+
+  /* 語意色對齊：成功 #06A77D、危險 #E63946、警告 #F4A261 */
+  --color-emerald-50: #e6f6f1;
+  --color-emerald-500: #06a77d;
+  --color-emerald-600: #06a77d;
+  --color-emerald-700: #058067;
+  --color-rose-50: #fdecee;
+  --color-rose-500: #e63946;
+  --color-rose-600: #e63946;
+  --color-amber-100: #fdeede;
+  --color-amber-400: #f4a261;
+  --color-amber-500: #f4a261;
+
+  /* 圓角 / 陰影 token（卡片 16px、按鈕 10px、柔和深藍陰影） */
+  --radius-lg: 10px;
+  --radius-xl: 12px;
+  --radius-2xl: 16px;
+  --shadow-sm: 0 2px 8px rgba(29, 53, 87, 0.04);
+  --shadow-md: 0 4px 20px rgba(29, 53, 87, 0.06);
+  --shadow-lg: 0 10px 30px rgba(29, 53, 87, 0.12);
+
+  --ease-brand: cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+html {
+  scroll-behavior: smooth;
+  -webkit-text-size-adjust: 100%;
+}
+body {
+  @apply antialiased;
+  background: var(--color-warm);
+  color: var(--color-ink);
+  font-family: var(--font-sans);
+}
+.dark body {
+  @apply bg-slate-950 text-slate-200;
+}
+
+/* 標題採襯線 Lora，呼應主站的人文氣質 */
+.font-display { font-family: var(--font-serif); }
+.q-stem { @apply leading-relaxed; }
+.scroll-x { overflow-x: auto; }

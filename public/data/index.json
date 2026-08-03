@@ -1,0 +1,3617 @@
+{
+ "professions": {
+  "呼吸治療師": {
+   "exams": {
+    "100020": {
+     "minguo": 100,
+     "year": 2011,
+     "session": "第一次",
+     "examName": "100年第一次專技牙醫、助產、職能治療、醫事放射、呼吸治療、獸醫考試暨牙醫分試考試",
+     "subjects": [
+      {
+       "no": 1,
+       "subject": "心肺基礎醫學（包括解剖學、生理學、藥理學）",
+       "short": "心肺基礎醫學",
+       "file": "100020-1.json",
+       "count": 80,
+       "answered": 80,
+       "img": 0,
+       "isEssay": false
+      },
+      {
+       "no": 2,
+       "subject": "基礎呼吸治療學（包括呼吸治療倫理）",
+       "short": "基礎呼吸治療學",
+       "file": "100020-2.json",
+       "count": 80,
+       "answered": 80,
+       "img": 0,
+       "isEssay": false
+      },
+      {
+       "no": 3,
+       "subject": "呼吸治療儀器設備學",
+       "short": "呼吸治療儀器設備學",
+       "file": "100020-3.json",
+       "count": 80,
+       "answered": 80,
+       "img": 0,
+       "isEssay": false
+      },
+      {
+       "no": 4,
+       "subject": "呼吸器原理及應用",
+       "short": "呼吸器原理及應用",
+       "file": "100020-4.json",
+       "count": 80,
+       "answered": 80,
+       "img": 0,
+       "isEssay": false
+      },
+      {
+       "no": 5,
+       "subject": "重症呼吸治療學",
+       "short": "重症呼吸治療學",
+       "file": "100020-5.json",
+       "count": 80,
+       "answered": 80,
+       "img": 0,
+       "isEssay": false
+      },
+      {
+       "no": 6,
+       "subject": "呼吸疾病學",
+       "short": "呼吸疾病學",
+       "file": "100020-6.json",
+       "count": 80,
+       "answered": 80,
+       "img": 0,
+       "isEssay": false
+      }
+     ]
+    },
+    "100130": {
+     "minguo": 100,
+     "year": 2011,
+     "session": "第二次",
+     "examName": "100年第二次專技牙醫、助產、職能治療、醫事放射、物理治療、呼吸治療、獸醫暨牙醫分試考試",
+     "subjects": [
+      {
+       "no": 1,
+       "subject": "心肺基礎醫學（包括解剖學、生理學、藥理學）",
+       "short": "心肺基礎醫學",
+       "file": "100130-1.json",
+       "count": 80,
+       "answered": 80,
+       "img": 0,
+       "isEssay": false
+      },
+      {
+       "no": 2,
+       "subject": "基礎呼吸治療學（包括呼吸治療倫理）",
+       "short": "基礎呼吸治療學",
+       "file": "100130-2.json",
+       "count": 80,
+       "answered": 80,
+       "img": 0,
+       "isEssay": false
+      },
+      {
+       "no": 3,
+       "subject": "呼吸治療儀器設備學",
+       "short": "呼吸治療儀器設備學",
+       "file": "100130-3.json",
+       "count": 80,
+       "answered": 80,
+       "img": 0,
+       "isEssay": false
+      },
+      {
+       "no": 4,
+       "subject": "呼吸器原理及應用",
+       "short": "呼吸器原理及應用",
+       "file": "100130-4.json",
+       "count": 79,
+       "answered": 79,
+       "img": 0,
+       "isEssay": false
+      },
+      {
+       "no": 5,
+       "subject": "重症呼吸治療學",
+       "short": "重症呼吸治療學",
+       "file": "100130-5.json",
+       "count": 80,
+       "answered": 80,
+       "img": 0,
+       "isEssay": false
+      },
+      {
+       "no": 6,
+       "subject": "呼吸疾病學",
+       "short": "呼吸疾病學",
+       "file": "100130-6.json",
+       "count": 80,
+       "answered": 80,
+       "img": 0,
+       "isEssay": false
+      }
+     ]
+    },
+    "101010": {
+     "minguo": 101,
+     "year": 2012,
+     "session": "第一次",
+     "examName": "101年第一次專技牙醫師分試、醫事放射師助產師物理治療師職能治療師呼吸治療師獸醫師",
+     "subjects": [
+      {
+       "no": 1,
+       "subject": "心肺基礎醫學（包括解剖學、生理學、藥理學）",
+       "short": "心肺基礎醫學",
+       "file": "101010-1.json",
+       "count": 80,
+       "answered": 80,
+       "img": 0,
+       "isEssay": false
+      },
+      {
+       "no": 2,
+       "subject": "基礎呼吸治療學（包括呼吸治療倫理）",
+       "short": "基礎呼吸治療學",
+       "file": "101010-2.json",
+       "count": 80,
+       "answered": 80,
+       "img": 0,
+       "isEssay": false
+      },
+      {
+       "no": 3,
+       "subject": "呼吸治療儀器設備學",
+       "short": "呼吸治療儀器設備學",
+       "file": "101010-3.json",
+       "count": 80,
+       "answered": 80,
+       "img": 0,
+       "isEssay": false
+      },
+      {
+       "no": 4,
+       "subject": "呼吸器原理及應用",
+       "short": "呼吸器原理及應用",
+       "file": "101010-4.json",
+       "count": 80,
+       "answered": 80,
+       "img": 0,
+       "isEssay": false
+      },
+      {
+       "no": 5,
+       "subject": "重症呼吸治療學",
+       "short": "重症呼吸治療學",
+       "file": "101010-5.json",
+       "count": 80,
+       "answered": 80,
+       "img": 0,
+       "isEssay": false
+      },
+      {
+       "no": 6,
+       "subject": "呼吸疾病學",
+       "short": "呼吸疾病學",
+       "file": "101010-6.json",
+       "count": 80,
+       "answered": 80,
+       "img": 0,
+       "isEssay": false
+      }
+     ]
+    },
+    "102020": {
+     "minguo": 102,
+     "year": 2013,
+     "session": "第一次",
+     "examName": "102年第一次專技牙醫師分試藥師醫事放射師助產師物理治療師職能治療師呼吸治療師獸醫師考試",
+     "subjects": [
+      {
+       "no": 1,
+       "subject": "心肺基礎醫學（包括解剖學、生理學、藥理學）",
+       "short": "心肺基礎醫學",
+       "file": "102020-1.json",
+       "count": 80,
+       "answered": 80,
+       "img": 0,
+       "isEssay": false
+      },
+      {
+       "no": 2,
+       "subject": "基礎呼吸治療學（包括呼吸治療倫理）",
+       "short": "基礎呼吸治療學",
+       "file": "102020-2.json",
+       "count": 80,
+       "answered": 80,
+       "img": 0,
+       "isEssay": false
+      },
+      {
+       "no": 3,
+       "subject": "呼吸治療儀器設備學",
+       "short": "呼吸治療儀器設備學",
+       "file": "102020-3.json",
+       "count": 80,
+       "answered": 80,
+       "img": 0,
+       "isEssay": false
+      },
+      {
+       "no": 4,
+       "subject": "呼吸器原理及應用",
+       "short": "呼吸器原理及應用",
+       "file": "102020-4.json",
+       "count": 80,
+       "answered": 80,
+       "img": 0,
+       "isEssay": false
+      },
+      {
+       "no": 5,
+       "subject": "重症呼吸治療學",
+       "short": "重症呼吸治療學",
+       "file": "102020-5.json",
+       "count": 80,
+       "answered": 80,
+       "img": 0,
+       "isEssay": false
+      },
+      {
+       "no": 6,
+       "subject": "呼吸疾病學",
+       "short": "呼吸疾病學",
+       "file": "102020-6.json",
+       "count": 80,
+       "answered": 80,
+       "img": 0,
+       "isEssay": false
+      }
+     ]
+    },
+    "102100": {
+     "minguo": 102,
+     "year": 2013,
+     "session": "第二次",
+     "examName": "102年第二次專技牙醫師分試藥師醫事檢驗師醫放師助產師物理治療師職能治療師呼吸治療師獸醫師考試",
+     "subjects": [
+      {
+       "no": 1,
+       "subject": "心肺基礎醫學（包括解剖學、生理學、藥理學）",
+       "short": "心肺基礎醫學",
+       "file": "102100-1.json",
+       "count": 80,
+       "answered": 80,
+       "img": 0,
+       "isEssay": false
+      },
+      {
+       "no": 2,
+       "subject": "基礎呼吸治療學（包括呼吸治療倫理）",
+       "short": "基礎呼吸治療學",
+       "file": "102100-2.json",
+       "count": 80,
+       "answered": 80,
+       "img": 0,
+       "isEssay": false
+      },
+      {
+       "no": 3,
+       "subject": "呼吸治療儀器設備學",
+       "short": "呼吸治療儀器設備學",
+       "file": "102100-3.json",
+       "count": 80,
+       "answered": 80,
+       "img": 0,
+       "isEssay": false
+      },
+      {
+       "no": 4,
+       "subject": "呼吸器原理及應用",
+       "short": "呼吸器原理及應用",
+       "file": "102100-4.json",
+       "count": 80,
+       "answered": 80,
+       "img": 0,
+       "isEssay": false
+      },
+      {
+       "no": 5,
+       "subject": "重症呼吸治療學",
+       "short": "重症呼吸治療學",
+       "file": "102100-5.json",
+       "count": 79,
+       "answered": 79,
+       "img": 0,
+       "isEssay": false
+      },
+      {
+       "no": 6,
+       "subject": "呼吸疾病學",
+       "short": "呼吸疾病學",
+       "file": "102100-6.json",
+       "count": 80,
+       "answered": 80,
+       "img": 0,
+       "isEssay": false
+      }
+     ]
+    },
+    "103020": {
+     "minguo": 103,
+     "year": 2014,
+     "session": "第一次",
+     "examName": "103年第一次專技牙醫師分階段考試、藥師醫檢師醫放師助產師物理職能呼吸治療師獸醫師考試",
+     "subjects": [
+      {
+       "no": 1,
+       "subject": "心肺基礎醫學（包括解剖學、生理學、藥理學）",
+       "short": "心肺基礎醫學",
+       "file": "103020-1.json",
+       "count": 80,
+       "answered": 80,
+       "img": 0,
+       "isEssay": false
+      },
+      {
+       "no": 2,
+       "subject": "基礎呼吸治療學（包括呼吸治療倫理）",
+       "short": "基礎呼吸治療學",
+       "file": "103020-2.json",
+       "count": 80,
+       "answered": 80,
+       "img": 0,
+       "isEssay": false
+      },
+      {
+       "no": 3,
+       "subject": "呼吸治療儀器設備學",
+       "short": "呼吸治療儀器設備學",
+       "file": "103020-3.json",
+       "count": 0,
+       "answered": 0,
+       "img": 0,
+       "isEssay": false
+      },
+      {
+       "no": 4,
+       "subject": "呼吸器原理及應用",
+       "short": "呼吸器原理及應用",
+       "file": "103020-4.json",
+       "count": 80,
+       "answered": 80,
+       "img": 0,
+       "isEssay": false
+      },
+      {
+       "no": 5,
+       "subject": "重症呼吸治療學",
+       "short": "重症呼吸治療學",
+       "file": "103020-5.json",
+       "count": 80,
+       "answered": 80,
+       "img": 0,
+       "isEssay": false
+      },
+      {
+       "no": 6,
+       "subject": "呼吸疾病學",
+       "short": "呼吸疾病學",
+       "file": "103020-6.json",
+       "count": 80,
+       "answered": 80,
+       "img": 0,
+       "isEssay": false
+      }
+     ]
+    },
+    "103090": {
+     "minguo": 103,
+     "year": 2014,
+     "session": "第二次",
+     "examName": "103年第二次專技牙醫師藥師分階段考試、藥師醫檢師醫放師助產師物理職能呼吸治療師獸醫師考試",
+     "subjects": [
+      {
+       "no": 1,
+       "subject": "心肺基礎醫學（包括解剖學、生理學、藥理學）",
+       "short": "心肺基礎醫學",
+       "file": "103090-1.json",
+       "count": 80,
+       "answered": 80,
+       "img": 0,
+       "isEssay": false
+      },
+      {
+       "no": 2,
+       "subject": "基礎呼吸治療學（包括呼吸治療倫理）",
+       "short": "基礎呼吸治療學",
+       "file": "103090-2.json",
+       "count": 0,
+       "answered": 0,
+       "img": 0,
+       "isEssay": false
+      },
+      {
+       "no": 3,
+       "subject": "呼吸治療儀器設備學",
+       "short": "呼吸治療儀器設備學",
+       "file": "103090-3.json",
+       "count": 0,
+       "answered": 0,
+       "img": 0,
+       "isEssay": false
+      },
+      {
+       "no": 4,
+       "subject": "呼吸器原理及應用",
+       "short": "呼吸器原理及應用",
+       "file": "103090-4.json",
+       "count": 80,
+       "answered": 80,
+       "img": 0,
+       "isEssay": false
+      },
+      {
+       "no": 5,
+       "subject": "重症呼吸治療學",
+       "short": "重症呼吸治療學",
+       "file": "103090-5.json",
+       "count": 80,
+       "answered": 80,
+       "img": 0,
+       "isEssay": false
+      },
+      {
+       "no": 6,
+       "subject": "呼吸疾病學",
+       "short": "呼吸疾病學",
+       "file": "103090-6.json",
+       "count": 80,
+       "answered": 80,
+       "img": 0,
+       "isEssay": false
+      }
+     ]
+    },
+    "104020": {
+     "minguo": 104,
+     "year": 2015,
+     "session": "第一次",
+     "examName": "104年第一次專技牙醫師藥師分階段考試藥師醫檢師醫放師助產師物理治療師職能呼吸治療師獸醫師考試",
+     "subjects": [
+      {
+       "no": 1,
+       "subject": "心肺基礎醫學（包括解剖學、生理學、藥理學）",
+       "short": "心肺基礎醫學",
+       "file": "104020-1.json",
+       "count": 80,
+       "answered": 80,
+       "img": 0,
+       "isEssay": false
+      },
+      {
+       "no": 2,
+       "subject": "基礎呼吸治療學（包括呼吸治療倫理）",
+       "short": "基礎呼吸治療學",
+       "file": "104020-2.json",
+       "count": 79,
+       "answered": 79,
+       "img": 0,
+       "isEssay": false
+      },
+      {
+       "no": 3,
+       "subject": "呼吸治療儀器設備學",
+       "short": "呼吸治療儀器設備學",
+       "file": "104020-3.json",
+       "count": 80,
+       "answered": 80,
+       "img": 0,
+       "isEssay": false
+      },
+      {
+       "no": 4,
+       "subject": "呼吸器原理及應用",
+       "short": "呼吸器原理及應用",
+       "file": "104020-4.json",
+       "count": 80,
+       "answered": 80,
+       "img": 0,
+       "isEssay": false
+      },
+      {
+       "no": 5,
+       "subject": "重症呼吸治療學",
+       "short": "重症呼吸治療學",
+       "file": "104020-5.json",
+       "count": 80,
+       "answered": 80,
+       "img": 0,
+       "isEssay": false
+      },
+      {
+       "no": 6,
+       "subject": "呼吸疾病學",
+       "short": "呼吸疾病學",
+       "file": "104020-6.json",
+       "count": 80,
+       "answered": 80,
+       "img": 0,
+       "isEssay": false
+      }
+     ]
+    },
+    "104090": {
+     "minguo": 104,
+     "year": 2015,
+     "session": "第二次",
+     "examName": "104年第二次專技醫師牙醫師藥師分階段考試藥師醫檢師醫放師助產師物理職能呼吸治療師獸醫師考試",
+     "subjects": [
+      {
+       "no": 1,
+       "subject": "心肺基礎醫學（包括解剖學、生理學、藥理學）",
+       "short": "心肺基礎醫學",
+       "file": "104090-1.json",
+       "count": 80,
+       "answered": 80,
+       "img": 0,
+       "isEssay": false
+      },
+      {
+       "no": 2,
+       "subject": "基礎呼吸治療學（包括呼吸治療倫理）",
+       "short": "基礎呼吸治療學",
+       "file": "104090-2.json",
+       "count": 0,
+       "answered": 0,
+       "img": 0,
+       "isEssay": false
+      },
+      {
+       "no": 3,
+       "subject": "呼吸治療儀器設備學",
+       "short": "呼吸治療儀器設備學",
+       "file": "104090-3.json",
+       "count": 80,
+       "answered": 80,
+       "img": 0,
+       "isEssay": false
+      },
+      {
+       "no": 4,
+       "subject": "呼吸器原理及應用",
+       "short": "呼吸器原理及應用",
+       "file": "104090-4.json",
+       "count": 80,
+       "answered": 80,
+       "img": 0,
+       "isEssay": false
+      },
+      {
+       "no": 5,
+       "subject": "重症呼吸治療學",
+       "short": "重症呼吸治療學",
+       "file": "104090-5.json",
+       "count": 80,
+       "answered": 80,
+       "img": 0,
+       "isEssay": false
+      },
+      {
+       "no": 6,
+       "subject": "呼吸疾病學",
+       "short": "呼吸疾病學",
+       "file": "104090-6.json",
+       "count": 80,
+       "answered": 80,
+       "img": 0,
+       "isEssay": false
+      }
+     ]
+    },
+    "105020": {
+     "minguo": 105,
+     "year": 2016,
+     "session": "第一次",
+     "examName": "105年第一次醫師牙醫師藥師分階段、藥師醫檢師醫放師助產師物理職能呼吸治療師獸醫師考試",
+     "subjects": [
+      {
+       "no": 1,
+       "subject": "心肺基礎醫學（包括解剖學、生理學、藥理學）",
+       "short": "心肺基礎醫學",
+       "file": "105020-1.json",
+       "count": 80,
+       "answered": 80,
+       "img": 0,
+       "isEssay": false
+      },
+      {
+       "no": 2,
+       "subject": "基礎呼吸治療學（包括呼吸治療倫理）",
+       "short": "基礎呼吸治療學",
+       "file": "105020-2.json",
+       "count": 80,
+       "answered": 80,
+       "img": 0,
+       "isEssay": false
+      },
+      {
+       "no": 3,
+       "subject": "呼吸治療儀器設備學",
+       "short": "呼吸治療儀器設備學",
+       "file": "105020-3.json",
+       "count": 0,
+       "answered": 0,
+       "img": 0,
+       "isEssay": false
+      },
+      {
+       "no": 4,
+       "subject": "呼吸器原理及應用",
+       "short": "呼吸器原理及應用",
+       "file": "105020-4.json",
+       "count": 79,
+       "answered": 79,
+       "img": 0,
+       "isEssay": false
+      },
+      {
+       "no": 5,
+       "subject": "重症呼吸治療學",
+       "short": "重症呼吸治療學",
+       "file": "105020-5.json",
+       "count": 80,
+       "answered": 80,
+       "img": 0,
+       "isEssay": false
+      },
+      {
+       "no": 6,
+       "subject": "呼吸疾病學",
+       "short": "呼吸疾病學",
+       "file": "105020-6.json",
+       "count": 80,
+       "answered": 80,
+       "img": 0,
+       "isEssay": false
+      }
+     ]
+    },
+    "105100": {
+     "minguo": 105,
+     "year": 2016,
+     "session": "第二次",
+     "examName": "105年第二次醫師牙醫師藥師分階段、藥師醫檢師醫放師助產師物理職能呼吸治療師獸醫師考試",
+     "subjects": [
+      {
+       "no": 1,
+       "subject": "心肺基礎醫學（包括解剖學、生理學、藥理學）",
+       "short": "心肺基礎醫學",
+       "file": "105100-1.json",
+       "count": 80,
+       "answered": 80,
+       "img": 0,
+       "isEssay": false
+      },
+      {
+       "no": 2,
+       "subject": "基礎呼吸治療學（包括呼吸治療倫理）",
+       "short": "基礎呼吸治療學",
+       "file": "105100-2.json",
+       "count": 80,
+       "answered": 80,
+       "img": 0,
+       "isEssay": false
+      },
+      {
+       "no": 3,
+       "subject": "呼吸治療儀器設備學",
+       "short": "呼吸治療儀器設備學",
+       "file": "105100-3.json",
+       "count": 78,
+       "answered": 78,
+       "img": 0,
+       "isEssay": false
+      },
+      {
+       "no": 4,
+       "subject": "呼吸器原理及應用",
+       "short": "呼吸器原理及應用",
+       "file": "105100-4.json",
+       "count": 80,
+       "answered": 80,
+       "img": 0,
+       "isEssay": false
+      },
+      {
+       "no": 5,
+       "subject": "重症呼吸治療學",
+       "short": "重症呼吸治療學",
+       "file": "105100-5.json",
+       "count": 80,
+       "answered": 80,
+       "img": 0,
+       "isEssay": false
+      },
+      {
+       "no": 6,
+       "subject": "呼吸疾病學",
+       "short": "呼吸疾病學",
+       "file": "105100-6.json",
+       "count": 80,
+       "answered": 80,
+       "img": 0,
+       "isEssay": false
+      }
+     ]
+    },
+    "106020": {
+     "minguo": 106,
+     "year": 2017,
+     "session": "第一次",
+     "examName": "106年第一次專技人員高等考試醫師牙醫師藥師考試分階段考試、藥師、醫事檢驗師、醫事放射師、物理治療師、職能治療師、呼吸治療師、獸醫師考試",
+     "subjects": [
+      {
+       "no": 1,
+       "subject": "心肺基礎醫學（包括解剖學、生理學、藥理學）",
+       "short": "心肺基礎醫學",
+       "file": "106020-1.json",
+       "count": 80,
+       "answered": 80,
+       "img": 0,
+       "isEssay": false
+      },
+      {
+       "no": 2,
+       "subject": "基礎呼吸治療學（包括呼吸治療倫理）",
+       "short": "基礎呼吸治療學",
+       "file": "106020-2.json",
+       "count": 80,
+       "answered": 80,
+       "img": 0,
+       "isEssay": false
+      },
+      {
+       "no": 3,
+       "subject": "呼吸治療儀器設備學",
+       "short": "呼吸治療儀器設備學",
+       "file": "106020-3.json",
+       "count": 0,
+       "answered": 0,
+       "img": 0,
+       "isEssay": false
+      },
+      {
+       "no": 4,
+       "subject": "呼吸器原理及應用",
+       "short": "呼吸器原理及應用",
+       "file": "106020-4.json",
+       "count": 80,
+       "answered": 80,
+       "img": 0,
+       "isEssay": false
+      },
+      {
+       "no": 5,
+       "subject": "重症呼吸治療學",
+       "short": "重症呼吸治療學",
+       "file": "106020-5.json",
+       "count": 80,
+       "answered": 80,
+       "img": 0,
+       "isEssay": false
+      },
+      {
+       "no": 6,
+       "subject": "呼吸疾病學",
+       "short": "呼吸疾病學",
+       "file": "106020-6.json",
+       "count": 80,
+       "answered": 80,
+       "img": 0,
+       "isEssay": false
+      }
+     ]
+    },
+    "106100": {
+     "minguo": 106,
+     "year": 2017,
+     "session": "第二次",
+     "examName": "106年第二次專技人員高等考試醫師考試分階段考試（第一階段）、牙醫師藥師考試分階段考試、藥師、醫事檢驗師、醫事放射師、物理治療師、職能治療師...",
+     "subjects": [
+      {
+       "no": 1,
+       "subject": "心肺基礎醫學（包括解剖學、生理學、藥理學）",
+       "short": "心肺基礎醫學",
+       "file": "106100-1.json",
+       "count": 80,
+       "answered": 80,
+       "img": 0,
+       "isEssay": false
+      },
+      {
+       "no": 2,
+       "subject": "基礎呼吸治療學（包括呼吸治療倫理）",
+       "short": "基礎呼吸治療學",
+       "file": "106100-2.json",
+       "count": 80,
+       "answered": 80,
+       "img": 0,
+       "isEssay": false
+      },
+      {
+       "no": 3,
+       "subject": "呼吸治療儀器設備學",
+       "short": "呼吸治療儀器設備學",
+       "file": "106100-3.json",
+       "count": 80,
+       "answered": 80,
+       "img": 0,
+       "isEssay": false
+      },
+      {
+       "no": 4,
+       "subject": "呼吸器原理及應用",
+       "short": "呼吸器原理及應用",
+       "file": "106100-4.json",
+       "count": 79,
+       "answered": 79,
+       "img": 0,
+       "isEssay": false
+      },
+      {
+       "no": 5,
+       "subject": "重症呼吸治療學",
+       "short": "重症呼吸治療學",
+       "file": "106100-5.json",
+       "count": 80,
+       "answered": 80,
+       "img": 0,
+       "isEssay": false
+      },
+      {
+       "no": 6,
+       "subject": "呼吸疾病學",
+       "short": "呼吸疾病學",
+       "file": "106100-6.json",
+       "count": 80,
+       "answered": 80,
+       "img": 0,
+       "isEssay": false
+      }
+     ]
+    },
+    "107020": {
+     "minguo": 107,
+     "year": 2018,
+     "session": "第一次",
+     "examName": "107年第一次專技人員高等考試醫師牙醫師藥師考試分階段考試、醫事檢驗師、醫事放射師、物理治療師、職能治療師、呼吸治療師、獸醫師考試、107年...",
+     "subjects": [
+      {
+       "no": 1,
+       "subject": "心肺基礎醫學（包括解剖學、生理學、藥理學）",
+       "short": "心肺基礎醫學",
+       "file": "107020-1.json",
+       "count": 80,
+       "answered": 80,
+       "img": 0,
+       "isEssay": false
+      },
+      {
+       "no": 2,
+       "subject": "基礎呼吸治療學（包括呼吸治療倫理）",
+       "short": "基礎呼吸治療學",
+       "file": "107020-2.json",
+       "count": 80,
+       "answered": 80,
+       "img": 0,
+       "isEssay": false
+      },
+      {
+       "no": 3,
+       "subject": "呼吸治療儀器設備學",
+       "short": "呼吸治療儀器設備學",
+       "file": "107020-3.json",
+       "count": 0,
+       "answered": 0,
+       "img": 0,
+       "isEssay": false
+      },
+      {
+       "no": 4,
+       "subject": "呼吸器原理及應用",
+       "short": "呼吸器原理及應用",
+       "file": "107020-4.json",
+       "count": 80,
+       "answered": 80,
+       "img": 0,
+       "isEssay": false
+      },
+      {
+       "no": 5,
+       "subject": "重症呼吸治療學",
+       "short": "重症呼吸治療學",
+       "file": "107020-5.json",
+       "count": 80,
+       "answered": 80,
+       "img": 0,
+       "isEssay": false
+      },
+      {
+       "no": 6,
+       "subject": "呼吸疾病學",
+       "short": "呼吸疾病學",
+       "file": "107020-6.json",
+       "count": 80,
+       "answered": 80,
+       "img": 0,
+       "isEssay": false
+      }
+     ]
+    },
+    "107100": {
+     "minguo": 107,
+     "year": 2018,
+     "session": "第二次",
+     "examName": "107年第二次專技人員高等考試醫師考試分階段考試（第一階段）、牙醫師藥師考試分階段考試、醫事檢驗師、醫事放射師、物理治療師、職能治療師、呼吸...",
+     "subjects": [
+      {
+       "no": 1,
+       "subject": "心肺基礎醫學（包括解剖學、生理學、藥理學）",
+       "short": "心肺基礎醫學",
+       "file": "107100-1.json",
+       "count": 80,
+       "answered": 80,
+       "img": 0,
+       "isEssay": false
+      },
+      {
+       "no": 2,
+       "subject": "基礎呼吸治療學（包括呼吸治療倫理）",
+       "short": "基礎呼吸治療學",
+       "file": "107100-2.json",
+       "count": 80,
+       "answered": 80,
+       "img": 0,
+       "isEssay": false
+      },
+      {
+       "no": 3,
+       "subject": "呼吸治療儀器設備學",
+       "short": "呼吸治療儀器設備學",
+       "file": "107100-3.json",
+       "count": 79,
+       "answered": 79,
+       "img": 0,
+       "isEssay": false
+      },
+      {
+       "no": 4,
+       "subject": "呼吸器原理及應用",
+       "short": "呼吸器原理及應用",
+       "file": "107100-4.json",
+       "count": 80,
+       "answered": 80,
+       "img": 0,
+       "isEssay": false
+      },
+      {
+       "no": 5,
+       "subject": "重症呼吸治療學",
+       "short": "重症呼吸治療學",
+       "file": "107100-5.json",
+       "count": 80,
+       "answered": 80,
+       "img": 0,
+       "isEssay": false
+      },
+      {
+       "no": 6,
+       "subject": "呼吸疾病學",
+       "short": "呼吸疾病學",
+       "file": "107100-6.json",
+       "count": 80,
+       "answered": 80,
+       "img": 0,
+       "isEssay": false
+      }
+     ]
+    },
+    "108030": {
+     "minguo": 108,
+     "year": 2019,
+     "session": "第一次",
+     "examName": "108年第一次專技人員高等考試醫師牙醫師藥師考試分階段考試、醫事檢驗師、醫事放射師、物理治療師、職能治療師、呼吸治療師、獸醫師考試",
+     "subjects": [
+      {
+       "no": 1,
+       "subject": "心肺基礎醫學（包括解剖學、生理學、藥理學）",
+       "short": "心肺基礎醫學",
+       "file": "108030-1.json",
+       "count": 80,
+       "answered": 80,
+       "img": 0,
+       "isEssay": false
+      },
+      {
+       "no": 2,
+       "subject": "基礎呼吸治療學（包括呼吸治療倫理）",
+       "short": "基礎呼吸治療學",
+       "file": "108030-2.json",
+       "count": 80,
+       "answered": 80,
+       "img": 0,
+       "isEssay": false
+      },
+      {
+       "no": 3,
+       "subject": "呼吸治療儀器設備學",
+       "short": "呼吸治療儀器設備學",
+       "file": "108030-3.json",
+       "count": 80,
+       "answered": 80,
+       "img": 0,
+       "isEssay": false
+      },
+      {
+       "no": 4,
+       "subject": "呼吸器原理及應用",
+       "short": "呼吸器原理及應用",
+       "file": "108030-4.json",
+       "count": 80,
+       "answered": 80,
+       "img": 0,
+       "isEssay": false
+      },
+      {
+       "no": 5,
+       "subject": "重症呼吸治療學",
+       "short": "重症呼吸治療學",
+       "file": "108030-5.json",
+       "count": 80,
+       "answered": 80,
+       "img": 0,
+       "isEssay": false
+      },
+      {
+       "no": 6,
+       "subject": "呼吸疾病學",
+       "short": "呼吸疾病學",
+       "file": "108030-6.json",
+       "count": 80,
+       "answered": 80,
+       "img": 0,
+       "isEssay": false
+      }
+     ]
+    },
+    "108100": {
+     "minguo": 108,
+     "year": 2019,
+     "session": "第二次",
+     "examName": "108年第二次專技人員高等考試醫師考試分階段考試（第一階段）、牙醫師藥師考試分階段考試、醫事檢驗師、醫事放射師、物理治療師、職能治療師、呼吸...",
+     "subjects": [
+      {
+       "no": 1,
+       "subject": "心肺基礎醫學（包括解剖學、生理學、藥理學）",
+       "short": "心肺基礎醫學",
+       "file": "108100-1.json",
+       "count": 80,
+       "answered": 80,
+       "img": 0,
+       "isEssay": false
+      },
+      {
+       "no": 2,
+       "subject": "基礎呼吸治療學（包括呼吸治療倫理）",
+       "short": "基礎呼吸治療學",
+       "file": "108100-2.json",
+       "count": 80,
+       "answered": 80,
+       "img": 0,
+       "isEssay": false
+      },
+      {
+       "no": 3,
+       "subject": "呼吸治療儀器設備學",
+       "short": "呼吸治療儀器設備學",
+       "file": "108100-3.json",
+       "count": 79,
+       "answered": 79,
+       "img": 0,
+       "isEssay": false
+      },
+      {
+       "no": 4,
+       "subject": "呼吸器原理及應用",
+       "short": "呼吸器原理及應用",
+       "file": "108100-4.json",
+       "count": 80,
+       "answered": 80,
+       "img": 0,
+       "isEssay": false
+      },
+      {
+       "no": 5,
+       "subject": "重症呼吸治療學",
+       "short": "重症呼吸治療學",
+       "file": "108100-5.json",
+       "count": 80,
+       "answered": 80,
+       "img": 0,
+       "isEssay": false
+      },
+      {
+       "no": 6,
+       "subject": "呼吸疾病學",
+       "short": "呼吸疾病學",
+       "file": "108100-6.json",
+       "count": 80,
+       "answered": 80,
+       "img": 0,
+       "isEssay": false
+      }
+     ]
+    },
+    "109020": {
+     "minguo": 109,
+     "year": 2020,
+     "session": "第一次",
+     "examName": "109年第一次專技人員高等考試醫師牙醫師藥師考試分階段考試、醫事檢驗師、醫事放射師、物理治療師、職能治療師、呼吸治療師、獸醫師考試",
+     "subjects": [
+      {
+       "no": 1,
+       "subject": "心肺基礎醫學（包括解剖學、生理學、藥理學）",
+       "short": "心肺基礎醫學",
+       "file": "109020-1.json",
+       "count": 0,
+       "answered": 0,
+       "img": 0,
+       "isEssay": false
+      },
+      {
+       "no": 2,
+       "subject": "基礎呼吸治療學（包括呼吸治療倫理）",
+       "short": "基礎呼吸治療學",
+       "file": "109020-2.json",
+       "count": 80,
+       "answered": 80,
+       "img": 0,
+       "isEssay": false
+      },
+      {
+       "no": 3,
+       "subject": "呼吸治療儀器設備學",
+       "short": "呼吸治療儀器設備學",
+       "file": "109020-3.json",
+       "count": 80,
+       "answered": 80,
+       "img": 0,
+       "isEssay": false
+      },
+      {
+       "no": 4,
+       "subject": "呼吸器原理及應用",
+       "short": "呼吸器原理及應用",
+       "file": "109020-4.json",
+       "count": 80,
+       "answered": 80,
+       "img": 0,
+       "isEssay": false
+      },
+      {
+       "no": 5,
+       "subject": "重症呼吸治療學",
+       "short": "重症呼吸治療學",
+       "file": "109020-5.json",
+       "count": 80,
+       "answered": 80,
+       "img": 0,
+       "isEssay": false
+      },
+      {
+       "no": 6,
+       "subject": "呼吸疾病學",
+       "short": "呼吸疾病學",
+       "file": "109020-6.json",
+       "count": 80,
+       "answered": 80,
+       "img": 0,
+       "isEssay": false
+      }
+     ]
+    },
+    "109100": {
+     "minguo": 109,
+     "year": 2020,
+     "session": "第二次",
+     "examName": "109年第二次專技人員高等考試醫師考試分階段考試（第一階段）、牙醫師藥師考試分階段考試、醫事檢驗師、醫事放射師、物理治療師、職能治療師、呼吸...",
+     "subjects": [
+      {
+       "no": 1,
+       "subject": "心肺基礎醫學（包括解剖學、生理學、藥理學）",
+       "short": "心肺基礎醫學",
+       "file": "109100-1.json",
+       "count": 80,
+       "answered": 80,
+       "img": 0,
+       "isEssay": false
+      },
+      {
+       "no": 2,
+       "subject": "基礎呼吸治療學（包括呼吸治療倫理）",
+       "short": "基礎呼吸治療學",
+       "file": "109100-2.json",
+       "count": 80,
+       "answered": 80,
+       "img": 0,
+       "isEssay": false
+      },
+      {
+       "no": 3,
+       "subject": "呼吸治療儀器設備學",
+       "short": "呼吸治療儀器設備學",
+       "file": "109100-3.json",
+       "count": 80,
+       "answered": 80,
+       "img": 0,
+       "isEssay": false
+      },
+      {
+       "no": 4,
+       "subject": "呼吸器原理及應用",
+       "short": "呼吸器原理及應用",
+       "file": "109100-4.json",
+       "count": 80,
+       "answered": 80,
+       "img": 0,
+       "isEssay": false
+      },
+      {
+       "no": 5,
+       "subject": "重症呼吸治療學",
+       "short": "重症呼吸治療學",
+       "file": "109100-5.json",
+       "count": 80,
+       "answered": 80,
+       "img": 0,
+       "isEssay": false
+      },
+      {
+       "no": 6,
+       "subject": "呼吸疾病學",
+       "short": "呼吸疾病學",
+       "file": "109100-6.json",
+       "count": 79,
+       "answered": 79,
+       "img": 0,
+       "isEssay": false
+      }
+     ]
+    },
+    "110100": {
+     "minguo": 110,
+     "year": 2021,
+     "session": "第二次",
+     "examName": "第一梯次:110年第二次專技牙醫師第二階段、藥師第二階段、醫事檢驗師、醫事放射師考試、110 年專技職能治療師、呼吸治療師、獸醫師、助產師考...",
+     "subjects": [
+      {
+       "no": 1,
+       "subject": "心肺基礎醫學（包括解剖學、生理學、藥理學）",
+       "short": "心肺基礎醫學",
+       "file": "110100-1.json",
+       "count": 0,
+       "answered": 0,
+       "img": 0,
+       "isEssay": false
+      },
+      {
+       "no": 2,
+       "subject": "基礎呼吸治療學（包括呼吸治療倫理）",
+       "short": "基礎呼吸治療學",
+       "file": "110100-2.json",
+       "count": 80,
+       "answered": 80,
+       "img": 0,
+       "isEssay": false
+      },
+      {
+       "no": 3,
+       "subject": "呼吸治療儀器設備學",
+       "short": "呼吸治療儀器設備學",
+       "file": "110100-3.json",
+       "count": 80,
+       "answered": 80,
+       "img": 0,
+       "isEssay": false
+      },
+      {
+       "no": 4,
+       "subject": "呼吸器原理及應用",
+       "short": "呼吸器原理及應用",
+       "file": "110100-4.json",
+       "count": 0,
+       "answered": 0,
+       "img": 0,
+       "isEssay": false
+      },
+      {
+       "no": 5,
+       "subject": "重症呼吸治療學",
+       "short": "重症呼吸治療學",
+       "file": "110100-5.json",
+       "count": 80,
+       "answered": 80,
+       "img": 0,
+       "isEssay": false
+      },
+      {
+       "no": 6,
+       "subject": "呼吸疾病學",
+       "short": "呼吸疾病學",
+       "file": "110100-6.json",
+       "count": 80,
+       "answered": 80,
+       "img": 0,
+       "isEssay": false
+      }
+     ]
+    },
+    "111100": {
+     "minguo": 111,
+     "year": 2022,
+     "session": "第二次",
+     "examName": "111年第二次專技人員高等考試醫師考試分階段考試（第一階段）、牙醫師藥師考試分階段考試、醫事檢驗師、醫事放射師、物理治療師考試、111年專技...",
+     "subjects": [
+      {
+       "no": 1,
+       "subject": "心肺基礎醫學（包括解剖學、生理學、藥理學）",
+       "short": "心肺基礎醫學",
+       "file": "111100-1.json",
+       "count": 80,
+       "answered": 80,
+       "img": 0,
+       "isEssay": false
+      },
+      {
+       "no": 2,
+       "subject": "基礎呼吸治療學（包括呼吸治療倫理）",
+       "short": "基礎呼吸治療學",
+       "file": "111100-2.json",
+       "count": 80,
+       "answered": 80,
+       "img": 0,
+       "isEssay": false
+      },
+      {
+       "no": 3,
+       "subject": "呼吸治療儀器設備學",
+       "short": "呼吸治療儀器設備學",
+       "file": "111100-3.json",
+       "count": 80,
+       "answered": 80,
+       "img": 0,
+       "isEssay": false
+      },
+      {
+       "no": 4,
+       "subject": "呼吸器原理及應用",
+       "short": "呼吸器原理及應用",
+       "file": "111100-4.json",
+       "count": 80,
+       "answered": 80,
+       "img": 0,
+       "isEssay": false
+      },
+      {
+       "no": 5,
+       "subject": "重症呼吸治療學",
+       "short": "重症呼吸治療學",
+       "file": "111100-5.json",
+       "count": 80,
+       "answered": 80,
+       "img": 0,
+       "isEssay": false
+      },
+      {
+       "no": 6,
+       "subject": "呼吸疾病學",
+       "short": "呼吸疾病學",
+       "file": "111100-6.json",
+       "count": 80,
+       "answered": 80,
+       "img": 0,
+       "isEssay": false
+      }
+     ]
+    },
+    "112100": {
+     "minguo": 112,
+     "year": 2023,
+     "session": "第二次",
+     "examName": "112年第二次專技人員高等考試醫師中醫師考試分階段考試（第一階段）、牙醫師藥師考試分階段考試、醫事檢驗師、醫事放射師、物理治療師考試、112...",
+     "subjects": [
+      {
+       "no": 1,
+       "subject": "心肺基礎醫學（包括解剖學、生理學、藥理學）",
+       "short": "心肺基礎醫學",
+       "file": "112100-1.json",
+       "count": 80,
+       "answered": 80,
+       "img": 0,
+       "isEssay": false
+      },
+      {
+       "no": 2,
+       "subject": "基礎呼吸治療學（包括呼吸治療倫理）",
+       "short": "基礎呼吸治療學",
+       "file": "112100-2.json",
+       "count": 79,
+       "answered": 79,
+       "img": 0,
+       "isEssay": false
+      },
+      {
+       "no": 3,
+       "subject": "呼吸治療儀器設備學",
+       "short": "呼吸治療儀器設備學",
+       "file": "112100-3.json",
+       "count": 80,
+       "answered": 80,
+       "img": 0,
+       "isEssay": false
+      },
+      {
+       "no": 4,
+       "subject": "呼吸器原理及應用",
+       "short": "呼吸器原理及應用",
+       "file": "112100-4.json",
+       "count": 80,
+       "answered": 80,
+       "img": 0,
+       "isEssay": false
+      },
+      {
+       "no": 5,
+       "subject": "重症呼吸治療學",
+       "short": "重症呼吸治療學",
+       "file": "112100-5.json",
+       "count": 80,
+       "answered": 80,
+       "img": 0,
+       "isEssay": false
+      },
+      {
+       "no": 6,
+       "subject": "呼吸疾病學",
+       "short": "呼吸疾病學",
+       "file": "112100-6.json",
+       "count": 80,
+       "answered": 80,
+       "img": 0,
+       "isEssay": false
+      }
+     ]
+    },
+    "113090": {
+     "minguo": 113,
+     "year": 2024,
+     "session": "第二次",
+     "examName": "113年第二次專技人員高等考試醫師中醫師考試分階段考試（第一階段考試）、牙醫師藥師考試分階段考試、醫事檢驗師、醫事放射師、物理治療師考試、1...",
+     "subjects": [
+      {
+       "no": 1,
+       "subject": "心肺基礎醫學（包括解剖學、生理學、藥理學）",
+       "short": "心肺基礎醫學",
+       "file": "113090-1.json",
+       "count": 0,
+       "answered": 0,
+       "img": 0,
+       "isEssay": false
+      },
+      {
+       "no": 2,
+       "subject": "基礎呼吸治療學（包括呼吸治療倫理）",
+       "short": "基礎呼吸治療學",
+       "file": "113090-2.json",
+       "count": 80,
+       "answered": 80,
+       "img": 0,
+       "isEssay": false
+      },
+      {
+       "no": 3,
+       "subject": "呼吸治療儀器設備學",
+       "short": "呼吸治療儀器設備學",
+       "file": "113090-3.json",
+       "count": 80,
+       "answered": 80,
+       "img": 0,
+       "isEssay": false
+      },
+      {
+       "no": 4,
+       "subject": "呼吸器原理及應用",
+       "short": "呼吸器原理及應用",
+       "file": "113090-4.json",
+       "count": 80,
+       "answered": 80,
+       "img": 0,
+       "isEssay": false
+      },
+      {
+       "no": 5,
+       "subject": "重症呼吸治療學",
+       "short": "重症呼吸治療學",
+       "file": "113090-5.json",
+       "count": 80,
+       "answered": 80,
+       "img": 0,
+       "isEssay": false
+      },
+      {
+       "no": 6,
+       "subject": "呼吸疾病學",
+       "short": "呼吸疾病學",
+       "file": "113090-6.json",
+       "count": 80,
+       "answered": 80,
+       "img": 0,
+       "isEssay": false
+      }
+     ]
+    },
+    "114090": {
+     "minguo": 114,
+     "year": 2025,
+     "session": "第二次",
+     "examName": "114年第二次專技人員高等考試醫師中醫師考試分階段考試（第一階段考試）、牙醫師藥師考試分階段考試、醫事檢驗師、醫事放射師、物理治療師考試、1...",
+     "subjects": [
+      {
+       "no": 1,
+       "subject": "心肺基礎醫學（包括解剖學、生理學、藥理學）",
+       "short": "心肺基礎醫學",
+       "file": "114090-1.json",
+       "count": 80,
+       "answered": 80,
+       "img": 0,
+       "isEssay": false
+      },
+      {
+       "no": 2,
+       "subject": "基礎呼吸治療學（包括呼吸治療倫理）",
+       "short": "基礎呼吸治療學",
+       "file": "114090-2.json",
+       "count": 79,
+       "answered": 79,
+       "img": 0,
+       "isEssay": false
+      },
+      {
+       "no": 3,
+       "subject": "呼吸治療儀器設備學",
+       "short": "呼吸治療儀器設備學",
+       "file": "114090-3.json",
+       "count": 80,
+       "answered": 80,
+       "img": 0,
+       "isEssay": false
+      },
+      {
+       "no": 4,
+       "subject": "呼吸器原理及應用",
+       "short": "呼吸器原理及應用",
+       "file": "114090-4.json",
+       "count": 80,
+       "answered": 80,
+       "img": 0,
+       "isEssay": false
+      },
+      {
+       "no": 5,
+       "subject": "重症呼吸治療學",
+       "short": "重症呼吸治療學",
+       "file": "114090-5.json",
+       "count": 80,
+       "answered": 80,
+       "img": 0,
+       "isEssay": false
+      },
+      {
+       "no": 6,
+       "subject": "呼吸疾病學",
+       "short": "呼吸疾病學",
+       "file": "114090-6.json",
+       "count": 80,
+       "answered": 80,
+       "img": 0,
+       "isEssay": false
+      }
+     ]
+    }
+   }
+  },
+  "護理師": {
+   "exams": {
+    "100030": {
+     "minguo": 100,
+     "year": 2011,
+     "session": "第一次",
+     "examName": "100年第一次專技中醫師、營養師、心理師、醫事人員暨醫師考試分試考試",
+     "subjects": [
+      {
+       "no": 1,
+       "subject": "基礎醫學(包括解剖學、生理學、病理學、藥理學、微生物學與免疫學)",
+       "short": "基礎醫學",
+       "file": "100030-1.json",
+       "count": 80,
+       "answered": 80,
+       "img": 2,
+       "isEssay": false
+      },
+      {
+       "no": 2,
+       "subject": "基本護理學（包括護理原理、護理技術）與護理行政",
+       "short": "基本護理學與護理行政",
+       "file": "100030-2.json",
+       "count": 80,
+       "answered": 80,
+       "img": 2,
+       "isEssay": false
+      },
+      {
+       "no": 3,
+       "subject": "內外科護理學",
+       "short": "內外科護理學",
+       "file": "100030-3.json",
+       "count": 80,
+       "answered": 78,
+       "img": 2,
+       "isEssay": true
+      },
+      {
+       "no": 4,
+       "subject": "產兒科護理學",
+       "short": "產兒科護理學",
+       "file": "100030-4.json",
+       "count": 80,
+       "answered": 80,
+       "img": 2,
+       "isEssay": false
+      },
+      {
+       "no": 5,
+       "subject": "精神科與社區衛生護理學",
+       "short": "精神科與社區衛生護理學",
+       "file": "100030-5.json",
+       "count": 80,
+       "answered": 79,
+       "img": 5,
+       "isEssay": true
+      }
+     ]
+    },
+    "100140": {
+     "minguo": 100,
+     "year": 2011,
+     "session": "第二次",
+     "examName": "100年第二次專技中醫、營養、心理、醫事人員、醫師分試、100年法醫、語言治療、聽力、牙體技術考試",
+     "subjects": [
+      {
+       "no": 1,
+       "subject": "基礎醫學(包括解剖學、生理學、病理學、藥理學、微生物學與免疫學)",
+       "short": "基礎醫學",
+       "file": "100140-1.json",
+       "count": 80,
+       "answered": 80,
+       "img": 2,
+       "isEssay": false
+      },
+      {
+       "no": 2,
+       "subject": "基本護理學（包括護理原理、護理技術）與護理行政",
+       "short": "基本護理學與護理行政",
+       "file": "100140-2.json",
+       "count": 80,
+       "answered": 80,
+       "img": 3,
+       "isEssay": false
+      },
+      {
+       "no": 3,
+       "subject": "內外科護理學",
+       "short": "內外科護理學",
+       "file": "100140-3.json",
+       "count": 80,
+       "answered": 80,
+       "img": 0,
+       "isEssay": false
+      },
+      {
+       "no": 4,
+       "subject": "產兒科護理學",
+       "short": "產兒科護理學",
+       "file": "100140-4.json",
+       "count": 80,
+       "answered": 80,
+       "img": 1,
+       "isEssay": false
+      },
+      {
+       "no": 5,
+       "subject": "精神科與社區衛生護理學",
+       "short": "精神科與社區衛生護理學",
+       "file": "100140-5.json",
+       "count": 80,
+       "answered": 80,
+       "img": 5,
+       "isEssay": false
+      }
+     ]
+    },
+    "101030": {
+     "minguo": 101,
+     "year": 2012,
+     "session": "第一次",
+     "examName": "101年第一次專技醫師分試中醫師營養師心理師藥師醫事檢驗師護理師護士社會工作師考試",
+     "subjects": [
+      {
+       "no": 1,
+       "subject": "基礎醫學(包括解剖學、生理學、病理學、藥理學、微生物學與免疫學)",
+       "short": "基礎醫學",
+       "file": "101030-1.json",
+       "count": 80,
+       "answered": 80,
+       "img": 2,
+       "isEssay": false
+      },
+      {
+       "no": 2,
+       "subject": "基本護理學（包括護理原理、護理技術）與護理行政",
+       "short": "基本護理學與護理行政",
+       "file": "101030-2.json",
+       "count": 80,
+       "answered": 80,
+       "img": 4,
+       "isEssay": false
+      },
+      {
+       "no": 3,
+       "subject": "內外科護理學",
+       "short": "內外科護理學",
+       "file": "101030-3.json",
+       "count": 80,
+       "answered": 80,
+       "img": 5,
+       "isEssay": false
+      },
+      {
+       "no": 4,
+       "subject": "產兒科護理學",
+       "short": "產兒科護理學",
+       "file": "101030-4.json",
+       "count": 80,
+       "answered": 80,
+       "img": 3,
+       "isEssay": false
+      },
+      {
+       "no": 5,
+       "subject": "精神科與社區衛生護理學",
+       "short": "精神科與社區衛生護理學",
+       "file": "101030-5.json",
+       "count": 80,
+       "answered": 80,
+       "img": 5,
+       "isEssay": false
+      }
+     ]
+    },
+    "101110": {
+     "minguo": 101,
+     "year": 2012,
+     "session": "第二次",
+     "examName": "101年第2次醫事人員考試",
+     "subjects": [
+      {
+       "no": 1,
+       "subject": "基礎醫學(包括解剖學、生理學、病理學、藥理學、微生物學與免疫學)",
+       "short": "基礎醫學",
+       "file": "101110-1.json",
+       "count": 80,
+       "answered": 80,
+       "img": 3,
+       "isEssay": false
+      },
+      {
+       "no": 2,
+       "subject": "基本護理學（包括護理原理、護理技術）與護理行政",
+       "short": "基本護理學與護理行政",
+       "file": "101110-2.json",
+       "count": 80,
+       "answered": 80,
+       "img": 2,
+       "isEssay": false
+      },
+      {
+       "no": 3,
+       "subject": "內外科護理學",
+       "short": "內外科護理學",
+       "file": "101110-3.json",
+       "count": 80,
+       "answered": 80,
+       "img": 2,
+       "isEssay": false
+      },
+      {
+       "no": 4,
+       "subject": "產兒科護理學",
+       "short": "產兒科護理學",
+       "file": "101110-4.json",
+       "count": 80,
+       "answered": 80,
+       "img": 2,
+       "isEssay": false
+      },
+      {
+       "no": 5,
+       "subject": "精神科與社區衛生護理學",
+       "short": "精神科與社區衛生護理學",
+       "file": "101110-5.json",
+       "count": 80,
+       "answered": 80,
+       "img": 5,
+       "isEssay": false
+      }
+     ]
+    },
+    "102030": {
+     "minguo": 102,
+     "year": 2013,
+     "session": "第一次",
+     "examName": "102年第一次專技醫師中醫師分試中醫師營養師心理師醫事檢驗師護理師社會工作師、特考聽力牙體語言治療師考試",
+     "subjects": [
+      {
+       "no": 1,
+       "subject": "基礎醫學(包括解剖學、生理學、病理學、藥理學、微生物學與免疫學)",
+       "short": "基礎醫學",
+       "file": "102030-1.json",
+       "count": 80,
+       "answered": 80,
+       "img": 3,
+       "isEssay": false
+      },
+      {
+       "no": 2,
+       "subject": "基本護理學（包括護理原理、護理技術）與護理行政",
+       "short": "基本護理學與護理行政",
+       "file": "102030-2.json",
+       "count": 80,
+       "answered": 80,
+       "img": 0,
+       "isEssay": false
+      },
+      {
+       "no": 3,
+       "subject": "內外科護理學",
+       "short": "內外科護理學",
+       "file": "102030-3.json",
+       "count": 80,
+       "answered": 80,
+       "img": 5,
+       "isEssay": false
+      },
+      {
+       "no": 4,
+       "subject": "產兒科護理學",
+       "short": "產兒科護理學",
+       "file": "102030-4.json",
+       "count": 80,
+       "answered": 80,
+       "img": 2,
+       "isEssay": false
+      },
+      {
+       "no": 5,
+       "subject": "精神科與社區衛生護理學",
+       "short": "精神科與社區衛生護理學",
+       "file": "102030-5.json",
+       "count": 80,
+       "answered": 80,
+       "img": 4,
+       "isEssay": false
+      }
+     ]
+    },
+    "102110": {
+     "minguo": 102,
+     "year": 2013,
+     "session": "第二次",
+     "examName": "102年第二次專技醫師中醫師分試中醫師營養師心理師護理師社會工作師、特考聽力牙體技術人員、法醫師語言聽力牙體技術師考試",
+     "subjects": [
+      {
+       "no": 1,
+       "subject": "基礎醫學(包括解剖學、生理學、病理學、藥理學、微生物學與免疫學)",
+       "short": "基礎醫學",
+       "file": "102110-1.json",
+       "count": 80,
+       "answered": 80,
+       "img": 6,
+       "isEssay": false
+      },
+      {
+       "no": 2,
+       "subject": "基本護理學（包括護理原理、護理技術）與護理行政",
+       "short": "基本護理學與護理行政",
+       "file": "102110-2.json",
+       "count": 80,
+       "answered": 80,
+       "img": 5,
+       "isEssay": false
+      },
+      {
+       "no": 3,
+       "subject": "內外科護理學",
+       "short": "內外科護理學",
+       "file": "102110-3.json",
+       "count": 80,
+       "answered": 80,
+       "img": 1,
+       "isEssay": false
+      },
+      {
+       "no": 4,
+       "subject": "產兒科護理學",
+       "short": "產兒科護理學",
+       "file": "102110-4.json",
+       "count": 80,
+       "answered": 80,
+       "img": 1,
+       "isEssay": false
+      },
+      {
+       "no": 5,
+       "subject": "精神科與社區衛生護理學",
+       "short": "精神科與社區衛生護理學",
+       "file": "102110-5.json",
+       "count": 80,
+       "answered": 80,
+       "img": 5,
+       "isEssay": false
+      }
+     ]
+    },
+    "103030": {
+     "minguo": 103,
+     "year": 2014,
+     "session": "第一次",
+     "examName": "103年第一次專技醫師中醫師分階段考試、中醫師營養師心理師護理師社會工作師考試",
+     "subjects": [
+      {
+       "no": 1,
+       "subject": "基礎醫學(包括解剖學、生理學、病理學、藥理學、微生物學與免疫學)",
+       "short": "基礎醫學",
+       "file": "103030-1.json",
+       "count": 80,
+       "answered": 80,
+       "img": 2,
+       "isEssay": false
+      },
+      {
+       "no": 2,
+       "subject": "基本護理學（包括護理原理、護理技術）與護理行政",
+       "short": "基本護理學與護理行政",
+       "file": "103030-2.json",
+       "count": 80,
+       "answered": 80,
+       "img": 4,
+       "isEssay": false
+      },
+      {
+       "no": 3,
+       "subject": "內外科護理學",
+       "short": "內外科護理學",
+       "file": "103030-3.json",
+       "count": 80,
+       "answered": 80,
+       "img": 1,
+       "isEssay": false
+      },
+      {
+       "no": 4,
+       "subject": "產兒科護理學",
+       "short": "產兒科護理學",
+       "file": "103030-4.json",
+       "count": 80,
+       "answered": 80,
+       "img": 1,
+       "isEssay": false
+      },
+      {
+       "no": 5,
+       "subject": "精神科與社區衛生護理學",
+       "short": "精神科與社區衛生護理學",
+       "file": "103030-5.json",
+       "count": 80,
+       "answered": 80,
+       "img": 3,
+       "isEssay": false
+      }
+     ]
+    },
+    "103100": {
+     "minguo": 103,
+     "year": 2014,
+     "session": "第二次",
+     "examName": "103年第二次專技醫師中醫師分階段、中醫師營養師心理師護理師社會工作師、法醫師語言聽力牙體技術師考試",
+     "subjects": [
+      {
+       "no": 1,
+       "subject": "基礎醫學(包括解剖學、生理學、病理學、藥理學、微生物學與免疫學)",
+       "short": "基礎醫學",
+       "file": "103100-1.json",
+       "count": 80,
+       "answered": 79,
+       "img": 2,
+       "isEssay": false
+      },
+      {
+       "no": 2,
+       "subject": "基本護理學（包括護理原理、護理技術）與護理行政",
+       "short": "基本護理學與護理行政",
+       "file": "103100-2.json",
+       "count": 80,
+       "answered": 79,
+       "img": 1,
+       "isEssay": false
+      },
+      {
+       "no": 3,
+       "subject": "內外科護理學",
+       "short": "內外科護理學",
+       "file": "103100-3.json",
+       "count": 80,
+       "answered": 79,
+       "img": 0,
+       "isEssay": false
+      },
+      {
+       "no": 4,
+       "subject": "產兒科護理學",
+       "short": "產兒科護理學",
+       "file": "103100-4.json",
+       "count": 80,
+       "answered": 78,
+       "img": 3,
+       "isEssay": false
+      },
+      {
+       "no": 5,
+       "subject": "精神科與社區衛生護理學",
+       "short": "精神科與社區衛生護理學",
+       "file": "103100-5.json",
+       "count": 80,
+       "answered": 78,
+       "img": 1,
+       "isEssay": false
+      }
+     ]
+    },
+    "104030": {
+     "minguo": 104,
+     "year": 2015,
+     "session": "第一次",
+     "examName": "104年第一次專技醫師中醫師分階段考試、中醫師營養師心理師護理師社會工作師考試",
+     "subjects": [
+      {
+       "no": 1,
+       "subject": "基礎醫學(包括解剖學、生理學、病理學、藥理學、微生物學與免疫學)",
+       "short": "基礎醫學",
+       "file": "104030-1.json",
+       "count": 80,
+       "answered": 78,
+       "img": 3,
+       "isEssay": false
+      },
+      {
+       "no": 2,
+       "subject": "基本護理學（包括護理原理、護理技術）與護理行政",
+       "short": "基本護理學與護理行政",
+       "file": "104030-2.json",
+       "count": 80,
+       "answered": 78,
+       "img": 5,
+       "isEssay": false
+      },
+      {
+       "no": 3,
+       "subject": "內外科護理學",
+       "short": "內外科護理學",
+       "file": "104030-3.json",
+       "count": 80,
+       "answered": 79,
+       "img": 3,
+       "isEssay": false
+      },
+      {
+       "no": 4,
+       "subject": "產兒科護理學",
+       "short": "產兒科護理學",
+       "file": "104030-4.json",
+       "count": 80,
+       "answered": 79,
+       "img": 3,
+       "isEssay": false
+      },
+      {
+       "no": 5,
+       "subject": "精神科與社區衛生護理學",
+       "short": "精神科與社區衛生護理學",
+       "file": "104030-5.json",
+       "count": 80,
+       "answered": 79,
+       "img": 6,
+       "isEssay": false
+      }
+     ]
+    },
+    "104100": {
+     "minguo": 104,
+     "year": 2015,
+     "session": "第二次",
+     "examName": "104年第二次專技中醫師分階段考試營養師心理師護理師社會工作師考試法醫師語言治療師聽力師牙體技術師考試",
+     "subjects": [
+      {
+       "no": 1,
+       "subject": "基礎醫學(包括解剖學、生理學、病理學、藥理學、微生物學與免疫學)",
+       "short": "基礎醫學",
+       "file": "104100-1.json",
+       "count": 80,
+       "answered": 78,
+       "img": 5,
+       "isEssay": false
+      },
+      {
+       "no": 2,
+       "subject": "基本護理學（包括護理原理、護理技術）與護理行政",
+       "short": "基本護理學與護理行政",
+       "file": "104100-2.json",
+       "count": 80,
+       "answered": 78,
+       "img": 6,
+       "isEssay": false
+      },
+      {
+       "no": 3,
+       "subject": "內外科護理學",
+       "short": "內外科護理學",
+       "file": "104100-3.json",
+       "count": 80,
+       "answered": 78,
+       "img": 2,
+       "isEssay": false
+      },
+      {
+       "no": 4,
+       "subject": "產兒科護理學",
+       "short": "產兒科護理學",
+       "file": "104100-4.json",
+       "count": 80,
+       "answered": 78,
+       "img": 1,
+       "isEssay": false
+      },
+      {
+       "no": 5,
+       "subject": "精神科與社區衛生護理學",
+       "short": "精神科與社區衛生護理學",
+       "file": "104100-5.json",
+       "count": 80,
+       "answered": 79,
+       "img": 1,
+       "isEssay": false
+      }
+     ]
+    },
+    "105030": {
+     "minguo": 105,
+     "year": 2016,
+     "session": "第一次",
+     "examName": "105年第一次中醫師分階段、營養師心理師護理師社工師考試",
+     "subjects": [
+      {
+       "no": 1,
+       "subject": "基礎醫學(包括解剖學、生理學、病理學、藥理學、微生物學與免疫學)",
+       "short": "基礎醫學",
+       "file": "105030-1.json",
+       "count": 80,
+       "answered": 79,
+       "img": 0,
+       "isEssay": false
+      },
+      {
+       "no": 2,
+       "subject": "基本護理學（包括護理原理、護理技術）與護理行政",
+       "short": "基本護理學與護理行政",
+       "file": "105030-2.json",
+       "count": 80,
+       "answered": 78,
+       "img": 1,
+       "isEssay": false
+      },
+      {
+       "no": 3,
+       "subject": "內外科護理學",
+       "short": "內外科護理學",
+       "file": "105030-3.json",
+       "count": 80,
+       "answered": 79,
+       "img": 0,
+       "isEssay": false
+      },
+      {
+       "no": 4,
+       "subject": "產兒科護理學",
+       "short": "產兒科護理學",
+       "file": "105030-4.json",
+       "count": 80,
+       "answered": 78,
+       "img": 0,
+       "isEssay": false
+      },
+      {
+       "no": 5,
+       "subject": "精神科與社區衛生護理學",
+       "short": "精神科與社區衛生護理學",
+       "file": "105030-5.json",
+       "count": 80,
+       "answered": 79,
+       "img": 0,
+       "isEssay": false
+      }
+     ]
+    },
+    "105090": {
+     "minguo": 105,
+     "year": 2016,
+     "session": "第二次",
+     "examName": "105年第二次中醫師分階段營養師心理師護理師社工師暨法醫師語言治療師聽力師牙體技術師考試",
+     "subjects": [
+      {
+       "no": 1,
+       "subject": "基礎醫學(包括解剖學、生理學、病理學、藥理學、微生物學與免疫學)",
+       "short": "基礎醫學",
+       "file": "105090-1.json",
+       "count": 80,
+       "answered": 78,
+       "img": 3,
+       "isEssay": false
+      },
+      {
+       "no": 2,
+       "subject": "基本護理學（包括護理原理、護理技術）與護理行政",
+       "short": "基本護理學與護理行政",
+       "file": "105090-2.json",
+       "count": 80,
+       "answered": 78,
+       "img": 6,
+       "isEssay": false
+      },
+      {
+       "no": 3,
+       "subject": "內外科護理學",
+       "short": "內外科護理學",
+       "file": "105090-3.json",
+       "count": 80,
+       "answered": 78,
+       "img": 1,
+       "isEssay": false
+      },
+      {
+       "no": 4,
+       "subject": "產兒科護理學",
+       "short": "產兒科護理學",
+       "file": "105090-4.json",
+       "count": 80,
+       "answered": 78,
+       "img": 3,
+       "isEssay": false
+      },
+      {
+       "no": 5,
+       "subject": "精神科與社區衛生護理學",
+       "short": "精神科與社區衛生護理學",
+       "file": "105090-5.json",
+       "count": 80,
+       "answered": 79,
+       "img": 1,
+       "isEssay": false
+      }
+     ]
+    },
+    "106030": {
+     "minguo": 106,
+     "year": 2017,
+     "session": "第一次",
+     "examName": "106年第一次專技人員高等考試中醫師考試分階段考試、營養師、心理師、護理師、社會工作師考試",
+     "subjects": [
+      {
+       "no": 1,
+       "subject": "基礎醫學(包括解剖學、生理學、病理學、藥理學、微生物學與免疫學)",
+       "short": "基礎醫學",
+       "file": "106030-1.json",
+       "count": 80,
+       "answered": 79,
+       "img": 1,
+       "isEssay": false
+      },
+      {
+       "no": 2,
+       "subject": "基本護理學（包括護理原理、護理技術）與護理行政",
+       "short": "基本護理學與護理行政",
+       "file": "106030-2.json",
+       "count": 80,
+       "answered": 78,
+       "img": 3,
+       "isEssay": false
+      },
+      {
+       "no": 3,
+       "subject": "內外科護理學",
+       "short": "內外科護理學",
+       "file": "106030-3.json",
+       "count": 80,
+       "answered": 79,
+       "img": 0,
+       "isEssay": false
+      },
+      {
+       "no": 4,
+       "subject": "產兒科護理學",
+       "short": "產兒科護理學",
+       "file": "106030-4.json",
+       "count": 80,
+       "answered": 78,
+       "img": 4,
+       "isEssay": false
+      },
+      {
+       "no": 5,
+       "subject": "精神科與社區衛生護理學",
+       "short": "精神科與社區衛生護理學",
+       "file": "106030-5.json",
+       "count": 80,
+       "answered": 78,
+       "img": 4,
+       "isEssay": false
+      }
+     ]
+    },
+    "106110": {
+     "minguo": 106,
+     "year": 2017,
+     "session": "第二次",
+     "examName": "106年第二次專技人員高等考試中醫師考試分階段考試、營養師、心理師、護理師、社會工作師考試、106年專技人員高等考試法醫師、語言治療師、聽力...",
+     "subjects": [
+      {
+       "no": 1,
+       "subject": "基礎醫學(包括解剖學、生理學、病理學、藥理學、微生物學與免疫學)",
+       "short": "基礎醫學",
+       "file": "106110-1.json",
+       "count": 80,
+       "answered": 78,
+       "img": 1,
+       "isEssay": false
+      },
+      {
+       "no": 2,
+       "subject": "基本護理學（包括護理原理、護理技術）與護理行政",
+       "short": "基本護理學與護理行政",
+       "file": "106110-2.json",
+       "count": 80,
+       "answered": 78,
+       "img": 1,
+       "isEssay": false
+      },
+      {
+       "no": 3,
+       "subject": "內外科護理學",
+       "short": "內外科護理學",
+       "file": "106110-3.json",
+       "count": 80,
+       "answered": 79,
+       "img": 1,
+       "isEssay": false
+      },
+      {
+       "no": 4,
+       "subject": "產兒科護理學",
+       "short": "產兒科護理學",
+       "file": "106110-4.json",
+       "count": 80,
+       "answered": 79,
+       "img": 2,
+       "isEssay": false
+      },
+      {
+       "no": 5,
+       "subject": "精神科與社區衛生護理學",
+       "short": "精神科與社區衛生護理學",
+       "file": "106110-5.json",
+       "count": 80,
+       "answered": 79,
+       "img": 0,
+       "isEssay": false
+      }
+     ]
+    },
+    "106111": {
+     "minguo": 106,
+     "year": 2017,
+     "session": "第二次",
+     "examName": "106年第二次專技人員高等考試中醫師考試分階段考試、營養師、心理師、護理師、社會工作師考試、106年專技人員高等考試法醫師、語言治療師、聽力...",
+     "subjects": [
+      {
+       "no": 1,
+       "subject": "基礎醫學(包括解剖學、生理學、病理學、藥理學、微生物學與免疫學)",
+       "short": "基礎醫學",
+       "file": "106111-1.json",
+       "count": 80,
+       "answered": 78,
+       "img": 0,
+       "isEssay": false
+      },
+      {
+       "no": 2,
+       "subject": "基本護理學（包括護理原理、護理技術）與護理行政",
+       "short": "基本護理學與護理行政",
+       "file": "106111-2.json",
+       "count": 80,
+       "answered": 79,
+       "img": 2,
+       "isEssay": false
+      },
+      {
+       "no": 3,
+       "subject": "內外科護理學",
+       "short": "內外科護理學",
+       "file": "106111-3.json",
+       "count": 80,
+       "answered": 78,
+       "img": 1,
+       "isEssay": false
+      },
+      {
+       "no": 4,
+       "subject": "產兒科護理學",
+       "short": "產兒科護理學",
+       "file": "106111-4.json",
+       "count": 80,
+       "answered": 79,
+       "img": 1,
+       "isEssay": false
+      },
+      {
+       "no": 5,
+       "subject": "精神科與社區衛生護理學",
+       "short": "精神科與社區衛生護理學",
+       "file": "106111-5.json",
+       "count": 80,
+       "answered": 79,
+       "img": 5,
+       "isEssay": false
+      }
+     ]
+    },
+    "107030": {
+     "minguo": 107,
+     "year": 2018,
+     "session": "第一次",
+     "examName": "107年第一次專技人員高等考試中醫師考試分階段考試、營養師、心理師、護理師、社會工作師考試",
+     "subjects": [
+      {
+       "no": 1,
+       "subject": "基礎醫學(包括解剖學、生理學、病理學、藥理學、微生物學與免疫學)",
+       "short": "基礎醫學",
+       "file": "107030-1.json",
+       "count": 80,
+       "answered": 78,
+       "img": 1,
+       "isEssay": false
+      },
+      {
+       "no": 2,
+       "subject": "基本護理學（包括護理原理、護理技術）與護理行政",
+       "short": "基本護理學與護理行政",
+       "file": "107030-2.json",
+       "count": 80,
+       "answered": 78,
+       "img": 1,
+       "isEssay": false
+      },
+      {
+       "no": 3,
+       "subject": "內外科護理學",
+       "short": "內外科護理學",
+       "file": "107030-3.json",
+       "count": 80,
+       "answered": 79,
+       "img": 2,
+       "isEssay": false
+      },
+      {
+       "no": 4,
+       "subject": "產兒科護理學",
+       "short": "產兒科護理學",
+       "file": "107030-4.json",
+       "count": 80,
+       "answered": 79,
+       "img": 0,
+       "isEssay": false
+      },
+      {
+       "no": 5,
+       "subject": "精神科與社區衛生護理學",
+       "short": "精神科與社區衛生護理學",
+       "file": "107030-5.json",
+       "count": 80,
+       "answered": 78,
+       "img": 2,
+       "isEssay": false
+      }
+     ]
+    },
+    "107110": {
+     "minguo": 107,
+     "year": 2018,
+     "session": "第二次",
+     "examName": "107年第二次專技人員高等考試中醫師考試分階段考試、營養師、心理師、護理師、社會工作師考試、107年專技人員高等考試法醫師、語言治療師、聽力...",
+     "subjects": [
+      {
+       "no": 1,
+       "subject": "基礎醫學(包括解剖學、生理學、病理學、藥理學、微生物學與免疫學)",
+       "short": "基礎醫學",
+       "file": "107110-1.json",
+       "count": 80,
+       "answered": 79,
+       "img": 1,
+       "isEssay": false
+      },
+      {
+       "no": 2,
+       "subject": "基本護理學（包括護理原理、護理技術）與護理行政",
+       "short": "基本護理學與護理行政",
+       "file": "107110-2.json",
+       "count": 80,
+       "answered": 79,
+       "img": 0,
+       "isEssay": false
+      },
+      {
+       "no": 3,
+       "subject": "內外科護理學",
+       "short": "內外科護理學",
+       "file": "107110-3.json",
+       "count": 80,
+       "answered": 79,
+       "img": 1,
+       "isEssay": false
+      },
+      {
+       "no": 4,
+       "subject": "產兒科護理學",
+       "short": "產兒科護理學",
+       "file": "107110-4.json",
+       "count": 80,
+       "answered": 78,
+       "img": 0,
+       "isEssay": false
+      },
+      {
+       "no": 5,
+       "subject": "精神科與社區衛生護理學",
+       "short": "精神科與社區衛生護理學",
+       "file": "107110-5.json",
+       "count": 80,
+       "answered": 79,
+       "img": 5,
+       "isEssay": false
+      }
+     ]
+    },
+    "108020": {
+     "minguo": 108,
+     "year": 2019,
+     "session": "第一次",
+     "examName": "108年第一次專技人員高等考試中醫師考試分階段考試、營養師、心理師、護理師、社會工作師考試",
+     "subjects": [
+      {
+       "no": 1,
+       "subject": "基礎醫學(包括解剖學、生理學、病理學、藥理學、微生物學與免疫學)",
+       "short": "基礎醫學",
+       "file": "108020-1.json",
+       "count": 80,
+       "answered": 78,
+       "img": 3,
+       "isEssay": false
+      },
+      {
+       "no": 2,
+       "subject": "基本護理學（包括護理原理、護理技術）與護理行政",
+       "short": "基本護理學與護理行政",
+       "file": "108020-2.json",
+       "count": 80,
+       "answered": 78,
+       "img": 1,
+       "isEssay": false
+      },
+      {
+       "no": 3,
+       "subject": "內外科護理學",
+       "short": "內外科護理學",
+       "file": "108020-3.json",
+       "count": 80,
+       "answered": 78,
+       "img": 3,
+       "isEssay": false
+      },
+      {
+       "no": 4,
+       "subject": "產兒科護理學",
+       "short": "產兒科護理學",
+       "file": "108020-4.json",
+       "count": 80,
+       "answered": 78,
+       "img": 0,
+       "isEssay": false
+      },
+      {
+       "no": 5,
+       "subject": "精神科與社區衛生護理學",
+       "short": "精神科與社區衛生護理學",
+       "file": "108020-5.json",
+       "count": 78,
+       "answered": 78,
+       "img": 0,
+       "isEssay": false
+      }
+     ]
+    },
+    "108110": {
+     "minguo": 108,
+     "year": 2019,
+     "session": "第二次",
+     "examName": "108年第二次專技人員高等考試中醫師考試分階段考試、營養師、心理師、護理師、社會工作師考試、108年專技人員高等考試法醫師、語言治療師、聽力...",
+     "subjects": [
+      {
+       "no": 1,
+       "subject": "基礎醫學(包括解剖學、生理學、病理學、藥理學、微生物學與免疫學)",
+       "short": "基礎醫學",
+       "file": "108110-1.json",
+       "count": 80,
+       "answered": 79,
+       "img": 0,
+       "isEssay": false
+      },
+      {
+       "no": 2,
+       "subject": "基本護理學（包括護理原理、護理技術）與護理行政",
+       "short": "基本護理學與護理行政",
+       "file": "108110-2.json",
+       "count": 80,
+       "answered": 78,
+       "img": 4,
+       "isEssay": false
+      },
+      {
+       "no": 3,
+       "subject": "內外科護理學",
+       "short": "內外科護理學",
+       "file": "108110-3.json",
+       "count": 80,
+       "answered": 78,
+       "img": 4,
+       "isEssay": false
+      },
+      {
+       "no": 4,
+       "subject": "產兒科護理學",
+       "short": "產兒科護理學",
+       "file": "108110-4.json",
+       "count": 80,
+       "answered": 78,
+       "img": 1,
+       "isEssay": false
+      },
+      {
+       "no": 5,
+       "subject": "精神科與社區衛生護理學",
+       "short": "精神科與社區衛生護理學",
+       "file": "108110-5.json",
+       "count": 80,
+       "answered": 79,
+       "img": 5,
+       "isEssay": false
+      }
+     ]
+    },
+    "109030": {
+     "minguo": 109,
+     "year": 2020,
+     "session": "第一次",
+     "examName": "109年第一次專技人員高等考試中醫師考試分階段考試、營養師、心理師、護理師、社會工作師考試",
+     "subjects": [
+      {
+       "no": 1,
+       "subject": "基礎醫學(包括解剖學、生理學、病理學、藥理學、微生物學與免疫學)",
+       "short": "基礎醫學",
+       "file": "109030-1.json",
+       "count": 80,
+       "answered": 78,
+       "img": 2,
+       "isEssay": false
+      },
+      {
+       "no": 2,
+       "subject": "基本護理學（包括護理原理、護理技術）與護理行政",
+       "short": "基本護理學與護理行政",
+       "file": "109030-2.json",
+       "count": 80,
+       "answered": 78,
+       "img": 3,
+       "isEssay": false
+      },
+      {
+       "no": 3,
+       "subject": "內外科護理學",
+       "short": "內外科護理學",
+       "file": "109030-3.json",
+       "count": 80,
+       "answered": 78,
+       "img": 2,
+       "isEssay": false
+      },
+      {
+       "no": 4,
+       "subject": "產兒科護理學",
+       "short": "產兒科護理學",
+       "file": "109030-4.json",
+       "count": 80,
+       "answered": 78,
+       "img": 2,
+       "isEssay": false
+      },
+      {
+       "no": 5,
+       "subject": "精神科與社區衛生護理學",
+       "short": "精神科與社區衛生護理學",
+       "file": "109030-5.json",
+       "count": 80,
+       "answered": 78,
+       "img": 0,
+       "isEssay": false
+      }
+     ]
+    },
+    "109110": {
+     "minguo": 109,
+     "year": 2020,
+     "session": "第二次",
+     "examName": "109年第二次專技人員高等考試中醫師考試分階段考試、營養師、心理師、護理師、社會工作師考試、109年專技人員高等考試法醫師、語言治療師、聽力...",
+     "subjects": [
+      {
+       "no": 1,
+       "subject": "基礎醫學(包括解剖學、生理學、病理學、藥理學、微生物學與免疫學)",
+       "short": "基礎醫學",
+       "file": "109110-1.json",
+       "count": 80,
+       "answered": 78,
+       "img": 2,
+       "isEssay": false
+      },
+      {
+       "no": 2,
+       "subject": "基本護理學（包括護理原理、護理技術）與護理行政",
+       "short": "基本護理學與護理行政",
+       "file": "109110-2.json",
+       "count": 80,
+       "answered": 78,
+       "img": 5,
+       "isEssay": false
+      },
+      {
+       "no": 3,
+       "subject": "內外科護理學",
+       "short": "內外科護理學",
+       "file": "109110-3.json",
+       "count": 80,
+       "answered": 79,
+       "img": 1,
+       "isEssay": false
+      },
+      {
+       "no": 4,
+       "subject": "產兒科護理學",
+       "short": "產兒科護理學",
+       "file": "109110-4.json",
+       "count": 80,
+       "answered": 78,
+       "img": 4,
+       "isEssay": false
+      },
+      {
+       "no": 5,
+       "subject": "精神科與社區衛生護理學",
+       "short": "精神科與社區衛生護理學",
+       "file": "109110-5.json",
+       "count": 80,
+       "answered": 79,
+       "img": 3,
+       "isEssay": false
+      }
+     ]
+    },
+    "110030": {
+     "minguo": 110,
+     "year": 2021,
+     "session": "第一次",
+     "examName": "110年第一次專技人員高等考試中醫師考試分階段考試、營養師、護理師、社會工作師考試",
+     "subjects": [
+      {
+       "no": 1,
+       "subject": "基礎醫學(包括解剖學、生理學、病理學、藥理學、微生物學與免疫學)",
+       "short": "基礎醫學",
+       "file": "110030-1.json",
+       "count": 80,
+       "answered": 78,
+       "img": 5,
+       "isEssay": false
+      },
+      {
+       "no": 2,
+       "subject": "基本護理學（包括護理原理、護理技術）與護理行政",
+       "short": "基本護理學與護理行政",
+       "file": "110030-2.json",
+       "count": 80,
+       "answered": 79,
+       "img": 1,
+       "isEssay": false
+      },
+      {
+       "no": 3,
+       "subject": "內外科護理學",
+       "short": "內外科護理學",
+       "file": "110030-3.json",
+       "count": 80,
+       "answered": 78,
+       "img": 8,
+       "isEssay": false
+      },
+      {
+       "no": 4,
+       "subject": "產兒科護理學",
+       "short": "產兒科護理學",
+       "file": "110030-4.json",
+       "count": 80,
+       "answered": 78,
+       "img": 2,
+       "isEssay": false
+      },
+      {
+       "no": 5,
+       "subject": "精神科與社區衛生護理學",
+       "short": "精神科與社區衛生護理學",
+       "file": "110030-5.json",
+       "count": 80,
+       "answered": 79,
+       "img": 4,
+       "isEssay": false
+      }
+     ]
+    },
+    "110110": {
+     "minguo": 110,
+     "year": 2021,
+     "session": "第二次",
+     "examName": "第一梯次:110年第二次專門職業及技術人員高等考試護理師考試",
+     "subjects": [
+      {
+       "no": 1,
+       "subject": "基礎醫學(包括解剖學、生理學、病理學、藥理學、微生物學與免疫學)",
+       "short": "基礎醫學",
+       "file": "110110-1.json",
+       "count": 80,
+       "answered": 78,
+       "img": 2,
+       "isEssay": false
+      },
+      {
+       "no": 2,
+       "subject": "基本護理學（包括護理原理、護理技術）與護理行政",
+       "short": "基本護理學與護理行政",
+       "file": "110110-2.json",
+       "count": 80,
+       "answered": 79,
+       "img": 4,
+       "isEssay": false
+      },
+      {
+       "no": 3,
+       "subject": "內外科護理學",
+       "short": "內外科護理學",
+       "file": "110110-3.json",
+       "count": 80,
+       "answered": 78,
+       "img": 4,
+       "isEssay": false
+      },
+      {
+       "no": 4,
+       "subject": "產兒科護理學",
+       "short": "產兒科護理學",
+       "file": "110110-4.json",
+       "count": 80,
+       "answered": 79,
+       "img": 1,
+       "isEssay": false
+      },
+      {
+       "no": 5,
+       "subject": "精神科與社區衛生護理學",
+       "short": "精神科與社區衛生護理學",
+       "file": "110110-5.json",
+       "count": 80,
+       "answered": 79,
+       "img": 2,
+       "isEssay": false
+      }
+     ]
+    },
+    "111030": {
+     "minguo": 111,
+     "year": 2022,
+     "session": "第一次",
+     "examName": "111年第一次專技人員高等考試中醫師考試分階段考試、營養師、護理師、社會工作師考試",
+     "subjects": [
+      {
+       "no": 1,
+       "subject": "基礎醫學(包括解剖學、生理學、病理學、藥理學、微生物學與免疫學)",
+       "short": "基礎醫學",
+       "file": "111030-1.json",
+       "count": 80,
+       "answered": 78,
+       "img": 0,
+       "isEssay": false
+      },
+      {
+       "no": 2,
+       "subject": "基本護理學（包括護理原理、護理技術）與護理行政",
+       "short": "基本護理學與護理行政",
+       "file": "111030-2.json",
+       "count": 80,
+       "answered": 78,
+       "img": 2,
+       "isEssay": false
+      },
+      {
+       "no": 3,
+       "subject": "內外科護理學",
+       "short": "內外科護理學",
+       "file": "111030-3.json",
+       "count": 80,
+       "answered": 79,
+       "img": 2,
+       "isEssay": false
+      },
+      {
+       "no": 4,
+       "subject": "產兒科護理學",
+       "short": "產兒科護理學",
+       "file": "111030-4.json",
+       "count": 80,
+       "answered": 79,
+       "img": 7,
+       "isEssay": false
+      },
+      {
+       "no": 5,
+       "subject": "精神科與社區衛生護理學",
+       "short": "精神科與社區衛生護理學",
+       "file": "111030-5.json",
+       "count": 80,
+       "answered": 79,
+       "img": 1,
+       "isEssay": false
+      }
+     ]
+    },
+    "111110": {
+     "minguo": 111,
+     "year": 2022,
+     "session": "第二次",
+     "examName": "111年第二次專技人員高等考試中醫師考試分階段考試、營養師、護理師、社會工作師考試、111年專技人員高等考試法醫師、語言治療師、聽力師、牙體...",
+     "subjects": [
+      {
+       "no": 1,
+       "subject": "基礎醫學(包括解剖學、生理學、病理學、藥理學、微生物學與免疫學)",
+       "short": "基礎醫學",
+       "file": "111110-1.json",
+       "count": 50,
+       "answered": 49,
+       "img": 4,
+       "isEssay": false
+      },
+      {
+       "no": 2,
+       "subject": "基本護理學（包括護理原理、護理技術）與護理行政",
+       "short": "基本護理學與護理行政",
+       "file": "111110-2.json",
+       "count": 80,
+       "answered": 79,
+       "img": 5,
+       "isEssay": false
+      },
+      {
+       "no": 3,
+       "subject": "內外科護理學",
+       "short": "內外科護理學",
+       "file": "111110-3.json",
+       "count": 80,
+       "answered": 78,
+       "img": 3,
+       "isEssay": false
+      },
+      {
+       "no": 4,
+       "subject": "產兒科護理學",
+       "short": "產兒科護理學",
+       "file": "111110-4.json",
+       "count": 80,
+       "answered": 79,
+       "img": 4,
+       "isEssay": false
+      },
+      {
+       "no": 5,
+       "subject": "精神科與社區衛生護理學",
+       "short": "精神科與社區衛生護理學",
+       "file": "111110-5.json",
+       "count": 80,
+       "answered": 78,
+       "img": 1,
+       "isEssay": false
+      }
+     ]
+    },
+    "112030": {
+     "minguo": 112,
+     "year": 2023,
+     "session": "第一次",
+     "examName": "112年第一次專技人員高等考試營養師、護理師、社會工作師考試",
+     "subjects": [
+      {
+       "no": 1,
+       "subject": "基礎醫學(包括解剖學、生理學、病理學、藥理學、微生物學與免疫學)",
+       "short": "基礎醫學",
+       "file": "112030-1.json",
+       "count": 50,
+       "answered": 48,
+       "img": 5,
+       "isEssay": false
+      },
+      {
+       "no": 2,
+       "subject": "基本護理學（包括護理原理、護理技術）與護理行政",
+       "short": "基本護理學與護理行政",
+       "file": "112030-2.json",
+       "count": 80,
+       "answered": 78,
+       "img": 4,
+       "isEssay": false
+      },
+      {
+       "no": 3,
+       "subject": "內外科護理學",
+       "short": "內外科護理學",
+       "file": "112030-3.json",
+       "count": 80,
+       "answered": 78,
+       "img": 5,
+       "isEssay": false
+      },
+      {
+       "no": 4,
+       "subject": "產兒科護理學",
+       "short": "產兒科護理學",
+       "file": "112030-4.json",
+       "count": 80,
+       "answered": 78,
+       "img": 6,
+       "isEssay": false
+      },
+      {
+       "no": 5,
+       "subject": "精神科與社區衛生護理學",
+       "short": "精神科與社區衛生護理學",
+       "file": "112030-5.json",
+       "count": 80,
+       "answered": 79,
+       "img": 3,
+       "isEssay": false
+      }
+     ]
+    },
+    "112110": {
+     "minguo": 112,
+     "year": 2023,
+     "session": "第二次",
+     "examName": "112年第二次專技人員高等考試營養師、護理師、社會工作師考試、112年專技人員高等考試法醫師、語言治療師、聽力師、牙體技術師、公共衛生師考試...",
+     "subjects": [
+      {
+       "no": 1,
+       "subject": "基礎醫學(包括解剖學、生理學、病理學、藥理學、微生物學與免疫學)",
+       "short": "基礎醫學",
+       "file": "112110-1.json",
+       "count": 50,
+       "answered": 49,
+       "img": 1,
+       "isEssay": false
+      },
+      {
+       "no": 2,
+       "subject": "基本護理學（包括護理原理、護理技術）與護理行政",
+       "short": "基本護理學與護理行政",
+       "file": "112110-2.json",
+       "count": 80,
+       "answered": 78,
+       "img": 4,
+       "isEssay": false
+      },
+      {
+       "no": 3,
+       "subject": "內外科護理學",
+       "short": "內外科護理學",
+       "file": "112110-3.json",
+       "count": 80,
+       "answered": 78,
+       "img": 5,
+       "isEssay": false
+      },
+      {
+       "no": 4,
+       "subject": "產兒科護理學",
+       "short": "產兒科護理學",
+       "file": "112110-4.json",
+       "count": 80,
+       "answered": 78,
+       "img": 1,
+       "isEssay": false
+      },
+      {
+       "no": 5,
+       "subject": "精神科與社區衛生護理學",
+       "short": "精神科與社區衛生護理學",
+       "file": "112110-5.json",
+       "count": 80,
+       "answered": 78,
+       "img": 3,
+       "isEssay": false
+      }
+     ]
+    },
+    "112180": {
+     "minguo": 112,
+     "year": 2023,
+     "session": "第三次",
+     "examName": "112年第三次專門職業及技術人員高等考試護理師考試",
+     "subjects": [
+      {
+       "no": 1,
+       "subject": "基礎醫學(包括解剖學、生理學、病理學、藥理學、微生物學與免疫學)",
+       "short": "基礎醫學",
+       "file": "112180-1.json",
+       "count": 50,
+       "answered": 48,
+       "img": 1,
+       "isEssay": false
+      },
+      {
+       "no": 2,
+       "subject": "基本護理學（包括護理原理、護理技術）與護理行政",
+       "short": "基本護理學與護理行政",
+       "file": "112180-2.json",
+       "count": 50,
+       "answered": 48,
+       "img": 3,
+       "isEssay": false
+      },
+      {
+       "no": 3,
+       "subject": "內外科護理學",
+       "short": "內外科護理學",
+       "file": "112180-3.json",
+       "count": 50,
+       "answered": 49,
+       "img": 3,
+       "isEssay": false
+      },
+      {
+       "no": 4,
+       "subject": "產兒科護理學",
+       "short": "產兒科護理學",
+       "file": "112180-4.json",
+       "count": 50,
+       "answered": 48,
+       "img": 2,
+       "isEssay": false
+      },
+      {
+       "no": 5,
+       "subject": "精神科與社區衛生護理學",
+       "short": "精神科與社區衛生護理學",
+       "file": "112180-5.json",
+       "count": 50,
+       "answered": 48,
+       "img": 4,
+       "isEssay": false
+      }
+     ]
+    },
+    "113030": {
+     "minguo": 113,
+     "year": 2024,
+     "session": "第一次",
+     "examName": "113年第一次專技人員高等考試營養師、護理師、社會工作師考試",
+     "subjects": [
+      {
+       "no": 1,
+       "subject": "基礎醫學(包括解剖學、生理學、病理學、藥理學、微生物學與免疫學)",
+       "short": "基礎醫學",
+       "file": "113030-1.json",
+       "count": 50,
+       "answered": 50,
+       "img": 0,
+       "isEssay": false
+      },
+      {
+       "no": 2,
+       "subject": "基本護理學（包括護理原理、護理技術）與護理行政",
+       "short": "基本護理學與護理行政",
+       "file": "113030-2.json",
+       "count": 50,
+       "answered": 50,
+       "img": 0,
+       "isEssay": false
+      },
+      {
+       "no": 3,
+       "subject": "內外科護理學",
+       "short": "內外科護理學",
+       "file": "113030-3.json",
+       "count": 50,
+       "answered": 50,
+       "img": 0,
+       "isEssay": false
+      },
+      {
+       "no": 4,
+       "subject": "產兒科護理學",
+       "short": "產兒科護理學",
+       "file": "113030-4.json",
+       "count": 50,
+       "answered": 50,
+       "img": 0,
+       "isEssay": false
+      },
+      {
+       "no": 5,
+       "subject": "精神科與社區衛生護理學",
+       "short": "精神科與社區衛生護理學",
+       "file": "113030-5.json",
+       "count": 50,
+       "answered": 50,
+       "img": 0,
+       "isEssay": false
+      }
+     ]
+    },
+    "113100": {
+     "minguo": 113,
+     "year": 2024,
+     "session": "第二次",
+     "examName": "113年第二次專技人員高等考試營養師、護理師、社會工作師考試、113年專技人員高等考試心理師、法醫師、語言治療師、聽力師、牙體技術師、公共衛...",
+     "subjects": [
+      {
+       "no": 1,
+       "subject": "基礎醫學(包括解剖學、生理學、病理學、藥理學、微生物學與免疫學)",
+       "short": "基礎醫學",
+       "file": "113100-1.json",
+       "count": 50,
+       "answered": 48,
+       "img": 3,
+       "isEssay": false
+      },
+      {
+       "no": 2,
+       "subject": "基本護理學（包括護理原理、護理技術）與護理行政",
+       "short": "基本護理學與護理行政",
+       "file": "113100-2.json",
+       "count": 50,
+       "answered": 48,
+       "img": 3,
+       "isEssay": false
+      },
+      {
+       "no": 3,
+       "subject": "內外科護理學",
+       "short": "內外科護理學",
+       "file": "113100-3.json",
+       "count": 50,
+       "answered": 49,
+       "img": 0,
+       "isEssay": false
+      },
+      {
+       "no": 4,
+       "subject": "產兒科護理學",
+       "short": "產兒科護理學",
+       "file": "113100-4.json",
+       "count": 50,
+       "answered": 48,
+       "img": 4,
+       "isEssay": false
+      },
+      {
+       "no": 5,
+       "subject": "精神科與社區衛生護理學",
+       "short": "精神科與社區衛生護理學",
+       "file": "113100-5.json",
+       "count": 50,
+       "answered": 48,
+       "img": 6,
+       "isEssay": false
+      }
+     ]
+    },
+    "113180": {
+     "minguo": 113,
+     "year": 2024,
+     "session": "第三次",
+     "examName": "113年第三次專門職業及技術人員高等考試護理師考試",
+     "subjects": [
+      {
+       "no": 1,
+       "subject": "基礎醫學(包括解剖學、生理學、病理學、藥理學、微生物學與免疫學)",
+       "short": "基礎醫學",
+       "file": "113180-1.json",
+       "count": 50,
+       "answered": 48,
+       "img": 3,
+       "isEssay": false
+      },
+      {
+       "no": 2,
+       "subject": "基本護理學（包括護理原理、護理技術）與護理行政",
+       "short": "基本護理學與護理行政",
+       "file": "113180-2.json",
+       "count": 50,
+       "answered": 48,
+       "img": 1,
+       "isEssay": false
+      },
+      {
+       "no": 3,
+       "subject": "內外科護理學",
+       "short": "內外科護理學",
+       "file": "113180-3.json",
+       "count": 50,
+       "answered": 49,
+       "img": 2,
+       "isEssay": false
+      },
+      {
+       "no": 4,
+       "subject": "產兒科護理學",
+       "short": "產兒科護理學",
+       "file": "113180-4.json",
+       "count": 50,
+       "answered": 48,
+       "img": 3,
+       "isEssay": false
+      },
+      {
+       "no": 5,
+       "subject": "精神科與社區衛生護理學",
+       "short": "精神科與社區衛生護理學",
+       "file": "113180-5.json",
+       "count": 50,
+       "answered": 49,
+       "img": 1,
+       "isEssay": false
+      }
+     ]
+    },
+    "114030": {
+     "minguo": 114,
+     "year": 2025,
+     "session": "第一次",
+     "examName": "114年第一次專技人員高等考試營養師、護理師、社會工作師考試",
+     "subjects": [
+      {
+       "no": 1,
+       "subject": "基礎醫學(包括解剖學、生理學、病理學、藥理學、微生物學與免疫學)",
+       "short": "基礎醫學",
+       "file": "114030-1.json",
+       "count": 50,
+       "answered": 50,
+       "img": 0,
+       "isEssay": false
+      },
+      {
+       "no": 2,
+       "subject": "基本護理學（包括護理原理、護理技術）與護理行政",
+       "short": "基本護理學與護理行政",
+       "file": "114030-2.json",
+       "count": 50,
+       "answered": 50,
+       "img": 0,
+       "isEssay": false
+      },
+      {
+       "no": 3,
+       "subject": "內外科護理學",
+       "short": "內外科護理學",
+       "file": "114030-3.json",
+       "count": 50,
+       "answered": 50,
+       "img": 0,
+       "isEssay": false
+      },
+      {
+       "no": 4,
+       "subject": "產兒科護理學",
+       "short": "產兒科護理學",
+       "file": "114030-4.json",
+       "count": 50,
+       "answered": 50,
+       "img": 0,
+       "isEssay": false
+      },
+      {
+       "no": 5,
+       "subject": "精神科與社區衛生護理學",
+       "short": "精神科與社區衛生護理學",
+       "file": "114030-5.json",
+       "count": 50,
+       "answered": 50,
+       "img": 0,
+       "isEssay": false
+      }
+     ]
+    },
+    "114100": {
+     "minguo": 114,
+     "year": 2025,
+     "session": "第二次",
+     "examName": "114年第二次專技人員高等考試營養師、護理師、社會工作師考試、114年專技人員高等考試心理師、法醫師、語言治療師、聽力師、牙體技術師、公共衛...",
+     "subjects": [
+      {
+       "no": 1,
+       "subject": "基礎醫學(包括解剖學、生理學、病理學、藥理學、微生物學與免疫學)",
+       "short": "基礎醫學",
+       "file": "114100-1.json",
+       "count": 50,
+       "answered": 49,
+       "img": 2,
+       "isEssay": false
+      },
+      {
+       "no": 2,
+       "subject": "基本護理學（包括護理原理、護理技術）與護理行政",
+       "short": "基本護理學與護理行政",
+       "file": "114100-2.json",
+       "count": 50,
+       "answered": 49,
+       "img": 1,
+       "isEssay": false
+      },
+      {
+       "no": 3,
+       "subject": "內外科護理學",
+       "short": "內外科護理學",
+       "file": "114100-3.json",
+       "count": 50,
+       "answered": 48,
+       "img": 4,
+       "isEssay": false
+      },
+      {
+       "no": 4,
+       "subject": "產兒科護理學",
+       "short": "產兒科護理學",
+       "file": "114100-4.json",
+       "count": 50,
+       "answered": 48,
+       "img": 4,
+       "isEssay": false
+      },
+      {
+       "no": 5,
+       "subject": "精神科與社區衛生護理學",
+       "short": "精神科與社區衛生護理學",
+       "file": "114100-5.json",
+       "count": 50,
+       "answered": 49,
+       "img": 1,
+       "isEssay": false
+      }
+     ]
+    },
+    "114170": {
+     "minguo": 114,
+     "year": 2025,
+     "session": "第三次",
+     "examName": "114年第三次專門職業及技術人員高等考試護理師考試",
+     "subjects": [
+      {
+       "no": 1,
+       "subject": "基礎醫學(包括解剖學、生理學、病理學、藥理學、微生物學與免疫學)",
+       "short": "基礎醫學",
+       "file": "114170-1.json",
+       "count": 50,
+       "answered": 48,
+       "img": 1,
+       "isEssay": false
+      },
+      {
+       "no": 2,
+       "subject": "基本護理學（包括護理原理、護理技術）與護理行政",
+       "short": "基本護理學與護理行政",
+       "file": "114170-2.json",
+       "count": 50,
+       "answered": 48,
+       "img": 3,
+       "isEssay": false
+      },
+      {
+       "no": 3,
+       "subject": "內外科護理學",
+       "short": "內外科護理學",
+       "file": "114170-3.json",
+       "count": 50,
+       "answered": 48,
+       "img": 4,
+       "isEssay": false
+      },
+      {
+       "no": 4,
+       "subject": "產兒科護理學",
+       "short": "產兒科護理學",
+       "file": "114170-4.json",
+       "count": 50,
+       "answered": 48,
+       "img": 3,
+       "isEssay": false
+      },
+      {
+       "no": 5,
+       "subject": "精神科與社區衛生護理學",
+       "short": "精神科與社區衛生護理學",
+       "file": "114170-5.json",
+       "count": 50,
+       "answered": 48,
+       "img": 1,
+       "isEssay": false
+      }
+     ]
+    }
+   }
+  }
+ },
+ "generatedAt": "2026-08-03"
+}
