@@ -1,7 +1,8 @@
-// 簡易 Service Worker：應用外殼 cache-first、題庫資料 network-first（可離線複習看過的內容）
-const SHELL = 'gq-shell-v1';
-const DATA = 'gq-data-v1';
-const SHELL_ASSETS = ['/', '/practice', '/mock', '/random', '/records', '/search', '/favicon.svg', '/manifest.webmanifest'];
+// Service Worker：HTML/導覽用 network-first（線上永遠拿最新，離線才回快取）；
+// 靜態資源(_astro 有 hash)與題庫圖片用 cache-first；題庫 JSON 用 network-first。
+const SHELL = 'gq-shell-v2';
+const DATA = 'gq-data-v2';
+const SHELL_ASSETS = ['/', '/favicon.svg', '/manifest.webmanifest'];
 
 self.addEventListener('install', (e) => {
   e.waitUntil(caches.open(SHELL).then((c) => c.addAll(SHELL_ASSETS)).then(() => self.skipWaiting()));
@@ -16,29 +17,39 @@ self.addEventListener('activate', (e) => {
 });
 
 self.addEventListener('fetch', (e) => {
-  const url = new URL(e.request.url);
-  if (e.request.method !== 'GET' || url.origin !== location.origin) return;
+  const req = e.request;
+  const url = new URL(req.url);
+  if (req.method !== 'GET' || url.origin !== location.origin) return;
 
-  // 題庫資料與圖片：network-first，成功則存快取，失敗則回快取
-  if (url.pathname.startsWith('/data/')) {
+  const isHTML = req.mode === 'navigate' || (req.headers.get('accept') || '').includes('text/html');
+  const isData = url.pathname.startsWith('/data/');
+  const isImg = url.pathname.startsWith('/data/q-img/');
+  const isHashedAsset = url.pathname.startsWith('/_astro/') || url.pathname.startsWith('/pagefind/');
+
+  // 圖片與 hash 過的靜態資源：cache-first（內容不變）
+  if (isImg || isHashedAsset) {
     e.respondWith(
-      fetch(e.request).then((res) => {
+      caches.match(req).then((hit) => hit || fetch(req).then((res) => {
         const copy = res.clone();
-        caches.open(DATA).then((c) => c.put(e.request, copy));
+        caches.open(isImg ? DATA : SHELL).then((c) => c.put(req, copy));
         return res;
-      }).catch(() => caches.match(e.request))
+      }))
     );
     return;
   }
 
-  // 其他（HTML/JS/CSS）：cache-first，背景更新
-  e.respondWith(
-    caches.match(e.request).then((hit) =>
-      hit || fetch(e.request).then((res) => {
+  // HTML 導覽 與 題庫 JSON：network-first
+  if (isHTML || isData) {
+    e.respondWith(
+      fetch(req).then((res) => {
         const copy = res.clone();
-        caches.open(SHELL).then((c) => c.put(e.request, copy));
+        caches.open(isData ? DATA : SHELL).then((c) => c.put(req, copy));
         return res;
-      }).catch(() => hit)
-    )
-  );
+      }).catch(() => caches.match(req).then((hit) => hit || caches.match('/')))
+    );
+    return;
+  }
+
+  // 其他：network-first
+  e.respondWith(fetch(req).catch(() => caches.match(req)));
 });
