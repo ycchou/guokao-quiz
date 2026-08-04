@@ -1,10 +1,12 @@
 import { useEffect, useMemo, useRef, useState } from 'react';
 import type { Question } from '../lib/types';
 import { saveAttempt, toggleMark, isMarked, type Attempt } from '../lib/store';
+import { reportAnswers } from '../lib/client';
 
 export interface QuizItem extends Question {
   prof: string;
   file: string;
+  subjectShort?: string;
   srcLabel?: string;
   srcHref?: string;
 }
@@ -91,6 +93,13 @@ export default function Quiz({ items, title, mode, timeLimitSec, dataBase = '', 
       };
       saveAttempt(attempt);
     }
+    // 匿名回報作答結果（僅已作答題），供全站統計與錯誤率排名
+    reportAnswers(items.filter((it) => picked[it.no]).map((it) => ({
+      qid: `${it.prof}|${it.file}|${it.no}`,
+      prof: it.prof,
+      subject: it.subjectShort || '',
+      correct: !!(it.answer && picked[it.no] === it.answer),
+    })));
     window.scrollTo({ top: 0, behavior: 'smooth' });
     onFinish?.({ total: items.length, correct: stats.correct, answered: stats.answered, durationSec, items, picked });
   }

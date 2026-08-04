@@ -61,7 +61,7 @@ export default function RecordsApp() {
         const lab = `${prof} ${s.minguo}年${s.session} ${s.subjectShort}`;
         for (const q of s.questions)
           if (nos.has(q.no) && q.mode !== 'scanned')
-            items.push({ ...q, prof, file, srcLabel: lab, srcHref: href });
+            items.push({ ...q, prof, file, subjectShort: s.subjectShort, srcLabel: lab, srcHref: href });
       } catch { /* skip */ }
     }
     setLoading(false);

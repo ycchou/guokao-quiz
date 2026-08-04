@@ -1,0 +1,7 @@
+---
+import Base from '../layouts/Base.astro';
+import RankingsApp from '../components/RankingsApp';
+---
+<Base title="錯誤率排行榜｜國考題庫" description="依全站考生實際作答統計，找出最容易答錯與最好拿分的國考題目。">
+  <RankingsApp client:only="react" />
+</Base>

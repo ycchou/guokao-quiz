@@ -1,0 +1,9 @@
+# Cloudflare Pages 設定（含 D1 綁定，供 /functions 後端使用）
+name = "guokao-quiz"
+compatibility_date = "2026-07-01"
+pages_build_output_dir = "dist"
+
+[[d1_databases]]
+binding = "DB"
+database_name = "gq-db"
+database_id = "056b503a-7376-4ec7-92ca-ef08736c38eb"

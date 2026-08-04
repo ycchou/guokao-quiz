@@ -12,7 +12,7 @@ function toItems(sub: any): QuizItem[] {
   const href = `${base}/${PROF_SLUG[sub.profession]}/${sub.examCode}/${sub.subjectNo}`;
   return sub.questions
     .filter((q: any) => q.mode !== 'scanned' && q.answer)
-    .map((q: any) => ({ ...q, prof: sub.profession, file: `${sub.examCode}-${sub.subjectNo}.json`, srcLabel: label, srcHref: href }));
+    .map((q: any) => ({ ...q, prof: sub.profession, file: `${sub.examCode}-${sub.subjectNo}.json`, subjectShort: sub.subjectShort, srcLabel: label, srcHref: href }));
 }
 
 export default function QuizApp({ variant }: { variant: Variant }) {

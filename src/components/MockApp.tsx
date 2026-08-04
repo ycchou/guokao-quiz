@@ -45,7 +45,7 @@ export default function MockApp() {
         const lab = `${prof} ${data.minguo}年${data.session} ${data.subjectShort}`;
         const items: QuizItem[] = data.questions
           .filter((q) => q.mode !== 'scanned' && q.answer)
-          .map((q) => ({ ...q, prof, file: ref.file, srcLabel: lab, srcHref: href }));
+          .map((q) => ({ ...q, prof, file: ref.file, subjectShort: data.subjectShort, srcLabel: lab, srcHref: href }));
         if (items.length) built.push({ label: data.subjectShort, fullLabel: lab, items, timeLimitSec: (data.timeLimitMin ?? 60) * 60 });
       }
       if (!built.length) throw 0;

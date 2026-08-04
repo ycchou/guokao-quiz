@@ -34,8 +34,30 @@ const modes = [
       <p class="mt-4 text-base sm:text-lg text-slate-600 dark:text-slate-300 max-w-2xl mx-auto leading-relaxed">
         收錄 <strong class="text-brand-600 dark:text-brand-400">{totalQ.toLocaleString()}</strong> 題民國 100 年以後歷屆試題，可線上練習、瀏覽題庫、限時模擬考。手機也順手。
       </p>
+
+      <!-- 即時統計 -->
+      <div class="mt-6 flex flex-wrap justify-center gap-x-6 gap-y-2 text-sm text-slate-500 dark:text-slate-400">
+        <span>今日訪客 <b id="v-today" class="text-slate-800 dark:text-slate-200 tabular-nums">—</b></span>
+        <span>累計訪客 <b id="v-total" class="text-slate-800 dark:text-slate-200 tabular-nums">—</b></span>
+        <span>全站已作答 <b id="a-total" class="text-slate-800 dark:text-slate-200 tabular-nums">—</b> 題</span>
+        <a href="/rankings" class="text-brand-600 hover:underline">錯誤率排行 →</a>
+      </div>
     </div>
   </section>
+
+  <script is:inline>
+    (async () => {
+      const set = (id, n) => { const el = document.getElementById(id); if (el && n != null) el.textContent = Number(n).toLocaleString(); };
+      const today = new Date(Date.now() + 8 * 3600 * 1000).toISOString().slice(0, 10);
+      let first = false;
+      try { first = localStorage.getItem('gq_visit_day') !== today; } catch (_) {}
+      try {
+        const res = first ? await fetch('/api/visits', { method: 'POST' }) : await fetch('/api/visits');
+        if (res.ok) { const d = await res.json(); set('v-today', d.today); set('v-total', d.total); if (first) try { localStorage.setItem('gq_visit_day', today); } catch (_) {} }
+      } catch (_) {}
+      try { const r = await fetch('/api/answers'); if (r.ok) { const d = await r.json(); set('a-total', d.answered); } } catch (_) {}
+    })();
+  </script>
 
   <!-- 三大模式 -->
   <section class="mx-auto max-w-5xl px-4 pb-4">

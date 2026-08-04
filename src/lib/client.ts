@@ -19,6 +19,24 @@ export function fetchSubject(prof: string, file: string): Promise<Subject> {
   return _subCache.get(key)!;
 }
 
+// 交卷後回報作答結果（匿名，供全站已答題數與錯誤率排名統計）
+export function reportAnswers(items: { qid: string; prof: string; subject: string; correct: boolean }[]) {
+  if (!items.length) return;
+  try {
+    fetch(`${base}/api/answers`, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ items }),
+      keepalive: true,
+    }).catch(() => {});
+  } catch { /* ignore */ }
+}
+
+export function fetchRankings(params: Record<string, string>): Promise<{ rows: any[] }> {
+  const q = new URLSearchParams(params).toString();
+  return fetch(`${base}/api/rankings?${q}`).then((r) => r.json());
+}
+
 export function shuffle<T>(arr: T[]): T[] {
   const a = arr.slice();
   for (let i = a.length - 1; i > 0; i--) {
