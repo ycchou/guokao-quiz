@@ -50,12 +50,32 @@ const jsonld = {
     <div class="mt-2 flex flex-wrap items-center gap-3 text-sm text-slate-500">
       <span>共 {data.stats.total} 題</span>
       {data.timeLimitMin && <span>考試時間 {data.timeLimitMin} 分鐘</span>}
-      {data.source.question && <a href={data.source.question} target="_blank" rel="nofollow noopener" class="underline hover:text-brand-600">原始試題 PDF</a>}
-      {data.source.answer && <a href={data.source.answer} target="_blank" rel="nofollow noopener" class="underline hover:text-brand-600">標準答案 PDF</a>}
-      {data.source.errata && <a href={data.source.errata} target="_blank" rel="nofollow noopener" class="underline hover:text-amber-600">更正答案 PDF</a>}
     </div>
+
     <div class="mt-4 flex flex-wrap gap-2">
       <a href={`/practice?prof=${prof}&code=${code}&sub=${sub}`} class="rounded-lg bg-brand-600 text-white text-sm font-semibold px-4 py-2 hover:bg-brand-700">互動練習這份考卷</a>
+    </div>
+
+    {/* 下載原始文件 */}
+    <div class="mt-4 rounded-xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 p-4">
+      <p class="text-sm font-semibold text-slate-700 dark:text-slate-200 mb-2">📄 下載原始文件（考選部）</p>
+      <div class="flex flex-wrap gap-2">
+        {data.source.question && (
+          <a href={data.source.question} target="_blank" rel="nofollow noopener" download
+            class="inline-flex items-center gap-1.5 rounded-lg border border-brand-200 dark:border-slate-700 bg-brand-50 dark:bg-slate-800 text-brand-700 dark:text-brand-300 text-sm px-3 py-1.5 hover:border-brand-400">
+            ⬇ 試題 PDF</a>
+        )}
+        {data.source.answer && (
+          <a href={data.source.answer} target="_blank" rel="nofollow noopener" download
+            class="inline-flex items-center gap-1.5 rounded-lg border border-emerald-200 dark:border-slate-700 bg-emerald-50 dark:bg-slate-800 text-emerald-700 dark:text-emerald-300 text-sm px-3 py-1.5 hover:border-emerald-400">
+            ⬇ 標準答案 PDF</a>
+        )}
+        {data.source.errata && (
+          <a href={data.source.errata} target="_blank" rel="nofollow noopener" download
+            class="inline-flex items-center gap-1.5 rounded-lg border border-amber-200 dark:border-slate-700 bg-amber-50 dark:bg-slate-800 text-amber-700 dark:text-amber-300 text-sm px-3 py-1.5 hover:border-amber-400">
+            ⬇ 更正答案 PDF</a>
+        )}
+      </div>
     </div>
 
     {data.scanned && data.pageImages && (

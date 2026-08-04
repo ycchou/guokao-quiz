@@ -1,18 +1,18 @@
 import { useEffect, useMemo, useState } from 'react';
-import type { IndexData, Subject, ExamEntry } from '../lib/types';
+import type { IndexData, ExamEntry } from '../lib/types';
 import { PROF_SLUG, SLUG_PROF } from '../lib/types';
 import { fetchIndex, fetchSubject, shuffle } from '../lib/client';
 import Quiz, { type QuizItem } from './Quiz';
 
-type Variant = 'practice' | 'mock' | 'random';
+type Variant = 'practice' | 'random';
 const base = import.meta.env.BASE_URL.replace(/\/$/, '');
 
-function toItems(sub: Subject, forQuiz = true): QuizItem[] {
+function toItems(sub: any): QuizItem[] {
   const label = `${sub.profession} ${sub.minguo}年${sub.session} ${sub.subjectShort}`;
   const href = `${base}/${PROF_SLUG[sub.profession]}/${sub.examCode}/${sub.subjectNo}`;
   return sub.questions
-    .filter((q) => (forQuiz ? q.mode !== 'scanned' && q.answer : true))
-    .map((q) => ({ ...q, prof: sub.profession, file: `${sub.examCode}-${sub.subjectNo}.json`, srcLabel: label, srcHref: href }));
+    .filter((q: any) => q.mode !== 'scanned' && q.answer)
+    .map((q: any) => ({ ...q, prof: sub.profession, file: `${sub.examCode}-${sub.subjectNo}.json`, srcLabel: label, srcHref: href }));
 }
 
 export default function QuizApp({ variant }: { variant: Variant }) {
@@ -20,12 +20,11 @@ export default function QuizApp({ variant }: { variant: Variant }) {
   const [prof, setProf] = useState('');
   const [code, setCode] = useState('');
   const [sub, setSub] = useState('');
-  const [subShort, setSubShort] = useState(''); // random: by subject short-name
+  const [subShort, setSubShort] = useState('');
   const [yearFrom, setYearFrom] = useState<number>(0);
   const [count, setCount] = useState(30);
   const [items, setItems] = useState<QuizItem[] | null>(null);
   const [title, setTitle] = useState('');
-  const [timeLimit, setTimeLimit] = useState<number | undefined>();
   const [loading, setLoading] = useState(false);
   const [err, setErr] = useState('');
 
@@ -37,27 +36,21 @@ export default function QuizApp({ variant }: { variant: Variant }) {
       if (pn && d.professions[pn]) {
         setProf(pn);
         const c = p.get('code'); const s = p.get('sub');
-        if (variant !== 'random' && c && d.professions[pn].exams[c]) {
-          if (s) autoRun(d, pn, c, s);
-          else if (variant === 'mock') autoRunExam(d, pn, c);
-          else { setCode(c); }
+        if (variant === 'practice' && c && d.professions[pn].exams[c]) {
+          if (s) autoRun(d, pn, c, s); else setCode(c);
         }
       }
     }).catch(() => setErr('資料載入失敗'));
   }, []);
 
   const profs = idx ? Object.keys(idx.professions) : [];
-  const exams: [string, ExamEntry][] = useMemo(() => {
-    if (!idx || !prof) return [];
-    return Object.entries(idx.professions[prof].exams).sort((a, b) => b[0].localeCompare(a[0]));
-  }, [idx, prof]);
+  const exams: [string, ExamEntry][] = useMemo(() =>
+    idx && prof ? Object.entries(idx.professions[prof].exams).sort((a, b) => b[0].localeCompare(a[0])) : [], [idx, prof]);
   const subjects = useMemo(() => (code && idx ? idx.professions[prof].exams[code].subjects : []), [idx, prof, code]);
-  // random: distinct subject short-names for the profession
   const subShorts = useMemo(() => {
     if (!idx || !prof) return [] as string[];
     const set = new Set<string>();
-    for (const e of Object.values(idx.professions[prof].exams))
-      for (const s of e.subjects) set.add(s.short);
+    for (const e of Object.values(idx.professions[prof].exams)) for (const s of e.subjects) set.add(s.short);
     return [...set];
   }, [idx, prof]);
   const years = useMemo(() => {
@@ -71,23 +64,9 @@ export default function QuizApp({ variant }: { variant: Variant }) {
       const ref = d.professions[pn].exams[c].subjects.find((x) => String(x.no) === String(s));
       if (!ref) throw 0;
       const data = await fetchSubject(pn, ref.file);
-      const its = toItems(data);
-      setItems(its);
+      setItems(toItems(data));
       setTitle(`${pn} ${data.minguo}年${data.session}．${data.subjectShort}`);
-      setTimeLimit(variant === 'mock' ? (data.timeLimitMin ?? 60) * 60 : undefined);
     } catch { setErr('無法載入此考科'); }
-    setLoading(false);
-  }
-  async function autoRunExam(d: IndexData, pn: string, c: string) {
-    setLoading(true);
-    try {
-      const e = d.professions[pn].exams[c];
-      const subs = await Promise.all(e.subjects.map((r) => fetchSubject(pn, r.file)));
-      const its = subs.flatMap((s) => toItems(s));
-      setItems(its);
-      setTitle(`${pn} ${e.minguo}年${e.session} 整場模擬`);
-      setTimeLimit(subs.reduce((a, s) => a + (s.timeLimitMin ?? 60), 0) * 60);
-    } catch { setErr('無法載入此考試'); }
     setLoading(false);
   }
   async function runRandom() {
@@ -103,26 +82,22 @@ export default function QuizApp({ variant }: { variant: Variant }) {
       const pool = subs.flatMap((s) => toItems(s));
       setItems(shuffle(pool).slice(0, count));
       setTitle(`${prof}．${subShort}．隨機 ${Math.min(count, pool.length)} 題`);
-      setTimeLimit(undefined);
     } catch { setErr('組題失敗'); }
     setLoading(false);
   }
 
-  if (items) return <Quiz items={items} title={title} mode={variant} timeLimitSec={timeLimit} dataBase={base} />;
+  if (items) return <Quiz items={items} title={title} mode={variant} dataBase={base} />;
 
   const sel = 'w-full rounded-lg border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-900 px-3 py-2.5';
   const label = 'block text-sm font-medium text-slate-600 dark:text-slate-300 mb-1';
 
   return (
     <div className="mx-auto max-w-lg px-4 py-8">
-      <h1 className="text-2xl font-extrabold text-slate-900 dark:text-white">
-        {variant === 'practice' ? '練習模式' : variant === 'mock' ? '模擬考試' : '隨機出題'}
-      </h1>
+      <h1 className="font-display text-2xl font-bold text-brand-900 dark:text-white">{variant === 'practice' ? '練習模式' : '隨機出題'}</h1>
       <p className="mt-1 text-sm text-slate-500">
-        {variant === 'practice' ? '選擇職類、年度、考科，作答後立即核對答案。'
-          : variant === 'mock' ? '比照實際考試限時作答，結束後看成績與詳解。'
-            : '選一個考科與年份範圍，隨機抽題快速刷。'}
+        {variant === 'practice' ? '選擇職類、年度、考科，作答完交卷後核對答案與詳解。' : '選一個考科與年份範圍，隨機抽題快速刷；交卷後看成績。'}
       </p>
+      {variant === 'random' && <a href="/mock" className="inline-block mt-2 text-sm text-brand-600 hover:underline">← 回模擬考</a>}
       {err && <div className="mt-4 rounded-lg bg-rose-50 text-rose-700 px-3 py-2 text-sm">{err}</div>}
 
       <div className="mt-6 space-y-4">
@@ -134,7 +109,7 @@ export default function QuizApp({ variant }: { variant: Variant }) {
           </select>
         </div>
 
-        {variant !== 'random' && prof && (
+        {variant === 'practice' && prof && (
           <div>
             <label className={label}>年度／場次</label>
             <select className={sel} value={code} onChange={(e) => { setCode(e.target.value); setSub(''); }}>
@@ -143,11 +118,6 @@ export default function QuizApp({ variant }: { variant: Variant }) {
             </select>
           </div>
         )}
-
-        {variant !== 'random' && variant === 'mock' && code && (
-          <p className="text-sm text-slate-500">將考整場（{subjects.length} 科，限時）。若只想考單科，請用練習模式。</p>
-        )}
-
         {variant === 'practice' && code && (
           <div>
             <label className={label}>考科</label>
@@ -186,15 +156,10 @@ export default function QuizApp({ variant }: { variant: Variant }) {
         )}
       </div>
 
-      <button
-        disabled={loading || (variant === 'random' ? !subShort : variant === 'mock' ? !code : !sub)}
-        onClick={() => {
-          if (variant === 'random') runRandom();
-          else if (variant === 'mock') { if (sub) autoRun(idx!, prof, code, sub); else autoRunExam(idx!, prof, code); }
-          else autoRun(idx!, prof, code, sub);
-        }}
+      <button disabled={loading || (variant === 'random' ? !subShort : !sub)}
+        onClick={() => { if (variant === 'random') runRandom(); else autoRun(idx!, prof, code, sub); }}
         className="mt-7 w-full rounded-xl bg-brand-600 text-white font-semibold py-3 hover:bg-brand-700 disabled:opacity-40 transition">
-        {loading ? '載入中…' : variant === 'mock' ? '開始考試' : '開始'}
+        {loading ? '載入中…' : '開始'}
       </button>
     </div>
   );

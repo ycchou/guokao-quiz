@@ -61,3 +61,29 @@ export function toggleMark(prof: string, file: string, no: number): boolean {
 export function isMarked(prof: string, file: string, no: number): boolean {
   return !!getMarks()[`${prof}|${file}|${no}`];
 }
+
+// ---- 匯出 / 匯入 ----
+export interface ExportBundle {
+  app: 'guokao-quiz'; version: 1; exportedAt: number;
+  attempts: Attempt[]; wrong: WrongMap; marks: ReturnType<typeof getMarks>;
+}
+export function exportAll(): ExportBundle {
+  return { app: 'guokao-quiz', version: 1, exportedAt: Date.now(), attempts: getAttempts(), wrong: getWrong(), marks: getMarks() };
+}
+export function importAll(data: any, mode: 'merge' | 'replace'): { attempts: number; wrong: number; marks: number } {
+  if (!data || data.app !== 'guokao-quiz') throw new Error('檔案格式不符（不是本站的紀錄檔）');
+  const inAtt: Attempt[] = Array.isArray(data.attempts) ? data.attempts : [];
+  const inWrong: WrongMap = data.wrong || {};
+  const inMarks = data.marks || {};
+  if (mode === 'replace') {
+    write(K_ATTEMPTS, inAtt.slice(0, 200)); write(K_WRONG, inWrong); write(K_MARK, inMarks);
+  } else {
+    const seen = new Set(getAttempts().map((a) => a.id));
+    const mergedAtt = [...getAttempts(), ...inAtt.filter((a) => !seen.has(a.id))]
+      .sort((a, b) => b.ts - a.ts).slice(0, 200);
+    write(K_ATTEMPTS, mergedAtt);
+    write(K_WRONG, { ...getWrong(), ...inWrong });
+    write(K_MARK, { ...getMarks(), ...inMarks });
+  }
+  return { attempts: inAtt.length, wrong: Object.keys(inWrong).length, marks: Object.keys(inMarks).length };
+}

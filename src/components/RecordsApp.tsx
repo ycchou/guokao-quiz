@@ -1,5 +1,5 @@
-import { useEffect, useState } from 'react';
-import { getAttempts, getWrong, getMarks, clearAttempts, type Attempt } from '../lib/store';
+import { useEffect, useRef, useState } from 'react';
+import { getAttempts, getWrong, getMarks, clearAttempts, exportAll, importAll, type Attempt } from '../lib/store';
 import { fetchSubject } from '../lib/client';
 import { PROF_SLUG } from '../lib/types';
 import Quiz, { type QuizItem } from './Quiz';
@@ -17,10 +17,33 @@ export default function RecordsApp() {
   const [runItems, setRunItems] = useState<QuizItem[] | null>(null);
   const [runTitle, setRunTitle] = useState('');
   const [loading, setLoading] = useState(false);
+  const [msg, setMsg] = useState('');
+  const fileRef = useRef<HTMLInputElement>(null);
 
-  useEffect(() => {
-    setAttempts(getAttempts()); setWrong(getWrong()); setMarks(getMarks());
-  }, []);
+  function refresh() { setAttempts(getAttempts()); setWrong(getWrong()); setMarks(getMarks()); }
+  useEffect(() => { refresh(); }, []);
+
+  function doExport() {
+    const blob = new Blob([JSON.stringify(exportAll(), null, 2)], { type: 'application/json' });
+    const url = URL.createObjectURL(blob);
+    const a = document.createElement('a');
+    const d = new Date();
+    a.href = url; a.download = `國考題庫紀錄_${d.getFullYear()}${d2(d.getMonth() + 1)}${d2(d.getDate())}.json`;
+    a.click(); URL.revokeObjectURL(url);
+  }
+  function doImport(file: File) {
+    const reader = new FileReader();
+    reader.onload = () => {
+      try {
+        const data = JSON.parse(String(reader.result));
+        const merge = !confirm('要「取代」現有紀錄嗎？\n\n按「確定」＝取代（清空後匯入）\n按「取消」＝合併（保留現有並加入）');
+        const r = importAll(data, merge ? 'merge' : 'replace');
+        refresh();
+        setMsg(`匯入完成：作答 ${r.attempts} 筆、錯題 ${r.wrong} 題、收藏 ${r.marks} 題`);
+      } catch (e: any) { setMsg('匯入失敗：' + (e?.message || '檔案無法解析')); }
+    };
+    reader.readAsText(file);
+  }
 
   async function launch(keys: { prof: string; file: string; no: number }[], title: string) {
     setLoading(true);
@@ -57,8 +80,16 @@ export default function RecordsApp() {
 
   return (
     <div className="mx-auto max-w-3xl px-4 py-8">
-      <h1 className="text-2xl font-extrabold text-slate-900 dark:text-white">我的紀錄</h1>
-      <p className="mt-1 text-sm text-slate-500">紀錄僅儲存在你目前的裝置瀏覽器，不會上傳。</p>
+      <h1 className="font-display text-2xl font-bold text-brand-900 dark:text-white">我的紀錄</h1>
+      <p className="mt-1 text-sm text-slate-500">紀錄僅儲存在你目前的裝置瀏覽器，不會上傳。可匯出備份或換裝置時匯入。</p>
+
+      <div className="mt-3 flex flex-wrap gap-2">
+        <button onClick={doExport} className="rounded-lg border border-slate-200 dark:border-slate-700 px-3 py-1.5 text-sm font-medium hover:border-brand-400">⬇ 匯出紀錄</button>
+        <button onClick={() => fileRef.current?.click()} className="rounded-lg border border-slate-200 dark:border-slate-700 px-3 py-1.5 text-sm font-medium hover:border-brand-400">⬆ 匯入紀錄</button>
+        <input ref={fileRef} type="file" accept="application/json,.json" className="hidden"
+          onChange={(e) => { const f = e.target.files?.[0]; if (f) doImport(f); e.target.value = ''; }} />
+      </div>
+      {msg && <div className="mt-2 text-sm rounded-lg bg-brand-50 dark:bg-slate-800 text-brand-700 dark:text-brand-300 px-3 py-2">{msg}</div>}
 
       <div className="mt-5 flex gap-1 border-b border-slate-200 dark:border-slate-800">
         {tabs.map(([t, name, n]) => (
