@@ -1,7 +1,7 @@
 {
-  "name": "國考題庫",
-  "short_name": "國考題庫",
-  "description": "考選部歷屆國考試題線上練習、模擬考與答案核對",
+  "name": "醫事人員國考題庫",
+  "short_name": "醫事國考",
+  "description": "醫事人員國家考試歷屆試題線上練習、模擬考與答案核對",
   "start_url": "/",
   "display": "standalone",
   "background_color": "#f1faee",

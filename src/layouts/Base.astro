@@ -8,12 +8,12 @@ export interface Props {
 }
 const {
   title,
-  description = '免費國考題庫：考選部歷屆試題線上練習、模擬考、隨機出題與答案核對，題目與答案完整公開，手機也好用。',
+  description = '免費醫事人員國考題庫：考選部歷屆試題線上練習、模擬考、隨機出題與答案核對，題目與答案完整公開，手機也好用。',
   noindex = false,
   jsonld,
 } = Astro.props;
 const canonical = new URL(Astro.url.pathname, Astro.site).href;
-const fullTitle = title.includes('國考') || title.includes('題庫') ? title : `${title}｜國考題庫`;
+const fullTitle = title.includes('國考') || title.includes('題庫') ? title : `${title}｜醫事國考題庫`;
 ---
 
 <!doctype html>
@@ -49,8 +49,8 @@ const fullTitle = title.includes('國考') || title.includes('題庫') ? title :
     <header class="sticky top-0 z-30 border-b border-slate-200/70 dark:border-slate-800 bg-warm/85 dark:bg-slate-950/85 backdrop-blur">
       <nav class="mx-auto max-w-5xl px-4 h-14 flex items-center gap-4">
         <a href="/" class="font-display font-bold text-lg tracking-tight text-brand-900 dark:text-white flex items-center gap-2">
-          <span class="inline-grid place-items-center w-7 h-7 rounded-lg bg-brand-600 text-white text-sm font-sans">考</span>
-          國考題庫
+          <span class="inline-grid place-items-center w-7 h-7 rounded-lg bg-brand-600 text-white text-sm font-sans">醫</span>
+          醫事國考題庫
         </a>
         <div class="hidden sm:flex items-center gap-1 text-sm ml-2">
           <a href="/practice" class="px-3 py-1.5 rounded-lg hover:bg-slate-100 dark:hover:bg-slate-800">練習</a>

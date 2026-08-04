@@ -28,7 +28,7 @@ export default function RecordsApp() {
     const url = URL.createObjectURL(blob);
     const a = document.createElement('a');
     const d = new Date();
-    a.href = url; a.download = `國考題庫紀錄_${d.getFullYear()}${d2(d.getMonth() + 1)}${d2(d.getDate())}.json`;
+    a.href = url; a.download = `醫事國考題庫紀錄_${d.getFullYear()}${d2(d.getMonth() + 1)}${d2(d.getDate())}.json`;
     a.click(); URL.revokeObjectURL(url);
   }
   function doImport(file: File) {

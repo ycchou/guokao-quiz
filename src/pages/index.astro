@@ -6,8 +6,8 @@ const totalQ = profs.reduce((a, p) => a + p.qCount, 0);
 const jsonld = {
   '@context': 'https://schema.org',
   '@type': 'WebSite',
-  name: '國考題庫',
-  description: '考選部歷屆國考試題線上練習平台',
+  name: '醫事人員國考題庫',
+  description: '醫事人員國家考試歷屆試題線上練習平台',
   url: Astro.site?.href,
 };
 const modes = [
@@ -18,8 +18,8 @@ const modes = [
 ---
 
 <Base
-  title="國考題庫｜考選部歷屆試題線上練習．模擬考．答案核對"
-  description={`免費國考題庫，收錄考選部歷屆試題共 ${totalQ.toLocaleString()} 題（護理師、呼吸治療師），可線上練習、限時模擬考、瀏覽題庫與答案。`}
+  title="醫事人員國考題庫｜考選部歷屆試題線上練習．模擬考．答案核對"
+  description={`免費醫事人員國考題庫，涵蓋各醫事職類國家考試（現有護理師、呼吸治療師，持續擴充），收錄考選部歷屆試題共 ${totalQ.toLocaleString()} 題，可線上練習、限時模擬考、瀏覽題庫與答案。`}
   jsonld={jsonld}
 >
   <section class="relative overflow-hidden">
@@ -29,10 +29,10 @@ const modes = [
         資料來源：考選部考畢試題查詢平臺
       </span>
       <h1 class="font-display mt-5 text-3xl sm:text-5xl font-bold tracking-tight text-brand-900 dark:text-white leading-tight">
-        國考歷屆試題，<br class="sm:hidden" />線上免費練起來
+        醫事人員國考，<br class="sm:hidden" />歷屆試題免費練
       </h1>
       <p class="mt-4 text-base sm:text-lg text-slate-600 dark:text-slate-300 max-w-2xl mx-auto leading-relaxed">
-        收錄 <strong class="text-brand-600 dark:text-brand-400">{totalQ.toLocaleString()}</strong> 題民國 100 年以後歷屆試題，可線上練習、瀏覽題庫、限時模擬考。手機也順手。
+        專為醫事人員國家考試打造的題庫。收錄 <strong class="text-brand-600 dark:text-brand-400">{totalQ.toLocaleString()}</strong> 題民國 100 年以後歷屆試題，可線上練習、瀏覽題庫、限時模擬考。手機也順手。
       </p>
 
       <!-- 即時統計 -->
@@ -74,8 +74,8 @@ const modes = [
 
   <!-- 題庫：選擇職類 -->
   <section id="banks" class="mx-auto max-w-5xl px-4 py-8 scroll-mt-16">
-    <h2 class="font-display text-xl font-bold mb-1 text-brand-900 dark:text-white">📚 題庫瀏覽</h2>
-    <p class="text-sm text-slate-500 mb-4">選擇職類，瀏覽各年度考科的題目與答案（含原始 PDF 下載）。</p>
+    <h2 class="font-display text-xl font-bold mb-1 text-brand-900 dark:text-white">📚 醫事職類題庫</h2>
+    <p class="text-sm text-slate-500 mb-4">選擇職類，瀏覽各年度考科的題目與答案（含原始 PDF 下載）。更多醫事職類持續擴充中。</p>
     <div class="grid sm:grid-cols-2 gap-4">
       {profs.map((p) => (
         <a href={`/${p.slug}`} class="group rounded-2xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 p-5 hover:border-brand-400 hover:shadow-md transition">
@@ -90,6 +90,10 @@ const modes = [
           </div>
         </a>
       ))}
+      <div class="rounded-2xl border border-dashed border-slate-300 dark:border-slate-700 p-5 flex flex-col justify-center text-slate-400">
+        <div class="font-display text-lg font-bold">更多醫事職類</div>
+        <p class="mt-1 text-sm">物理治療師、職能治療師、醫事檢驗師、藥師… 陸續新增中。</p>
+      </div>
     </div>
   </section>
 </Base>
