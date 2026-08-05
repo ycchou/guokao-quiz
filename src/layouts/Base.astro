@@ -8,7 +8,7 @@ export interface Props {
 }
 const {
   title,
-  description = '免費醫事人員國考題庫：考選部歷屆試題線上練習、模擬考、隨機出題與答案核對，題目與答案完整公開，手機也好用。',
+  description = '醫事人員國考題庫：考選部歷屆試題線上練習、模擬考、隨機出題與答案核對，題目與答案完整公開，手機也好用。',
   noindex = false,
   jsonld,
 } = Astro.props;
@@ -110,7 +110,7 @@ const fullTitle = title.includes('國考') || title.includes('題庫') ? title :
         <p class="leading-relaxed">
           本站試題與答案來源為
           <a href="https://wwwq.moex.gov.tw/exam/wFrmExamQandASearch.aspx" rel="nofollow noopener" target="_blank" class="underline hover:text-brand-600">考選部考畢試題查詢平臺</a>
-          （政府公開資料）。本站僅整理供免費練習之用，非官方網站；答案以考選部公告之標準答案／更正答案為準。
+          （政府公開資料）。本站僅整理供學習練習之用，非官方網站；答案以考選部公告之標準答案／更正答案為準。
         </p>
       </div>
     </footer>

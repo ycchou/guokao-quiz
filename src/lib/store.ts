@@ -43,6 +43,9 @@ export function saveAttempt(a: Attempt) {
   write(K_WRONG, wrong);
 }
 export function clearAttempts() { write(K_ATTEMPTS, []); }
+export function removeAttempt(id: string) {
+  write(K_ATTEMPTS, getAttempts().filter((a) => a.id !== id));
+}
 
 // ---- wrong book ----
 export type WrongMap = Record<string, AttemptQ & { ts: number }>;

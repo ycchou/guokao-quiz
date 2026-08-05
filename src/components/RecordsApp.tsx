@@ -1,5 +1,5 @@
 import { useEffect, useRef, useState } from 'react';
-import { getAttempts, getWrong, getMarks, clearAttempts, exportAll, importAll, type Attempt } from '../lib/store';
+import { getAttempts, getWrong, getMarks, clearAttempts, removeAttempt, exportAll, importAll, type Attempt } from '../lib/store';
 import { fetchSubject } from '../lib/client';
 import { PROF_SLUG } from '../lib/types';
 import Quiz, { type QuizItem } from './Quiz';
@@ -22,6 +22,26 @@ export default function RecordsApp() {
 
   function refresh() { setAttempts(getAttempts()); setWrong(getWrong()); setMarks(getMarks()); }
   useEffect(() => { refresh(); }, []);
+
+  // 刪除單筆作答紀錄：多次確認。錯誤題目的全站統計在伺服器端，不受此影響。
+  function deleteOne(a: Attempt) {
+    if (!confirm(`確定要刪除這筆紀錄嗎？\n\n「${a.title}」\n${fmtDate(a.ts)}`)) return;
+    if (!confirm('刪除後無法復原，確定刪除？')) return;
+    removeAttempt(a.id);
+    setAttempts(getAttempts());
+    setMsg('已刪除 1 筆作答紀錄（全站錯誤率統計不受影響）。');
+  }
+
+  // 清除全部：兩次確認 + 輸入驗證
+  function clearAll() {
+    if (!confirm('確定要清除「全部」作答紀錄嗎？此動作無法復原。')) return;
+    if (!confirm('再次確認：這會刪除你在此裝置上的所有作答紀錄。')) return;
+    const typed = prompt('最後一步：請輸入「刪除」兩字以確認清除全部紀錄。');
+    if (typed !== '刪除') { setMsg('已取消清除。'); return; }
+    clearAttempts();
+    setAttempts([]);
+    setMsg('已清除全部作答紀錄（全站錯誤率統計不受影響）。');
+  }
 
   function doExport() {
     const blob = new Blob([JSON.stringify(exportAll(), null, 2)], { type: 'application/json' });
@@ -105,21 +125,36 @@ export default function RecordsApp() {
       {tab === 'history' && (
         <div className="mt-5 space-y-3">
           {attempts.length === 0 && <Empty text="還沒有作答紀錄，先去練習吧！" />}
-          {attempts.map((a) => (
-            <div key={a.id} className="rounded-xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 p-4 flex items-center gap-4">
-              <div className="text-center shrink-0">
-                <div className="text-2xl font-extrabold text-brand-600 dark:text-brand-400">{Math.round((a.correct / a.total) * 100)}%</div>
-                <div className="text-xs text-slate-400">{a.correct}/{a.total}</div>
+          {attempts.map((a) => {
+            const wrongN = a.answered - a.correct;   // 已作答中答錯的題數
+            const blankN = a.total - a.answered;      // 未作答
+            return (
+              <div key={a.id} className="rounded-xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 p-4 flex items-center gap-4">
+                <div className="text-center shrink-0 w-14">
+                  <div className="text-2xl font-extrabold text-brand-600 dark:text-brand-400">{Math.round((a.correct / a.total) * 100)}<span className="text-sm">分</span></div>
+                  <div className="text-xs text-slate-400">{a.correct}/{a.total}</div>
+                </div>
+                <div className="min-w-0 flex-1">
+                  <div className="font-medium text-slate-900 dark:text-white truncate">{a.title}</div>
+                  <div className="mt-1 flex flex-wrap gap-x-3 gap-y-0.5 text-xs">
+                    <span className="text-emerald-600 dark:text-emerald-400">答對 {a.correct}</span>
+                    <span className="text-rose-600 dark:text-rose-400">答錯 {wrongN}</span>
+                    {blankN > 0 && <span className="text-slate-400">未作答 {blankN}</span>}
+                  </div>
+                  <div className="mt-0.5 text-xs text-slate-400">{fmtDate(a.ts)}．{a.mode === 'mock' ? '模擬考' : a.mode === 'random' ? '隨機' : '練習'}{a.durationSec ? `．${Math.round(a.durationSec / 60)} 分鐘` : ''}</div>
+                </div>
+                <button onClick={() => deleteOne(a)} aria-label="刪除這筆紀錄"
+                  className="shrink-0 p-2 rounded-lg text-slate-400 hover:text-rose-600 hover:bg-rose-50 dark:hover:bg-rose-900/20">
+                  <svg className="w-4 h-4" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24"><path d="M3 6h18M8 6V4h8v2M19 6l-1 14H6L5 6M10 11v6M14 11v6"/></svg>
+                </button>
               </div>
-              <div className="min-w-0 flex-1">
-                <div className="font-medium text-slate-900 dark:text-white truncate">{a.title}</div>
-                <div className="text-xs text-slate-400">{fmtDate(a.ts)}．{a.mode === 'mock' ? '模擬考' : a.mode === 'random' ? '隨機' : '練習'}{a.durationSec ? `．${Math.round(a.durationSec / 60)} 分鐘` : ''}</div>
-              </div>
-            </div>
-          ))}
+            );
+          })}
           {attempts.length > 0 && (
-            <button onClick={() => { if (confirm('確定清除所有作答紀錄？')) { clearAttempts(); setAttempts([]); } }}
-              className="text-sm text-rose-500 hover:underline">清除全部紀錄</button>
+            <div className="pt-2">
+              <button onClick={clearAll} className="text-sm text-rose-500 hover:underline">清除全部紀錄</button>
+              <p className="mt-1 text-xs text-slate-400">刪除紀錄只會移除你裝置上的作答歷程；用於排行榜的全站錯誤率統計為匿名彙總，不受影響。</p>
+            </div>
           )}
         </div>
       )}
