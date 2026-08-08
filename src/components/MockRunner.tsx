@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import Quiz, { type QuizItem, type QuizResult } from './Quiz';
+import Icon from './Icon';
 
 export interface MockSession {
   label: string;      // 科目短名
@@ -121,7 +122,7 @@ function MockSummary({ title, sessions, results, dataBase }: {
                         return (
                           <div key={L} className={`flex gap-2 rounded px-2 py-1 ${isAns ? 'bg-emerald-50 dark:bg-emerald-900/25 text-emerald-700 dark:text-emerald-300' : isPick ? 'bg-rose-50 dark:bg-rose-900/25 text-rose-700 dark:text-rose-300' : ''}`}>
                             <b>{L}.</b><span>{it.options?.[L] ?? ''}</span>
-                            {isAns && <span className="ml-auto">✓ 正解</span>}
+                            {isAns && <span className="ml-auto flex items-center gap-1"><Icon name="check" className="w-4 h-4" />正解</span>}
                             {isPick && !isAns && <span className="ml-auto">你的選擇</span>}
                           </div>
                         );

@@ -2,6 +2,7 @@ import { useEffect, useMemo, useRef, useState } from 'react';
 import type { Question } from '../lib/types';
 import { saveAttempt, toggleMark, isMarked, type Attempt } from '../lib/store';
 import { reportAnswers } from '../lib/client';
+import Icon from './Icon';
 
 export interface QuizItem extends Question {
   prof: string;
@@ -136,8 +137,8 @@ export default function Quiz({ items, title, mode, timeLimitSec, dataBase = '', 
             {q.mode === 'image' && q.img && <img src={`${dataBase}/data/${q.img}`} alt={`第 ${q.no} 題`} className="mt-2 max-w-full rounded-lg border border-slate-200 dark:border-slate-700" />}
             {q.mode === 'text_uncertain' && <p className="mt-1 text-xs text-amber-600">此題自動解析可能不完整，可交卷後對照原始 PDF。</p>}
           </div>
-          <button onClick={toggleStar} title="收藏" className="shrink-0 p-1 text-xl leading-none">
-            <span className={marks[idx] ? 'text-amber-400' : 'text-slate-300 dark:text-slate-600'}>{marks[idx] ? '★' : '☆'}</span>
+          <button onClick={toggleStar} title="收藏" aria-label="收藏此題" className="shrink-0 p-1">
+            <Icon name="star" className={`w-5 h-5 ${marks[idx] ? 'text-amber-400' : 'text-slate-300 dark:text-slate-600'}`} fill={marks[idx]} />
           </button>
         </div>
 
@@ -205,7 +206,7 @@ function Results({ items, picked, stats, title, dataBase, onRedo }: {
         </div>
       </div>
       <h3 className="mt-8 mb-3 font-bold text-slate-900 dark:text-white">
-        {wrong.length ? `錯題與詳解（${wrong.length}）` : '全部答對，太強了 🎉'}
+        {wrong.length ? `錯題與詳解（${wrong.length}）` : '本次全部答對'}
       </h3>
       <ol className="space-y-4">
         {wrong.map((it) => (
@@ -221,7 +222,7 @@ function Results({ items, picked, stats, title, dataBase, onRedo }: {
                     return (
                       <div key={L} className={`flex gap-2 rounded px-2 py-1 ${isAns ? 'bg-emerald-50 dark:bg-emerald-900/25 text-emerald-700 dark:text-emerald-300' : isPick ? 'bg-rose-50 dark:bg-rose-900/25 text-rose-700 dark:text-rose-300' : ''}`}>
                         <b>{L}.</b><span>{it.options?.[L] ?? ''}</span>
-                        {isAns && <span className="ml-auto">✓ 正解</span>}
+                        {isAns && <span className="ml-auto flex items-center gap-1"><Icon name="check" className="w-4 h-4" />正解</span>}
                         {isPick && !isAns && <span className="ml-auto">你的選擇</span>}
                       </div>
                     );

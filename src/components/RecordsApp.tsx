@@ -3,6 +3,7 @@ import { getAttempts, getWrong, getMarks, clearAttempts, removeAttempt, exportAl
 import { fetchSubject } from '../lib/client';
 import { PROF_SLUG } from '../lib/types';
 import Quiz, { type QuizItem } from './Quiz';
+import Icon from './Icon';
 
 const base = import.meta.env.BASE_URL.replace(/\/$/, '');
 type Tab = 'history' | 'wrong' | 'marks';
@@ -104,8 +105,8 @@ export default function RecordsApp() {
       <p className="mt-1 text-sm text-slate-500">紀錄僅儲存在你目前的裝置瀏覽器，不會上傳。可匯出備份或換裝置時匯入。</p>
 
       <div className="mt-3 flex flex-wrap gap-2">
-        <button onClick={doExport} className="rounded-lg border border-slate-200 dark:border-slate-700 px-3 py-1.5 text-sm font-medium hover:border-brand-400">⬇ 匯出紀錄</button>
-        <button onClick={() => fileRef.current?.click()} className="rounded-lg border border-slate-200 dark:border-slate-700 px-3 py-1.5 text-sm font-medium hover:border-brand-400">⬆ 匯入紀錄</button>
+        <button onClick={doExport} className="inline-flex items-center gap-1.5 rounded-lg border border-slate-200 dark:border-slate-700 px-3 py-1.5 text-sm font-medium hover:border-brand-400"><Icon name="download" className="w-4 h-4" />匯出紀錄</button>
+        <button onClick={() => fileRef.current?.click()} className="inline-flex items-center gap-1.5 rounded-lg border border-slate-200 dark:border-slate-700 px-3 py-1.5 text-sm font-medium hover:border-brand-400"><Icon name="upload" className="w-4 h-4" />匯入紀錄</button>
         <input ref={fileRef} type="file" accept="application/json,.json" className="hidden"
           onChange={(e) => { const f = e.target.files?.[0]; if (f) doImport(f); e.target.value = ''; }} />
       </div>
@@ -168,7 +169,7 @@ export default function RecordsApp() {
               <ul className="space-y-2 text-sm">
                 {wrongList.slice(0, 100).map((w: any, i) => (
                   <li key={i} className="rounded-lg border border-slate-200 dark:border-slate-800 px-3 py-2 flex items-center gap-2">
-                    <span className="text-rose-500">✗</span>
+                    <Icon name="x" className="w-4 h-4 text-rose-500 shrink-0" />
                     <span className="text-slate-500">{w.prof}．第 {w.no} 題</span>
                     <span className="ml-auto text-xs text-slate-400">你選 {w.picked}／正解 {w.answer}</span>
                   </li>
@@ -181,14 +182,14 @@ export default function RecordsApp() {
 
       {tab === 'marks' && (
         <div className="mt-5">
-          {markList.length === 0 ? <Empty text="還沒有收藏題目，作答時點 ☆ 即可收藏。" /> : (
+          {markList.length === 0 ? <Empty text="還沒有收藏題目，作答時點星號即可收藏。" /> : (
             <>
               <button onClick={() => launch(markList as any, `收藏複習（${markList.length}）`)}
                 className="mb-4 rounded-lg bg-brand-600 text-white font-semibold px-4 py-2 hover:bg-brand-700">複習收藏（{markList.length}）</button>
               <ul className="space-y-2 text-sm">
                 {markList.map((m: any, i) => (
                   <li key={i} className="rounded-lg border border-slate-200 dark:border-slate-800 px-3 py-2 flex items-center gap-2">
-                    <span className="text-amber-400">★</span>
+                    <Icon name="star" className="w-4 h-4 text-amber-400 shrink-0" fill />
                     <span className="text-slate-500">{m.prof}．第 {m.no} 題</span>
                   </li>
                 ))}

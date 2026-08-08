@@ -1,5 +1,6 @@
 ---
 import '../styles/global.css';
+import Icon from '../components/Icon.astro';
 export interface Props {
   title: string;
   description?: string;
@@ -76,13 +77,13 @@ const fullTitle = title.includes('國考') || title.includes('題庫') ? title :
       <!-- 手機選單 -->
       <div id="mobile-menu" class="sm:hidden hidden border-t border-slate-200/70 dark:border-slate-800 bg-warm dark:bg-slate-950">
         <div class="px-4 py-2 flex flex-col text-[15px]">
-          <a href="/practice" class="py-2.5 border-b border-slate-100 dark:border-slate-800/70 flex items-center gap-2">📝 練習模式</a>
-          <a href="/#banks" class="py-2.5 border-b border-slate-100 dark:border-slate-800/70 flex items-center gap-2">📚 題庫瀏覽</a>
-          <a href="/mock" class="py-2.5 border-b border-slate-100 dark:border-slate-800/70 flex items-center gap-2">⏱️ 模擬考試</a>
-          <a href="/random" class="py-2.5 border-b border-slate-100 dark:border-slate-800/70 flex items-center gap-2">🎲 隨機出題</a>
-          <a href="/records" class="py-2.5 border-b border-slate-100 dark:border-slate-800/70 flex items-center gap-2">📌 我的紀錄／錯題本</a>
-          <a href="/search" class="py-2.5 border-b border-slate-100 dark:border-slate-800/70 flex items-center gap-2">🔍 搜尋題目</a>
-          <a href="/about" class="py-2.5 flex items-center gap-2">ℹ️ 關於本站</a>
+          <a href="/practice" class="py-2.5 border-b border-slate-100 dark:border-slate-800/70 flex items-center gap-2.5"><Icon name="pencil" class="w-5 h-5 text-slate-400" />練習模式</a>
+          <a href="/#banks" class="py-2.5 border-b border-slate-100 dark:border-slate-800/70 flex items-center gap-2.5"><Icon name="book" class="w-5 h-5 text-slate-400" />題庫瀏覽</a>
+          <a href="/mock" class="py-2.5 border-b border-slate-100 dark:border-slate-800/70 flex items-center gap-2.5"><Icon name="clock" class="w-5 h-5 text-slate-400" />模擬考試</a>
+          <a href="/random" class="py-2.5 border-b border-slate-100 dark:border-slate-800/70 flex items-center gap-2.5"><Icon name="shuffle" class="w-5 h-5 text-slate-400" />隨機出題</a>
+          <a href="/records" class="py-2.5 border-b border-slate-100 dark:border-slate-800/70 flex items-center gap-2.5"><Icon name="bookmark" class="w-5 h-5 text-slate-400" />我的紀錄／錯題本</a>
+          <a href="/search" class="py-2.5 border-b border-slate-100 dark:border-slate-800/70 flex items-center gap-2.5"><Icon name="search" class="w-5 h-5 text-slate-400" />搜尋題目</a>
+          <a href="/about" class="py-2.5 flex items-center gap-2.5"><Icon name="info" class="w-5 h-5 text-slate-400" />關於本站</a>
         </div>
       </div>
     </header>
@@ -100,7 +101,7 @@ const fullTitle = title.includes('國考') || title.includes('題庫') ? title :
           <a href="/search" class="hover:text-brand-600">搜尋題目</a>
         </div>
         <div class="rounded-2xl bg-brand-50 dark:bg-slate-900 border border-brand-100 dark:border-slate-800 p-4">
-          <p class="text-ink dark:text-slate-200 font-medium">🩺 護理職場透明化運動．姊妹站</p>
+          <p class="text-ink dark:text-slate-200 font-medium flex items-center gap-2"><Icon name="pulse" class="w-4 h-4 text-brand-600" />護理職場透明化運動．姊妹站</p>
           <p class="mt-1 leading-relaxed">
             本題庫站與
             <a href="https://ycchou.github.io/transparent-nursing/" target="_blank" rel="noopener" class="text-brand-600 underline underline-offset-2 hover:text-brand-700">護理職場透明化運動</a>

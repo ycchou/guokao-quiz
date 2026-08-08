@@ -1,5 +1,6 @@
 ---
 import Base from '../../../layouts/Base.astro';
+import Icon from '../../../components/Icon.astro';
 import { professions, examsOf, SLUG_PROF, loadSubject } from '../../../lib/data';
 
 export function getStaticPaths() {
@@ -58,22 +59,22 @@ const jsonld = {
 
     {/* 下載原始文件 */}
     <div class="mt-4 rounded-xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 p-4">
-      <p class="text-sm font-semibold text-slate-700 dark:text-slate-200 mb-2">📄 下載原始文件（考選部）</p>
+      <p class="text-sm font-semibold text-slate-700 dark:text-slate-200 mb-2 flex items-center gap-1.5"><Icon name="file" class="w-4 h-4 text-slate-400" />下載原始文件（考選部）</p>
       <div class="flex flex-wrap gap-2">
         {data.source.question && (
           <a href={data.source.question} target="_blank" rel="nofollow noopener" download
             class="inline-flex items-center gap-1.5 rounded-lg border border-brand-200 dark:border-slate-700 bg-brand-50 dark:bg-slate-800 text-brand-700 dark:text-brand-300 text-sm px-3 py-1.5 hover:border-brand-400">
-            ⬇ 試題 PDF</a>
+            <Icon name="download" class="w-4 h-4" />試題 PDF</a>
         )}
         {data.source.answer && (
           <a href={data.source.answer} target="_blank" rel="nofollow noopener" download
             class="inline-flex items-center gap-1.5 rounded-lg border border-emerald-200 dark:border-slate-700 bg-emerald-50 dark:bg-slate-800 text-emerald-700 dark:text-emerald-300 text-sm px-3 py-1.5 hover:border-emerald-400">
-            ⬇ 標準答案 PDF</a>
+            <Icon name="download" class="w-4 h-4" />標準答案 PDF</a>
         )}
         {data.source.errata && (
           <a href={data.source.errata} target="_blank" rel="nofollow noopener" download
             class="inline-flex items-center gap-1.5 rounded-lg border border-amber-200 dark:border-slate-700 bg-amber-50 dark:bg-slate-800 text-amber-700 dark:text-amber-300 text-sm px-3 py-1.5 hover:border-amber-400">
-            ⬇ 更正答案 PDF</a>
+            <Icon name="download" class="w-4 h-4" />更正答案 PDF</a>
         )}
       </div>
     </div>
@@ -105,7 +106,7 @@ const jsonld = {
                     <li class={`flex gap-2 rounded-lg px-2 py-1 ${q.answer === L ? 'bg-emerald-50 dark:bg-emerald-900/25 text-emerald-800 dark:text-emerald-300 font-medium' : ''}`}>
                       <span class="font-semibold shrink-0">{L}.</span>
                       <span>{q.options![L]}</span>
-                      {q.answer === L && <span class="ml-auto text-emerald-600 text-sm shrink-0">✓ 正解</span>}
+                      {q.answer === L && <span class="ml-auto text-emerald-600 text-sm shrink-0 flex items-center gap-1"><Icon name="check" class="w-4 h-4" />正解</span>}
                     </li>
                   ))}
                 </ul>

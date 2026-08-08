@@ -1,5 +1,6 @@
 ---
 import Base from '../layouts/Base.astro';
+import Icon from '../components/Icon.astro';
 import { professions } from '../lib/data';
 const profs = professions();
 const totalQ = profs.reduce((a, p) => a + p.qCount, 0);
@@ -11,9 +12,9 @@ const jsonld = {
   url: Astro.site?.href,
 };
 const modes = [
-  { href: '/practice', icon: '📝', title: '開始練習', desc: '選年度、考科作答，交卷後核對答案與詳解。' },
-  { href: '#banks', icon: '📚', title: '題庫瀏覽', desc: '直接查看歷屆題目與標準答案，可下載原始 PDF。' },
-  { href: '/mock', icon: '⏱️', title: '模擬考試', desc: '每科獨立限時，比照實際考試循序作答。' },
+  { href: '/practice', icon: 'pencil', title: '開始練習', desc: '選定年度與考科作答，交卷後核對答案與詳解。' },
+  { href: '#banks', icon: 'book', title: '題庫瀏覽', desc: '查看歷屆題目與標準答案，可下載原始 PDF。' },
+  { href: '/mock', icon: 'clock', title: '模擬考試', desc: '每科獨立限時，比照實際考試循序作答。' },
 ];
 ---
 
@@ -32,7 +33,7 @@ const modes = [
         醫事人員國考，<br class="sm:hidden" />歷屆試題練起來
       </h1>
       <p class="mt-4 text-base sm:text-lg text-slate-600 dark:text-slate-300 max-w-2xl mx-auto leading-relaxed">
-        專為醫事人員國家考試打造的題庫。收錄 <strong class="text-brand-600 dark:text-brand-400">{totalQ.toLocaleString()}</strong> 題民國 100 年以後歷屆試題，可線上練習、瀏覽題庫、限時模擬考。手機也順手。
+        收錄民國 100 年以後歷屆試題共 <strong class="text-brand-600 dark:text-brand-400">{totalQ.toLocaleString()}</strong> 題，提供線上練習、題庫瀏覽與限時模擬考。
       </p>
 
       <!-- 即時統計 -->
@@ -63,10 +64,14 @@ const modes = [
   <section class="mx-auto max-w-5xl px-4 pb-4">
     <div class="grid sm:grid-cols-3 gap-4">
       {modes.map((m) => (
-        <a href={m.href} class="group rounded-2xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 p-6 hover:border-brand-400 hover:shadow-md transition text-center sm:text-left">
-          <div class="text-3xl">{m.icon}</div>
-          <h2 class="font-display mt-3 text-xl font-bold text-brand-900 dark:text-white">{m.title}</h2>
-          <p class="mt-1.5 text-sm text-slate-500 dark:text-slate-400 leading-relaxed">{m.desc}</p>
+        <a href={m.href} class="group rounded-2xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 p-6 hover:border-brand-400 hover:shadow-md transition">
+          <div class="flex items-center gap-2.5">
+            <span class="inline-grid place-items-center w-10 h-10 rounded-xl bg-brand-50 dark:bg-brand-900/30 text-brand-600 dark:text-brand-300">
+              <Icon name={m.icon} class="w-5 h-5" />
+            </span>
+            <h2 class="font-display text-xl font-bold text-brand-900 dark:text-white">{m.title}</h2>
+          </div>
+          <p class="mt-3 text-sm text-slate-500 dark:text-slate-400 leading-relaxed">{m.desc}</p>
         </a>
       ))}
     </div>
@@ -74,7 +79,7 @@ const modes = [
 
   <!-- 題庫：選擇職類 -->
   <section id="banks" class="mx-auto max-w-5xl px-4 py-8 scroll-mt-16">
-    <h2 class="font-display text-xl font-bold mb-1 text-brand-900 dark:text-white">📚 醫事職類題庫</h2>
+    <h2 class="font-display text-xl font-bold mb-1 text-brand-900 dark:text-white">醫事職類題庫</h2>
     <p class="text-sm text-slate-500 mb-4">選擇職類，瀏覽各年度考科的題目與答案（含原始 PDF 下載）。更多醫事職類持續擴充中。</p>
     <div class="grid sm:grid-cols-2 gap-4">
       {profs.map((p) => (

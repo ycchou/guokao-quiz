@@ -1,0 +1,8 @@
+---
+import { ICONS } from '../lib/icons';
+interface Props { name: keyof typeof ICONS | string; class?: string; fill?: boolean; }
+const { name, class: cls = 'w-5 h-5', fill = false } = Astro.props;
+const inner = ICONS[name] || '';
+---
+<svg class={cls} viewBox="0 0 24 24" fill={fill ? 'currentColor' : 'none'} stroke="currentColor"
+  stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" set:html={inner}></svg>
