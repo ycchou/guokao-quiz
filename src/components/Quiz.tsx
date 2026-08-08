@@ -3,6 +3,7 @@ import type { Question } from '../lib/types';
 import { saveAttempt, toggleMark, isMarked, type Attempt } from '../lib/store';
 import { reportAnswers } from '../lib/client';
 import Icon from './Icon';
+import Explanation from './Explanation';
 
 export interface QuizItem extends Question {
   prof: string;
@@ -230,6 +231,7 @@ function Results({ items, picked, stats, title, dataBase, onRedo }: {
                 </div>
                 {it.corrected && <span className="inline-block mt-2 rounded bg-amber-100 dark:bg-amber-900/40 text-amber-700 dark:text-amber-300 px-1.5 py-0.5 text-xs">更正答案</span>}
                 {it.srcHref && <a href={it.srcHref} className="inline-block mt-2 ml-2 text-xs text-slate-400 underline hover:text-brand-600">出處：{it.srcLabel}</a>}
+                <Explanation text={it.explanation} />
               </div>
             </div>
           </li>

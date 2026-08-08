@@ -9,6 +9,7 @@ export interface Question {
   stem?: string;
   options?: Record<string, string>;
   img?: string;
+  explanation?: string | null; // AI 輔助解析（可為空）
 }
 export interface Subject {
   id: string;

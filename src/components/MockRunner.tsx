@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import Quiz, { type QuizItem, type QuizResult } from './Quiz';
 import Icon from './Icon';
+import Explanation from './Explanation';
 
 export interface MockSession {
   label: string;      // 科目短名
@@ -129,6 +130,7 @@ function MockSummary({ title, sessions, results, dataBase }: {
                       })}
                     </div>
                     {it.srcHref && <a href={it.srcHref} className="inline-block mt-2 text-xs text-slate-400 underline hover:text-brand-600">出處：{it.srcLabel}</a>}
+                    <Explanation text={it.explanation} />
                   </div>
                 </div>
               </li>

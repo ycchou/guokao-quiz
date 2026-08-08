@@ -20,6 +20,7 @@ export type Question = {
   no: number; answer: string | null; corrected: boolean; note: string | null;
   mode: 'text' | 'image' | 'text_uncertain' | 'scanned';
   stem?: string; options?: Record<string, string>; img?: string;
+  explanation?: string | null;
 };
 export type Subject = {
   id: string; profession: string; minguo: number; year: number; session: string;
