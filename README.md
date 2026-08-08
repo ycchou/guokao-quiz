@@ -37,8 +37,8 @@ npm run preview    # 預覽 dist/
 
 ## 資料從哪來 / 如何新增職類
 
-題庫資料（`public/data/`）由 `scratchpad` 中的 Python 管線產生：
-`extract.py`（PDF→題目/答案解析）+ `build_data.py`（輸出 JSON 與裁圖）。
+題庫資料（`public/data/`）由 `pipeline/` 中的 Python 管線產生：
+`extract.py`（PDF→題目/答案解析）+ `build_data.py`（輸出 JSON 與裁圖）。詳見 [`pipeline/README.md`](./pipeline/README.md)。
 新增其他職類（如物理治療師、職能治療師）步驟：
 
 1. 用 `profession.py <關鍵字> <資料夾> <考試碼…>` 下載該職類 PDF。
