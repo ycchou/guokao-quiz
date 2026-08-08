@@ -146,20 +146,21 @@ def process(entry):
         opts = q.get("options", {})
         ans = answers.get(no)
         clean = (len(opts) == 4 and all(opts.get(k, "").strip() for k in "ABCD") and not q.get("_uncertain"))
-        needs_img = q.get("_img", False)
+        has_fig = q.get("_img", False)  # genuine embedded figure overlapping this question
         item = {"no": no, "answer": ans, "corrected": no in corr_qnos,
                 "note": notes.get(no)}
-        if clean and not needs_img:
+        if clean and not has_fig:
             item["mode"] = "text"; item["stem"] = q["stem"]; item["options"] = {k: opts[k] for k in opts}
-        elif q.get("_bbox") is not None:
-            # image mode: render crop; keep any parsed text/options as supplement
+        elif has_fig and q.get("_bbox") is not None:
+            # genuine figure question: render crop; keep any parsed text/options as supplement
             item["mode"] = "image"
             item["stem"] = q.get("stem", "")
             if clean:
                 item["options"] = {k: opts[k] for k in opts}
             crops.append((no, qpdf, q["_page"], q["_bbox"]))
         else:
-            # labeled bad question with no bbox: keep imperfect text + flag
+            # option-parsing imperfect but NO real figure: keep the parsed text and
+            # flag as uncertain (never fabricate an image crop for a text question)
             item["mode"] = "text_uncertain"; item["stem"] = q.get("stem", ""); item["options"] = {k: opts[k] for k in opts}
         result["questions"].append(item)
 

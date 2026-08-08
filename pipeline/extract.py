@@ -11,6 +11,12 @@ Cross-validates parsed question count against the official 題數.
 """
 import fitz, re, unicodedata, subprocess, os
 
+# Private-use-area glyphs (option bullets ⒜⒝… rendered as custom font glyphs) and
+# zero-width / bidi marks. These carry no text but, if kept, form phantom empty
+# cells that corrupt positional column clustering. Strip them at line level.
+_PUA = re.compile('[-\U000f0000-\U000ffffd\U00100000-\U0010fffd'
+                  '​-‏‪-‮⁠﻿]')
+
 def pdftotext_layout(path):
     try:
         out = subprocess.run(["pdftotext", "-enc", "UTF-8", "-layout", path, "-"],
@@ -74,9 +80,15 @@ def parse_answer_pdf(path):
                 if idx < len(toks):
                     answers[n] = toks[idx]
             pending_nums = None
-    # correction notes: e.g. "第 36 題，一律給分" / "答案更正為 B"
-    for m in re.finditer(r'第\s*([0-9]+)\s*題[，,\s]*([^\n。；]*)', text):
-        notes[int(m.group(1))] = m.group(2).strip()
+    # correction notes: e.g. "第 36 題，一律給分". Capture only up to the NEXT
+    # 第N題 / newline / sentence end, then keep ONLY captures that read like a real
+    # erratum. This rejects the 題號 grid header row (第1題 第2題 …) and stray
+    # answer-letter columns that pdftotext -layout aligns near a 第N題 token.
+    ERRATA_KW = re.compile(r'給分|送分|更正|一律|均給|皆給|均可|皆可|重複|錯誤|刪除|疑義|不計分|加分|均正確')
+    for m in re.finditer(r'第\s*([0-9]+)\s*題[，,、：:\s]*(.*?)(?=第\s*[0-9]+\s*題|[\n。；]|$)', text):
+        note = m.group(2).strip().rstrip('，,、：: ')
+        if note and ERRATA_KW.search(note):
+            notes[int(m.group(1))] = note
     return answers, declared, is_corr, notes
 
 
@@ -97,7 +109,7 @@ def _lines(page):
     for b in d["blocks"]:
         for l in b.get("lines", []):
             t = "".join(s["text"] for s in l["spans"])
-            t = t.replace("　", " ").strip()
+            t = _PUA.sub("", t).replace("　", " ").strip()
             if not t:
                 continue
             x0, y0, x1, y1 = l["bbox"]
@@ -164,13 +176,15 @@ def parse_labeled(pdf_path):
     for n in range(1, maxn + 1):
         if n in found:
             continue
-        lo = found[n - 1]["_end"] if (n - 1) in found else 0
-        hi = found[n + 1]["_start"] if (n + 1) in found else len(text)
+        lo = found[n - 1].get("_end", 0) if (n - 1) in found else 0
+        hi = found[n + 1].get("_start", len(text)) if (n + 1) in found else len(text)
         mm = re.search(rf'(?<!\d){n}[.\．]', text[lo:hi])
         if mm:
             seg = text[lo + mm.end(): hi]
             q = _parse_seg(n, seg)
             q["_uncertain"] = True
+            q["_start"] = lo + mm.start()
+            q["_end"] = hi
             found[n] = q
     return [found[k] for k in sorted(found)]
 
@@ -258,8 +272,13 @@ def _parse_block(n, block, cols):
             anchor = y
             break
     if anchor is not None:
-        opt_ys = [y for y in below if y >= anchor]
-        stem_ys = [y for y in below if y < anchor]
+        # 2-column option grids often have ~1-2pt baseline jitter between the
+        # left cell (A/C) and its paired right cell (B/D). Pull left-column cells
+        # sitting on the same visual row as the anchor into the option region so
+        # option A isn't misfiled as stem. 6pt < one row (~15pt) keeps stem safe.
+        opt_start = anchor - 6
+        opt_ys = [y for y in below if y >= opt_start]
+        stem_ys = [y for y in below if y < opt_start]
     else:
         # single-column layout: options are the last 4 below-rows (one cell each)
         stem_ys = below[:-4]
