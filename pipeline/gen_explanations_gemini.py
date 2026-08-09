@@ -18,14 +18,15 @@
   python gen_explanations_gemini.py --prof nurse --exam 113030 --limit 30   # 小量試跑
   python gen_explanations_gemini.py --prof all               # 依免費額度，每天跑到上限自動停
 """
-import os, sys, json, time, base64, argparse, threading, datetime, urllib.parse
+import os, sys, json, time, re, base64, argparse, threading, datetime, urllib.parse, random
 import requests
 
 HERE = os.path.dirname(os.path.abspath(__file__))
 CACHE = os.path.join(HERE, "explanations.jsonl")
 QUOTA = os.path.join(HERE, "gemini_quota.json")
-QROOT = r"D:\Antigravity\test\exam-site\public\data\questions"
-IMGROOT = r"D:\Antigravity\test\exam-site\public\data"
+_REPO = os.path.dirname(HERE)
+QROOT = os.path.join(_REPO, "public", "data", "questions")
+IMGROOT = os.path.join(_REPO, "public", "data")
 DEFAULT_MODEL = "gemini-3.6-flash"
 ENDPOINT = "https://generativelanguage.googleapis.com/v1beta/models/{model}:generateContent"
 
@@ -153,11 +154,14 @@ def iter_questions(prof_slug, exam=None):
 
 def _gen_config(args, schema=None, max_tokens=2048):
     cfg = {"temperature": 0.3, "maxOutputTokens": max_tokens}
-    if args.thinking_budget is not None:
-        cfg["thinkingConfig"] = {"thinkingBudget": args.thinking_budget}
     if schema is not None:
+        # gemini-3.6-flash：結構化輸出（responseSchema）與 thinkingBudget=0 不相容（會 400）。
+        # batch 一律用動態思考（省略 thinkingConfig），實測每 15 題約 6K token，仍遠低於免費 TPM。
         cfg["responseMimeType"] = "application/json"
         cfg["responseSchema"] = schema
+    elif args.thinking_budget is not None:
+        # 單題／圖片題無 schema，可關思考（thinkingBudget=0）最省。
+        cfg["thinkingConfig"] = {"thinkingBudget": args.thinking_budget}
     return cfg
 
 
@@ -183,11 +187,16 @@ def _post(api_key, model, body, max_retries=5):
                 return None
         if r.status_code == 429:
             low = r.text.lower()
-            if "spending cap" in low or "credit" in low or "billing" in low:
-                _stop_reason[0] = "額度／支出上限已滿（billing）— 請至 AI Studio 調整；或改用免費額度專案金鑰"
+            # 每日免費上限（quotaId 含 PerDay）或支出上限 → 當日硬停（明日可續跑）。
+            # 注意：每日耗盡的 429 也會附一個「誤導性」的 retryDelay，故以 PerDay/billing 字樣為準，不看 retry。
+            if "perday" in low or "per day" in low or "spending cap" in low or "billing account" in low:
+                _stop_reason[0] = "已達每日免費上限（RPD）或支出上限 — 今日停止，明日可續跑；或至 AI Studio 調整/換模型"
                 _stop.set(); return None
-            # 速率限制：退避後重試（重試不再額外佔用 governor 的 count）
-            time.sleep(delay); delay = min(delay * 2, 60); continue
+            # 每分鐘速率限制：依伺服器建議秒數退避後重試（重試不再額外佔用 governor 的 count）。
+            # 加隨機抖動打散多 worker 的同步退避（thundering herd），避免退避後又一起重試撞牆。
+            m = re.search(r"retry in ([0-9.]+)s", low) or re.search(r'retrydelay"\s*:\s*"([0-9.]+)s', low)
+            wait = (float(m.group(1)) + 1.0) if m else delay
+            time.sleep(min(wait, 60) + random.uniform(0.5, 4.0)); delay = min(delay * 2, 60); continue
         if r.status_code in (500, 502, 503, 504):
             time.sleep(delay); delay = min(delay * 2, 30); continue
         _stop_reason[0] = f"HTTP {r.status_code}: {r.text[:200]}"

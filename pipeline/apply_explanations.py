@@ -10,8 +10,9 @@ import json, os, sys
 
 HERE = os.path.dirname(os.path.abspath(__file__))
 CACHE = os.path.join(HERE, "explanations.jsonl")
+_REPO = os.path.dirname(HERE)
 TARGETS = [
-    r"D:\Antigravity\test\exam-site\public\data\questions",
+    os.path.join(_REPO, "public", "data", "questions"),
     r"D:\Antigravity\test\exam-data\questions",
 ]
 
