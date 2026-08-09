@@ -34,8 +34,24 @@ SYSTEM = (
     "最後以「關鍵：…」點出重點概念或記憶點。"
     "規則：一律以官方公告的正確答案為準，不質疑、不改動答案；若為『何者錯誤／最不適當』題，"
     "說明時點出被選中的敘述為何錯誤；約 100–230 字；用詞專業但好懂；不要重述整個題目；"
-    "只輸出解析內容本身，不要任何前言、標題、選項符號或結語。"
+    "只輸出解析內容本身，不要任何前言、標題或結語。"
+    "格式要求：輸出為「單一段落」的純文字，全程不要換行、不要空行；"
+    "不要使用 Markdown、粗體、條列符號；不要使用任何數學排版符號（例如 $ 或 LaTeX），"
+    "需要時直接用一般文字與阿拉伯數字書寫（如 N-1、65%）。"
 )
+
+
+def clean_text(txt):
+    """壓成單一段落純文字：移除數學排版符號、換行改空白、壓縮多餘空白。"""
+    if not txt:
+        return txt
+    txt = txt.replace("$", "").replace("**", "").replace("　", " ")
+    # 換行與 tab 轉為空白
+    for ch in ("\r", "\n", "\t"):
+        txt = txt.replace(ch, " ")
+    while "  " in txt:
+        txt = txt.replace("  ", " ")
+    return txt.strip()
 
 ENDPOINT = "https://generativelanguage.googleapis.com/v1beta/models/{model}:generateContent"
 
@@ -94,6 +110,98 @@ def build_parts(q):
     return parts
 
 
+BATCH_SYSTEM = (
+    SYSTEM +
+    " 我會一次給你多題（每題以「第N題」標示）。請回傳一個 JSON 陣列，"
+    "每個元素為物件 {\"id\": 題號整數, \"explanation\": \"該題解析\"}，"
+    "id 必須對應我給的「第N題」編號，且每一題都要有一個對應元素、不可遺漏或合併。"
+)
+
+_BATCH_SCHEMA = {
+    "type": "ARRAY",
+    "items": {
+        "type": "OBJECT",
+        "properties": {"id": {"type": "INTEGER"}, "explanation": {"type": "STRING"}},
+        "required": ["id", "explanation"],
+    },
+}
+
+
+def _post(api_key, model, body, max_retries=5):
+    url = ENDPOINT.format(model=model) + "?key=" + urllib.parse.quote(api_key)
+    delay = 2.0
+    for _ in range(max_retries):
+        if _stop.is_set():
+            return None
+        try:
+            r = requests.post(url, json=body, timeout=180)
+        except Exception:
+            time.sleep(delay); delay = min(delay * 2, 30); continue
+        if r.status_code == 200:
+            j = r.json()
+            try:
+                cand = j["candidates"][0]
+                return "".join(p.get("text", "") for p in cand["content"]["parts"]).strip()
+            except Exception:
+                return None
+        if r.status_code == 429:
+            if "credit" in r.text.lower() or "billing" in r.text.lower():
+                _stop_reason[0] = "額度用盡（prepayment credits depleted）— 請先至 AI Studio 儲值"
+                _stop.set(); return None
+            time.sleep(delay); delay = min(delay * 2, 60); continue
+        if r.status_code in (500, 502, 503, 504):
+            time.sleep(delay); delay = min(delay * 2, 30); continue
+        _stop_reason[0] = f"HTTP {r.status_code}: {r.text[:200]}"
+        return None
+    return None
+
+
+def generate_batch(api_key, model, chunk):
+    """chunk: list of (qid, q)（皆為文字題）。回傳 list of (qid, explanation)。"""
+    blocks = []
+    for i, (_qid, q) in enumerate(chunk, 1):
+        opts = q.get("options") or {}
+        lines = [f"第{i}題", "題幹：" + (q.get("stem") or "")]
+        for L in sorted(opts):
+            lines.append(f"({L}) {opts[L]}")
+        lines.append(f"官方正確答案：{q.get('answer')}")
+        if q.get("corrected"):
+            lines.append("（本題經更正／送分）")
+        if q.get("note"):
+            lines.append(f"備註：{q['note']}")
+        blocks.append("\n".join(lines))
+    body = {
+        "system_instruction": {"parts": [{"text": BATCH_SYSTEM}]},
+        "contents": [{"role": "user", "parts": [{"text": "\n\n".join(blocks)}]}],
+        "generationConfig": {
+            "temperature": 0.3, "maxOutputTokens": 8192,
+            "responseMimeType": "application/json", "responseSchema": _BATCH_SCHEMA,
+        },
+    }
+    txt = _post(api_key, model, body)
+    results = []
+    if txt:
+        try:
+            arr = json.loads(txt)
+            by_id = {}
+            for item in arr:
+                by_id[int(item.get("id"))] = clean_text(item.get("explanation", ""))
+            for i, (qid, _q) in enumerate(chunk, 1):
+                e = by_id.get(i)
+                if e:
+                    results.append((qid, e))
+        except Exception:
+            results = []
+    # 缺漏或整批失敗者，逐題補救
+    got = {qid for qid, _ in results}
+    for qid, q in chunk:
+        if qid not in got and not _stop.is_set():
+            e = generate_one(api_key, model, q)
+            if e:
+                results.append((qid, e))
+    return results
+
+
 def generate_one(api_key, model, q, max_retries=5):
     """回傳解析文字或 None。遇額度用盡設定 _stop。"""
     body = {
@@ -115,7 +223,7 @@ def generate_one(api_key, model, q, max_retries=5):
             try:
                 cand = j["candidates"][0]
                 txt = "".join(p.get("text", "") for p in cand["content"]["parts"]).strip()
-                return txt or None
+                return clean_text(txt) or None
             except Exception:
                 return None
         if r.status_code == 429:
@@ -139,6 +247,7 @@ def main():
     ap.add_argument("--exam", default=None, help="考試碼前綴，如 113030；可只給年份如 113")
     ap.add_argument("--limit", type=int, default=0, help="最多幾題（試跑）")
     ap.add_argument("--workers", type=int, default=6, help="併發數")
+    ap.add_argument("--batch", type=int, default=5, help="每次 API 呼叫處理幾題（文字題）")
     ap.add_argument("--model", default=DEFAULT_MODEL)
     ap.add_argument("--dry-run", action="store_true")
     args = ap.parse_args()
@@ -171,26 +280,39 @@ def main():
     if not api_key:
         print("ERROR：未設定環境變數 GEMINI_API_KEY"); sys.exit(1)
 
+    # 分流：圖片題單題、文字題每 args.batch 題一組
+    text_items = [(qid, q) for qid, q in todo if q.get("mode") != "image"]
+    image_items = [(qid, q) for qid, q in todo if q.get("mode") == "image"]
+    chunks = [text_items[i:i + args.batch] for i in range(0, len(text_items), args.batch)]
+    for qid, q in image_items:
+        chunks.append([(qid, q)])
+    print(f"  文字題 {len(text_items)} → {len([c for c in chunks if len(c)>1 or (c and c[0][1].get('mode')!='image')])} 批；圖片題 {len(image_items)} 單題")
+
     out = open(CACHE, "a", encoding="utf-8")
-    ok = 0; fail = 0; t0 = time.time()
+    ok = 0; done_q = 0; t0 = time.time()
     from concurrent.futures import ThreadPoolExecutor, as_completed
+
+    def run_chunk(chunk):
+        if len(chunk) == 1 and chunk[0][1].get("mode") == "image":
+            e = generate_one(api_key, args.model, chunk[0][1])
+            return [(chunk[0][0], e)] if e else []
+        return generate_batch(api_key, args.model, chunk)
+
     with ThreadPoolExecutor(max_workers=args.workers) as ex:
-        futs = {ex.submit(generate_one, api_key, args.model, q): qid for qid, q in todo}
-        for i, fut in enumerate(as_completed(futs), 1):
-            qid = futs[fut]
-            txt = fut.result()
-            if txt:
+        futs = {ex.submit(run_chunk, c): len(c) for c in chunks}
+        for n, fut in enumerate(as_completed(futs), 1):
+            for qid, txt in fut.result():
                 with _write_lock:
                     out.write(json.dumps({"qid": qid, "explanation": txt, "model": args.model}, ensure_ascii=False) + "\n")
                     out.flush()
                 ok += 1
-            else:
-                fail += 1
-            if i % 20 == 0 or _stop.is_set():
-                rate = i / max(time.time() - t0, 1)
-                print(f"  進度 {i}/{len(todo)} 成功{ok} 失敗{fail} ({rate:.1f} 題/秒)")
+            done_q += futs[fut]
+            if n % 10 == 0 or _stop.is_set():
+                rate = ok / max(time.time() - t0, 1)
+                print(f"  批次 {n}/{len(chunks)} 已寫入{ok} ({rate:.1f} 題/秒)")
             if _stop.is_set():
                 break
+    fail = len(todo) - ok
     out.close()
     print(f"完成：成功 {ok}、失敗 {fail}。")
     if _stop_reason[0]:
