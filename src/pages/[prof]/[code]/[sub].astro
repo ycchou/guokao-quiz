@@ -65,17 +65,17 @@ const jsonld = {
       <p class="text-sm font-semibold text-slate-700 dark:text-slate-200 mb-2 flex items-center gap-1.5"><Icon name="file" class="w-4 h-4 text-slate-400" />下載原始文件（考選部）</p>
       <div class="flex flex-wrap gap-2">
         {data.source.question && (
-          <a href={data.source.question} target="_blank" rel="nofollow noopener" download
+          <a href={data.source.question} target="_blank" rel="nofollow noopener noreferrer"
             class="inline-flex items-center gap-1.5 rounded-lg border border-brand-200 dark:border-slate-700 bg-brand-50 dark:bg-slate-800 text-brand-700 dark:text-brand-300 text-sm px-3 py-1.5 hover:border-brand-400">
             <Icon name="download" class="w-4 h-4" />試題 PDF</a>
         )}
         {data.source.answer && (
-          <a href={data.source.answer} target="_blank" rel="nofollow noopener" download
+          <a href={data.source.answer} target="_blank" rel="nofollow noopener noreferrer"
             class="inline-flex items-center gap-1.5 rounded-lg border border-emerald-200 dark:border-slate-700 bg-emerald-50 dark:bg-slate-800 text-emerald-700 dark:text-emerald-300 text-sm px-3 py-1.5 hover:border-emerald-400">
             <Icon name="download" class="w-4 h-4" />標準答案 PDF</a>
         )}
         {data.source.errata && (
-          <a href={data.source.errata} target="_blank" rel="nofollow noopener" download
+          <a href={data.source.errata} target="_blank" rel="nofollow noopener noreferrer"
             class="inline-flex items-center gap-1.5 rounded-lg border border-amber-200 dark:border-slate-700 bg-amber-50 dark:bg-slate-800 text-amber-700 dark:text-amber-300 text-sm px-3 py-1.5 hover:border-amber-400">
             <Icon name="download" class="w-4 h-4" />更正答案 PDF</a>
         )}
