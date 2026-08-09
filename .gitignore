@@ -20,3 +20,4 @@ npm-debug.log*
 Thumbs.db
 .wrangler/
 pipeline/gemini_quota.json
+__pycache__/
