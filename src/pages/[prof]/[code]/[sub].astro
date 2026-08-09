@@ -41,7 +41,7 @@ const jsonld = {
   description={`${name} ${data.minguo}年${data.session}「${data.subject}」歷屆試題與標準答案全文，共 ${data.stats.total} 題，附考選部原始 PDF。`}
   jsonld={jsonld}
 >
-  <div class="mx-auto max-w-3xl px-4 py-8">
+  <div id="paper" class="mx-auto max-w-3xl px-4 py-8">
     <nav class="text-sm text-slate-500 mb-3">
       <a href="/" class="hover:text-brand-600">首頁</a> /
       <a href={`/${prof}`} class="hover:text-brand-600">{name}</a> /
@@ -58,7 +58,12 @@ const jsonld = {
 
     <div class="mt-4 flex flex-wrap gap-2">
       <a href={`/practice?prof=${prof}&code=${code}&sub=${sub}`} class="rounded-lg bg-brand-600 text-white text-sm font-semibold px-4 py-2 hover:bg-brand-700">互動練習這份考卷</a>
+      <button id="reveal-toggle" type="button" aria-pressed="false"
+        class="inline-flex items-center gap-1.5 rounded-lg border border-slate-300 dark:border-slate-600 text-slate-700 dark:text-slate-200 text-sm font-semibold px-4 py-2 hover:bg-slate-100 dark:hover:bg-slate-800">
+        <Icon name="info" class="w-4 h-4" /><span id="reveal-label">顯示答案與詳解</span>
+      </button>
     </div>
+    <p id="reveal-hint" class="mt-2 text-xs text-slate-400">預設隱藏答案與詳解，方便先自行作答；需要時點上方按鈕顯示。</p>
 
     {/* 下載原始文件 */}
     <div class="mt-4 rounded-xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 p-4">
@@ -106,22 +111,22 @@ const jsonld = {
               {q.options && (
                 <ul class="mt-2 space-y-1">
                   {letters.filter((L) => q.options![L] != null).map((L) => (
-                    <li class={`flex gap-2 rounded-lg px-2 py-1 ${q.answer === L ? 'bg-emerald-50 dark:bg-emerald-900/25 text-emerald-800 dark:text-emerald-300 font-medium' : ''}`}>
+                    <li class:list={['flex gap-2 rounded-lg px-2 py-1', { 'opt-correct': q.answer === L }]}>
                       <span class="font-semibold shrink-0">{L}.</span>
                       <span>{q.options![L]}</span>
-                      {q.answer === L && <span class="ml-auto text-emerald-600 text-sm shrink-0 flex items-center gap-1"><Icon name="check" class="w-4 h-4" />正解</span>}
+                      {q.answer === L && <span class="answer-only ml-auto text-emerald-600 text-sm shrink-0 flex items-center gap-1"><Icon name="check" class="w-4 h-4" />正解</span>}
                     </li>
                   ))}
                 </ul>
               )}
               <div class="mt-2 flex flex-wrap items-center gap-2 text-sm">
-                {q.answer && !q.options && <span class="text-emerald-700 dark:text-emerald-400 font-medium">正確答案：{q.answer}</span>}
+                {q.answer && !q.options && <span class="answer-only text-emerald-700 dark:text-emerald-400 font-medium">正確答案：{q.answer}</span>}
                 {q.corrected && <span class="rounded bg-amber-100 dark:bg-amber-900/40 text-amber-700 dark:text-amber-300 px-1.5 py-0.5 text-xs">更正答案</span>}
                 {q.mode === 'text_uncertain' && <span class="rounded bg-slate-100 dark:bg-slate-800 text-slate-500 px-1.5 py-0.5 text-xs">此題自動解析可能不完整，建議對照原始 PDF</span>}
-                {q.note && <span class="text-slate-400 text-xs">{q.note}</span>}
+                {q.note && <span class="answer-only text-slate-400 text-xs">{q.note}</span>}
               </div>
               {q.explanation && (
-                <div class="mt-3 rounded-lg border border-brand-100 dark:border-slate-700 bg-brand-50/60 dark:bg-slate-800/60 p-3">
+                <div class="answer-only mt-3 rounded-lg border border-brand-100 dark:border-slate-700 bg-brand-50/60 dark:bg-slate-800/60 p-3">
                   <div class="flex items-center gap-1.5 text-sm font-semibold text-brand-700 dark:text-brand-300">
                     <Icon name="info" class="w-4 h-4" />詳解
                   </div>
@@ -137,7 +142,7 @@ const jsonld = {
 
     {/* scanned answer key */}
     {data.scanned && (
-      <div class="mt-6 rounded-xl border border-slate-200 dark:border-slate-800 p-4">
+      <div class="answer-only mt-6 rounded-xl border border-slate-200 dark:border-slate-800 p-4">
         <h2 class="font-bold mb-2">標準答案</h2>
         <div class="grid grid-cols-5 sm:grid-cols-10 gap-1 text-sm">
           {data.questions.map((q) => (
@@ -147,4 +152,33 @@ const jsonld = {
       </div>
     )}
   </div>
+
+  <style is:global>
+    /* 預設隱藏答案與詳解，加上 .reveal 才顯示 */
+    #paper:not(.reveal) .answer-only { display: none !important; }
+    #paper.reveal .opt-correct { background-color: #ecfdf5; color: #064e3b; font-weight: 500; }
+    html.dark #paper.reveal .opt-correct { background-color: rgba(6,95,70,.30); color: #6ee7b7; }
+  </style>
+
+  <script is:inline>
+    (function () {
+      var paper = document.getElementById('paper');
+      var btn = document.getElementById('reveal-toggle');
+      var label = document.getElementById('reveal-label');
+      var hint = document.getElementById('reveal-hint');
+      if (!paper || !btn) return;
+      function apply(on) {
+        paper.classList.toggle('reveal', on);
+        btn.setAttribute('aria-pressed', on ? 'true' : 'false');
+        if (label) label.textContent = on ? '隱藏答案與詳解' : '顯示答案與詳解';
+        if (hint) hint.style.display = on ? 'none' : '';
+      }
+      apply(localStorage.getItem('revealAnswers') === '1');
+      btn.addEventListener('click', function () {
+        var on = !paper.classList.contains('reveal');
+        apply(on);
+        localStorage.setItem('revealAnswers', on ? '1' : '0');
+      });
+    })();
+  </script>
 </Base>
