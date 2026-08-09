@@ -56,7 +56,13 @@ def norm_letter(ch):
 # ---------- answer key ----------
 def parse_answer_pdf(path):
     """Return dict{qno:int -> answer:str}, declared count, is_correction.
-    Uses pdftotext -layout which keeps 題號/答案 grid aligned."""
+
+    Answers are aligned to 題號 headers by X-COORDINATE (via PyMuPDF), not by
+    token index. Index alignment silently breaks when a 答案 grid has uneven
+    spacing or a mid-row blank: pdftotext -layout then drops/merges letters and
+    every following answer shifts by one, producing WRONG answers with no error.
+    Matching each answer letter to its nearest 第N題 column is robust to that.
+    """
     text = pdftotext_layout(path)
     text = unicodedata.normalize("NFKC", text)
     declared = None
@@ -66,20 +72,72 @@ def parse_answer_pdf(path):
             declared = int(m.group(1)); break
     is_corr = "更正" in text
 
-    lines = [l for l in text.splitlines() if l.strip()]
     answers = {}
     notes = {}
-    pending_nums = None
-    for l in lines:
-        s = l.strip()
-        if s.startswith("題號"):
-            pending_nums = [int(x) for x in re.findall(r'第?\s*([0-9]+)\s*題?', s)]
-        elif s.startswith("答案") and pending_nums is not None:
-            toks = re.findall(r'[A-E#]', s)
-            for idx, n in enumerate(pending_nums):
-                if idx < len(toks):
-                    answers[n] = toks[idx]
-            pending_nums = None
+    try:
+        doc = fitz.open(path)
+    except Exception:
+        doc = None
+    if doc is not None:
+        for page in doc:
+            # Collect EVERY glyph with its centre coords (rawdict gives per-glyph
+            # bboxes, so a letter glued to the 答案 label keeps its true column x),
+            # then cluster into rows by y ourselves — PyMuPDF often splits each
+            # grid cell into its own "line", so we can't rely on its line grouping.
+            glyphs = []  # (y_center, x_center, char)
+            for b in page.get_text("rawdict")["blocks"]:
+                for l in b.get("lines", []):
+                    for s in l.get("spans", []):
+                        for ch in s.get("chars", []):
+                            c = unicodedata.normalize("NFKC", ch["c"])
+                            if c.strip():
+                                x0, y0, x1, y1 = ch["bbox"]
+                                glyphs.append((round((y0 + y1) / 2, 1),
+                                               round((x0 + x1) / 2, 1), c))
+            glyphs.sort()
+            # cluster into rows by y
+            rows = []  # each: [y, [(x, c), ...]]
+            for y, x, c in glyphs:
+                if rows and abs(rows[-1][0] - y) <= 5:
+                    rows[-1][1].append((x, c))
+                else:
+                    rows.append([y, [(x, c)]])
+            for ri, (_y, cells) in enumerate(rows):
+                cells.sort()
+                txt = "".join(c for _x, c in cells)
+                if "題號" not in txt:
+                    continue
+                # header columns: group consecutive digit glyphs into numbers
+                cols = []          # (x_center, qno)
+                cur = []
+                for x, c in cells:
+                    if c.isdigit():
+                        if cur and x - cur[-1][0] > 11:
+                            num = int("".join(cc for _x, cc in cur))
+                            cols.append((sum(xx for xx, _c in cur) / len(cur), num)); cur = []
+                        cur.append((x, c))
+                    elif cur:
+                        num = int("".join(cc for _x, cc in cur))
+                        cols.append((sum(xx for xx, _c in cur) / len(cur), num)); cur = []
+                if cur:
+                    num = int("".join(cc for _x, cc in cur))
+                    cols.append((sum(xx for xx, _c in cur) / len(cur), num))
+                if not cols:
+                    continue
+                # the following row starting with 答案 holds the letters
+                ans_cells = None
+                for rj in range(ri + 1, min(ri + 3, len(rows))):
+                    jj = "".join(c for _x, c in sorted(rows[rj][1]))
+                    if "答案" in jj[:4]:
+                        ans_cells = sorted(rows[rj][1]); break
+                if ans_cells is None:
+                    continue
+                for x, c in ans_cells:
+                    if c in "ABCDE#":
+                        best = min(cols, key=lambda h: abs(h[0] - x))
+                        if abs(best[0] - x) <= 16:
+                            answers[best[1]] = c
+        doc.close()
     # correction notes: e.g. "第 36 題，一律給分". Capture only up to the NEXT
     # 第N題 / newline / sentence end, then keep ONLY captures that read like a real
     # erratum. This rejects the 題號 grid header row (第1題 第2題 …) and stray

@@ -2056,7 +2056,7 @@
        "short": "基礎醫學",
        "file": "103100-1.json",
        "count": 80,
-       "answered": 79,
+       "answered": 80,
        "img": 0,
        "isEssay": false
       },
@@ -2066,7 +2066,7 @@
        "short": "基本護理學與護理行政",
        "file": "103100-2.json",
        "count": 80,
-       "answered": 79,
+       "answered": 80,
        "img": 0,
        "isEssay": false
       },
@@ -2076,7 +2076,7 @@
        "short": "內外科護理學",
        "file": "103100-3.json",
        "count": 80,
-       "answered": 79,
+       "answered": 80,
        "img": 0,
        "isEssay": false
       },
@@ -2086,7 +2086,7 @@
        "short": "產兒科護理學",
        "file": "103100-4.json",
        "count": 80,
-       "answered": 78,
+       "answered": 80,
        "img": 3,
        "isEssay": false
       },
@@ -2096,7 +2096,7 @@
        "short": "精神科與社區衛生護理學",
        "file": "103100-5.json",
        "count": 80,
-       "answered": 78,
+       "answered": 80,
        "img": 0,
        "isEssay": false
       }
@@ -2114,7 +2114,7 @@
        "short": "基礎醫學",
        "file": "104030-1.json",
        "count": 80,
-       "answered": 78,
+       "answered": 80,
        "img": 0,
        "isEssay": false
       },
@@ -2124,7 +2124,7 @@
        "short": "基本護理學與護理行政",
        "file": "104030-2.json",
        "count": 80,
-       "answered": 78,
+       "answered": 80,
        "img": 0,
        "isEssay": false
       },
@@ -2134,7 +2134,7 @@
        "short": "內外科護理學",
        "file": "104030-3.json",
        "count": 80,
-       "answered": 79,
+       "answered": 80,
        "img": 0,
        "isEssay": false
       },
@@ -2144,7 +2144,7 @@
        "short": "產兒科護理學",
        "file": "104030-4.json",
        "count": 80,
-       "answered": 79,
+       "answered": 80,
        "img": 0,
        "isEssay": false
       },
@@ -2154,7 +2154,7 @@
        "short": "精神科與社區衛生護理學",
        "file": "104030-5.json",
        "count": 80,
-       "answered": 79,
+       "answered": 80,
        "img": 0,
        "isEssay": false
       }
@@ -2172,7 +2172,7 @@
        "short": "基礎醫學",
        "file": "104100-1.json",
        "count": 80,
-       "answered": 78,
+       "answered": 80,
        "img": 0,
        "isEssay": false
       },
@@ -2182,7 +2182,7 @@
        "short": "基本護理學與護理行政",
        "file": "104100-2.json",
        "count": 80,
-       "answered": 78,
+       "answered": 80,
        "img": 0,
        "isEssay": false
       },
@@ -2192,7 +2192,7 @@
        "short": "內外科護理學",
        "file": "104100-3.json",
        "count": 80,
-       "answered": 78,
+       "answered": 80,
        "img": 0,
        "isEssay": false
       },
@@ -2202,7 +2202,7 @@
        "short": "產兒科護理學",
        "file": "104100-4.json",
        "count": 80,
-       "answered": 78,
+       "answered": 80,
        "img": 0,
        "isEssay": false
       },
@@ -2212,7 +2212,7 @@
        "short": "精神科與社區衛生護理學",
        "file": "104100-5.json",
        "count": 80,
-       "answered": 79,
+       "answered": 80,
        "img": 0,
        "isEssay": false
       }
@@ -2230,7 +2230,7 @@
        "short": "基礎醫學",
        "file": "105030-1.json",
        "count": 80,
-       "answered": 79,
+       "answered": 80,
        "img": 0,
        "isEssay": false
       },
@@ -2240,7 +2240,7 @@
        "short": "基本護理學與護理行政",
        "file": "105030-2.json",
        "count": 80,
-       "answered": 78,
+       "answered": 80,
        "img": 0,
        "isEssay": false
       },
@@ -2250,7 +2250,7 @@
        "short": "內外科護理學",
        "file": "105030-3.json",
        "count": 80,
-       "answered": 79,
+       "answered": 80,
        "img": 0,
        "isEssay": false
       },
@@ -2260,7 +2260,7 @@
        "short": "產兒科護理學",
        "file": "105030-4.json",
        "count": 80,
-       "answered": 78,
+       "answered": 80,
        "img": 0,
        "isEssay": false
       },
@@ -2270,7 +2270,7 @@
        "short": "精神科與社區衛生護理學",
        "file": "105030-5.json",
        "count": 80,
-       "answered": 79,
+       "answered": 80,
        "img": 0,
        "isEssay": false
       }
@@ -2288,7 +2288,7 @@
        "short": "基礎醫學",
        "file": "105090-1.json",
        "count": 80,
-       "answered": 78,
+       "answered": 80,
        "img": 1,
        "isEssay": false
       },
@@ -2298,7 +2298,7 @@
        "short": "基本護理學與護理行政",
        "file": "105090-2.json",
        "count": 80,
-       "answered": 78,
+       "answered": 80,
        "img": 0,
        "isEssay": false
       },
@@ -2308,7 +2308,7 @@
        "short": "內外科護理學",
        "file": "105090-3.json",
        "count": 80,
-       "answered": 78,
+       "answered": 80,
        "img": 0,
        "isEssay": false
       },
@@ -2318,7 +2318,7 @@
        "short": "產兒科護理學",
        "file": "105090-4.json",
        "count": 80,
-       "answered": 78,
+       "answered": 80,
        "img": 0,
        "isEssay": false
       },
@@ -2328,7 +2328,7 @@
        "short": "精神科與社區衛生護理學",
        "file": "105090-5.json",
        "count": 80,
-       "answered": 79,
+       "answered": 80,
        "img": 0,
        "isEssay": false
       }
@@ -2346,7 +2346,7 @@
        "short": "基礎醫學",
        "file": "106030-1.json",
        "count": 80,
-       "answered": 79,
+       "answered": 80,
        "img": 0,
        "isEssay": false
       },
@@ -2356,7 +2356,7 @@
        "short": "基本護理學與護理行政",
        "file": "106030-2.json",
        "count": 80,
-       "answered": 78,
+       "answered": 80,
        "img": 0,
        "isEssay": false
       },
@@ -2366,7 +2366,7 @@
        "short": "內外科護理學",
        "file": "106030-3.json",
        "count": 80,
-       "answered": 79,
+       "answered": 80,
        "img": 0,
        "isEssay": false
       },
@@ -2376,7 +2376,7 @@
        "short": "產兒科護理學",
        "file": "106030-4.json",
        "count": 80,
-       "answered": 78,
+       "answered": 80,
        "img": 0,
        "isEssay": false
       },
@@ -2386,7 +2386,7 @@
        "short": "精神科與社區衛生護理學",
        "file": "106030-5.json",
        "count": 80,
-       "answered": 78,
+       "answered": 80,
        "img": 0,
        "isEssay": false
       }
@@ -2404,7 +2404,7 @@
        "short": "基礎醫學",
        "file": "106110-1.json",
        "count": 80,
-       "answered": 78,
+       "answered": 80,
        "img": 0,
        "isEssay": false
       },
@@ -2414,7 +2414,7 @@
        "short": "基本護理學與護理行政",
        "file": "106110-2.json",
        "count": 80,
-       "answered": 78,
+       "answered": 80,
        "img": 0,
        "isEssay": false
       },
@@ -2424,7 +2424,7 @@
        "short": "內外科護理學",
        "file": "106110-3.json",
        "count": 80,
-       "answered": 79,
+       "answered": 80,
        "img": 0,
        "isEssay": false
       },
@@ -2434,7 +2434,7 @@
        "short": "產兒科護理學",
        "file": "106110-4.json",
        "count": 80,
-       "answered": 79,
+       "answered": 80,
        "img": 0,
        "isEssay": false
       },
@@ -2444,7 +2444,7 @@
        "short": "精神科與社區衛生護理學",
        "file": "106110-5.json",
        "count": 80,
-       "answered": 79,
+       "answered": 80,
        "img": 0,
        "isEssay": false
       }
@@ -2462,7 +2462,7 @@
        "short": "基礎醫學",
        "file": "106111-1.json",
        "count": 80,
-       "answered": 78,
+       "answered": 80,
        "img": 0,
        "isEssay": false
       },
@@ -2472,7 +2472,7 @@
        "short": "基本護理學與護理行政",
        "file": "106111-2.json",
        "count": 80,
-       "answered": 79,
+       "answered": 80,
        "img": 0,
        "isEssay": false
       },
@@ -2482,7 +2482,7 @@
        "short": "內外科護理學",
        "file": "106111-3.json",
        "count": 80,
-       "answered": 78,
+       "answered": 80,
        "img": 1,
        "isEssay": false
       },
@@ -2492,7 +2492,7 @@
        "short": "產兒科護理學",
        "file": "106111-4.json",
        "count": 80,
-       "answered": 79,
+       "answered": 80,
        "img": 0,
        "isEssay": false
       },
@@ -2502,7 +2502,7 @@
        "short": "精神科與社區衛生護理學",
        "file": "106111-5.json",
        "count": 80,
-       "answered": 79,
+       "answered": 80,
        "img": 0,
        "isEssay": false
       }
@@ -2520,7 +2520,7 @@
        "short": "基礎醫學",
        "file": "107030-1.json",
        "count": 80,
-       "answered": 78,
+       "answered": 80,
        "img": 0,
        "isEssay": false
       },
@@ -2530,7 +2530,7 @@
        "short": "基本護理學與護理行政",
        "file": "107030-2.json",
        "count": 80,
-       "answered": 78,
+       "answered": 80,
        "img": 0,
        "isEssay": false
       },
@@ -2540,7 +2540,7 @@
        "short": "內外科護理學",
        "file": "107030-3.json",
        "count": 80,
-       "answered": 79,
+       "answered": 80,
        "img": 0,
        "isEssay": false
       },
@@ -2550,7 +2550,7 @@
        "short": "產兒科護理學",
        "file": "107030-4.json",
        "count": 80,
-       "answered": 79,
+       "answered": 80,
        "img": 0,
        "isEssay": false
       },
@@ -2560,7 +2560,7 @@
        "short": "精神科與社區衛生護理學",
        "file": "107030-5.json",
        "count": 80,
-       "answered": 78,
+       "answered": 80,
        "img": 0,
        "isEssay": false
       }
@@ -2578,7 +2578,7 @@
        "short": "基礎醫學",
        "file": "107110-1.json",
        "count": 80,
-       "answered": 79,
+       "answered": 80,
        "img": 0,
        "isEssay": false
       },
@@ -2588,7 +2588,7 @@
        "short": "基本護理學與護理行政",
        "file": "107110-2.json",
        "count": 80,
-       "answered": 79,
+       "answered": 80,
        "img": 0,
        "isEssay": false
       },
@@ -2598,7 +2598,7 @@
        "short": "內外科護理學",
        "file": "107110-3.json",
        "count": 80,
-       "answered": 79,
+       "answered": 80,
        "img": 0,
        "isEssay": false
       },
@@ -2608,7 +2608,7 @@
        "short": "產兒科護理學",
        "file": "107110-4.json",
        "count": 80,
-       "answered": 78,
+       "answered": 80,
        "img": 0,
        "isEssay": false
       },
@@ -2618,7 +2618,7 @@
        "short": "精神科與社區衛生護理學",
        "file": "107110-5.json",
        "count": 80,
-       "answered": 79,
+       "answered": 80,
        "img": 0,
        "isEssay": false
       }
@@ -2636,7 +2636,7 @@
        "short": "基礎醫學",
        "file": "108020-1.json",
        "count": 80,
-       "answered": 78,
+       "answered": 80,
        "img": 0,
        "isEssay": false
       },
@@ -2646,7 +2646,7 @@
        "short": "基本護理學與護理行政",
        "file": "108020-2.json",
        "count": 80,
-       "answered": 78,
+       "answered": 80,
        "img": 0,
        "isEssay": false
       },
@@ -2656,7 +2656,7 @@
        "short": "內外科護理學",
        "file": "108020-3.json",
        "count": 80,
-       "answered": 78,
+       "answered": 80,
        "img": 0,
        "isEssay": false
       },
@@ -2666,7 +2666,7 @@
        "short": "產兒科護理學",
        "file": "108020-4.json",
        "count": 80,
-       "answered": 78,
+       "answered": 80,
        "img": 0,
        "isEssay": false
       },
@@ -2675,8 +2675,8 @@
        "subject": "精神科與社區衛生護理學",
        "short": "精神科與社區衛生護理學",
        "file": "108020-5.json",
-       "count": 78,
-       "answered": 78,
+       "count": 80,
+       "answered": 80,
        "img": 0,
        "isEssay": false
       }
@@ -2694,7 +2694,7 @@
        "short": "基礎醫學",
        "file": "108110-1.json",
        "count": 80,
-       "answered": 79,
+       "answered": 80,
        "img": 0,
        "isEssay": false
       },
@@ -2704,7 +2704,7 @@
        "short": "基本護理學與護理行政",
        "file": "108110-2.json",
        "count": 80,
-       "answered": 78,
+       "answered": 80,
        "img": 0,
        "isEssay": false
       },
@@ -2714,7 +2714,7 @@
        "short": "內外科護理學",
        "file": "108110-3.json",
        "count": 80,
-       "answered": 78,
+       "answered": 80,
        "img": 0,
        "isEssay": false
       },
@@ -2724,7 +2724,7 @@
        "short": "產兒科護理學",
        "file": "108110-4.json",
        "count": 80,
-       "answered": 78,
+       "answered": 80,
        "img": 1,
        "isEssay": false
       },
@@ -2734,7 +2734,7 @@
        "short": "精神科與社區衛生護理學",
        "file": "108110-5.json",
        "count": 80,
-       "answered": 79,
+       "answered": 80,
        "img": 0,
        "isEssay": false
       }
@@ -2752,7 +2752,7 @@
        "short": "基礎醫學",
        "file": "109030-1.json",
        "count": 80,
-       "answered": 78,
+       "answered": 80,
        "img": 0,
        "isEssay": false
       },
@@ -2762,7 +2762,7 @@
        "short": "基本護理學與護理行政",
        "file": "109030-2.json",
        "count": 80,
-       "answered": 78,
+       "answered": 80,
        "img": 0,
        "isEssay": false
       },
@@ -2772,7 +2772,7 @@
        "short": "內外科護理學",
        "file": "109030-3.json",
        "count": 80,
-       "answered": 78,
+       "answered": 80,
        "img": 0,
        "isEssay": false
       },
@@ -2782,7 +2782,7 @@
        "short": "產兒科護理學",
        "file": "109030-4.json",
        "count": 80,
-       "answered": 78,
+       "answered": 80,
        "img": 0,
        "isEssay": false
       },
@@ -2792,7 +2792,7 @@
        "short": "精神科與社區衛生護理學",
        "file": "109030-5.json",
        "count": 80,
-       "answered": 78,
+       "answered": 80,
        "img": 0,
        "isEssay": false
       }
@@ -2810,7 +2810,7 @@
        "short": "基礎醫學",
        "file": "109110-1.json",
        "count": 80,
-       "answered": 78,
+       "answered": 80,
        "img": 0,
        "isEssay": false
       },
@@ -2820,7 +2820,7 @@
        "short": "基本護理學與護理行政",
        "file": "109110-2.json",
        "count": 80,
-       "answered": 78,
+       "answered": 80,
        "img": 0,
        "isEssay": false
       },
@@ -2830,7 +2830,7 @@
        "short": "內外科護理學",
        "file": "109110-3.json",
        "count": 80,
-       "answered": 79,
+       "answered": 80,
        "img": 0,
        "isEssay": false
       },
@@ -2840,7 +2840,7 @@
        "short": "產兒科護理學",
        "file": "109110-4.json",
        "count": 80,
-       "answered": 78,
+       "answered": 80,
        "img": 0,
        "isEssay": false
       },
@@ -2850,7 +2850,7 @@
        "short": "精神科與社區衛生護理學",
        "file": "109110-5.json",
        "count": 80,
-       "answered": 79,
+       "answered": 80,
        "img": 0,
        "isEssay": false
       }
@@ -2868,7 +2868,7 @@
        "short": "基礎醫學",
        "file": "110030-1.json",
        "count": 80,
-       "answered": 78,
+       "answered": 80,
        "img": 0,
        "isEssay": false
       },
@@ -2878,7 +2878,7 @@
        "short": "基本護理學與護理行政",
        "file": "110030-2.json",
        "count": 80,
-       "answered": 79,
+       "answered": 80,
        "img": 0,
        "isEssay": false
       },
@@ -2888,7 +2888,7 @@
        "short": "內外科護理學",
        "file": "110030-3.json",
        "count": 80,
-       "answered": 78,
+       "answered": 80,
        "img": 0,
        "isEssay": false
       },
@@ -2898,7 +2898,7 @@
        "short": "產兒科護理學",
        "file": "110030-4.json",
        "count": 80,
-       "answered": 78,
+       "answered": 80,
        "img": 0,
        "isEssay": false
       },
@@ -2908,7 +2908,7 @@
        "short": "精神科與社區衛生護理學",
        "file": "110030-5.json",
        "count": 80,
-       "answered": 79,
+       "answered": 80,
        "img": 0,
        "isEssay": false
       }
@@ -2926,7 +2926,7 @@
        "short": "基礎醫學",
        "file": "110110-1.json",
        "count": 80,
-       "answered": 78,
+       "answered": 80,
        "img": 0,
        "isEssay": false
       },
@@ -2936,7 +2936,7 @@
        "short": "基本護理學與護理行政",
        "file": "110110-2.json",
        "count": 80,
-       "answered": 79,
+       "answered": 80,
        "img": 0,
        "isEssay": false
       },
@@ -2946,7 +2946,7 @@
        "short": "內外科護理學",
        "file": "110110-3.json",
        "count": 80,
-       "answered": 78,
+       "answered": 80,
        "img": 0,
        "isEssay": false
       },
@@ -2956,7 +2956,7 @@
        "short": "產兒科護理學",
        "file": "110110-4.json",
        "count": 80,
-       "answered": 79,
+       "answered": 80,
        "img": 0,
        "isEssay": false
       },
@@ -2966,7 +2966,7 @@
        "short": "精神科與社區衛生護理學",
        "file": "110110-5.json",
        "count": 80,
-       "answered": 79,
+       "answered": 80,
        "img": 0,
        "isEssay": false
       }
@@ -2984,7 +2984,7 @@
        "short": "基礎醫學",
        "file": "111030-1.json",
        "count": 80,
-       "answered": 78,
+       "answered": 80,
        "img": 0,
        "isEssay": false
       },
@@ -2994,7 +2994,7 @@
        "short": "基本護理學與護理行政",
        "file": "111030-2.json",
        "count": 80,
-       "answered": 78,
+       "answered": 80,
        "img": 0,
        "isEssay": false
       },
@@ -3004,7 +3004,7 @@
        "short": "內外科護理學",
        "file": "111030-3.json",
        "count": 80,
-       "answered": 79,
+       "answered": 80,
        "img": 0,
        "isEssay": false
       },
@@ -3014,7 +3014,7 @@
        "short": "產兒科護理學",
        "file": "111030-4.json",
        "count": 80,
-       "answered": 79,
+       "answered": 80,
        "img": 1,
        "isEssay": false
       },
@@ -3024,7 +3024,7 @@
        "short": "精神科與社區衛生護理學",
        "file": "111030-5.json",
        "count": 80,
-       "answered": 79,
+       "answered": 80,
        "img": 0,
        "isEssay": false
       }
@@ -3042,7 +3042,7 @@
        "short": "基礎醫學",
        "file": "111110-1.json",
        "count": 50,
-       "answered": 49,
+       "answered": 50,
        "img": 0,
        "isEssay": false
       },
@@ -3052,7 +3052,7 @@
        "short": "基本護理學與護理行政",
        "file": "111110-2.json",
        "count": 80,
-       "answered": 79,
+       "answered": 80,
        "img": 0,
        "isEssay": false
       },
@@ -3062,7 +3062,7 @@
        "short": "內外科護理學",
        "file": "111110-3.json",
        "count": 80,
-       "answered": 78,
+       "answered": 80,
        "img": 0,
        "isEssay": false
       },
@@ -3072,7 +3072,7 @@
        "short": "產兒科護理學",
        "file": "111110-4.json",
        "count": 80,
-       "answered": 79,
+       "answered": 80,
        "img": 0,
        "isEssay": false
       },
@@ -3082,7 +3082,7 @@
        "short": "精神科與社區衛生護理學",
        "file": "111110-5.json",
        "count": 80,
-       "answered": 78,
+       "answered": 80,
        "img": 0,
        "isEssay": false
       }
@@ -3100,7 +3100,7 @@
        "short": "基礎醫學",
        "file": "112030-1.json",
        "count": 50,
-       "answered": 48,
+       "answered": 50,
        "img": 1,
        "isEssay": false
       },
@@ -3110,7 +3110,7 @@
        "short": "基本護理學與護理行政",
        "file": "112030-2.json",
        "count": 80,
-       "answered": 78,
+       "answered": 80,
        "img": 0,
        "isEssay": false
       },
@@ -3120,7 +3120,7 @@
        "short": "內外科護理學",
        "file": "112030-3.json",
        "count": 80,
-       "answered": 78,
+       "answered": 80,
        "img": 0,
        "isEssay": false
       },
@@ -3130,7 +3130,7 @@
        "short": "產兒科護理學",
        "file": "112030-4.json",
        "count": 80,
-       "answered": 78,
+       "answered": 80,
        "img": 0,
        "isEssay": false
       },
@@ -3140,7 +3140,7 @@
        "short": "精神科與社區衛生護理學",
        "file": "112030-5.json",
        "count": 80,
-       "answered": 79,
+       "answered": 80,
        "img": 0,
        "isEssay": false
       }
@@ -3158,7 +3158,7 @@
        "short": "基礎醫學",
        "file": "112110-1.json",
        "count": 50,
-       "answered": 49,
+       "answered": 50,
        "img": 0,
        "isEssay": false
       },
@@ -3168,7 +3168,7 @@
        "short": "基本護理學與護理行政",
        "file": "112110-2.json",
        "count": 80,
-       "answered": 78,
+       "answered": 80,
        "img": 0,
        "isEssay": false
       },
@@ -3178,7 +3178,7 @@
        "short": "內外科護理學",
        "file": "112110-3.json",
        "count": 80,
-       "answered": 78,
+       "answered": 80,
        "img": 0,
        "isEssay": false
       },
@@ -3188,7 +3188,7 @@
        "short": "產兒科護理學",
        "file": "112110-4.json",
        "count": 80,
-       "answered": 78,
+       "answered": 80,
        "img": 0,
        "isEssay": false
       },
@@ -3198,7 +3198,7 @@
        "short": "精神科與社區衛生護理學",
        "file": "112110-5.json",
        "count": 80,
-       "answered": 78,
+       "answered": 80,
        "img": 1,
        "isEssay": false
       }
@@ -3216,7 +3216,7 @@
        "short": "基礎醫學",
        "file": "112180-1.json",
        "count": 50,
-       "answered": 48,
+       "answered": 50,
        "img": 0,
        "isEssay": false
       },
@@ -3226,7 +3226,7 @@
        "short": "基本護理學與護理行政",
        "file": "112180-2.json",
        "count": 50,
-       "answered": 48,
+       "answered": 50,
        "img": 0,
        "isEssay": false
       },
@@ -3236,7 +3236,7 @@
        "short": "內外科護理學",
        "file": "112180-3.json",
        "count": 50,
-       "answered": 49,
+       "answered": 50,
        "img": 0,
        "isEssay": false
       },
@@ -3246,7 +3246,7 @@
        "short": "產兒科護理學",
        "file": "112180-4.json",
        "count": 50,
-       "answered": 48,
+       "answered": 50,
        "img": 0,
        "isEssay": false
       },
@@ -3256,7 +3256,7 @@
        "short": "精神科與社區衛生護理學",
        "file": "112180-5.json",
        "count": 50,
-       "answered": 48,
+       "answered": 50,
        "img": 0,
        "isEssay": false
       }
@@ -3332,7 +3332,7 @@
        "short": "基礎醫學",
        "file": "113100-1.json",
        "count": 50,
-       "answered": 48,
+       "answered": 50,
        "img": 0,
        "isEssay": false
       },
@@ -3342,7 +3342,7 @@
        "short": "基本護理學與護理行政",
        "file": "113100-2.json",
        "count": 50,
-       "answered": 48,
+       "answered": 50,
        "img": 0,
        "isEssay": false
       },
@@ -3352,7 +3352,7 @@
        "short": "內外科護理學",
        "file": "113100-3.json",
        "count": 50,
-       "answered": 49,
+       "answered": 50,
        "img": 0,
        "isEssay": false
       },
@@ -3362,7 +3362,7 @@
        "short": "產兒科護理學",
        "file": "113100-4.json",
        "count": 50,
-       "answered": 48,
+       "answered": 50,
        "img": 0,
        "isEssay": false
       },
@@ -3372,7 +3372,7 @@
        "short": "精神科與社區衛生護理學",
        "file": "113100-5.json",
        "count": 50,
-       "answered": 48,
+       "answered": 50,
        "img": 0,
        "isEssay": false
       }
@@ -3390,7 +3390,7 @@
        "short": "基礎醫學",
        "file": "113180-1.json",
        "count": 50,
-       "answered": 48,
+       "answered": 50,
        "img": 1,
        "isEssay": false
       },
@@ -3400,7 +3400,7 @@
        "short": "基本護理學與護理行政",
        "file": "113180-2.json",
        "count": 50,
-       "answered": 48,
+       "answered": 50,
        "img": 0,
        "isEssay": false
       },
@@ -3410,7 +3410,7 @@
        "short": "內外科護理學",
        "file": "113180-3.json",
        "count": 50,
-       "answered": 49,
+       "answered": 50,
        "img": 0,
        "isEssay": false
       },
@@ -3420,7 +3420,7 @@
        "short": "產兒科護理學",
        "file": "113180-4.json",
        "count": 50,
-       "answered": 48,
+       "answered": 50,
        "img": 0,
        "isEssay": false
       },
@@ -3430,7 +3430,7 @@
        "short": "精神科與社區衛生護理學",
        "file": "113180-5.json",
        "count": 50,
-       "answered": 49,
+       "answered": 50,
        "img": 0,
        "isEssay": false
       }
@@ -3506,7 +3506,7 @@
        "short": "基礎醫學",
        "file": "114100-1.json",
        "count": 50,
-       "answered": 49,
+       "answered": 50,
        "img": 0,
        "isEssay": false
       },
@@ -3516,7 +3516,7 @@
        "short": "基本護理學與護理行政",
        "file": "114100-2.json",
        "count": 50,
-       "answered": 49,
+       "answered": 50,
        "img": 0,
        "isEssay": false
       },
@@ -3526,7 +3526,7 @@
        "short": "內外科護理學",
        "file": "114100-3.json",
        "count": 50,
-       "answered": 48,
+       "answered": 50,
        "img": 0,
        "isEssay": false
       },
@@ -3536,7 +3536,7 @@
        "short": "產兒科護理學",
        "file": "114100-4.json",
        "count": 50,
-       "answered": 48,
+       "answered": 50,
        "img": 0,
        "isEssay": false
       },
@@ -3546,7 +3546,7 @@
        "short": "精神科與社區衛生護理學",
        "file": "114100-5.json",
        "count": 50,
-       "answered": 49,
+       "answered": 50,
        "img": 0,
        "isEssay": false
       }
@@ -3564,7 +3564,7 @@
        "short": "基礎醫學",
        "file": "114170-1.json",
        "count": 50,
-       "answered": 48,
+       "answered": 50,
        "img": 0,
        "isEssay": false
       },
@@ -3574,7 +3574,7 @@
        "short": "基本護理學與護理行政",
        "file": "114170-2.json",
        "count": 50,
-       "answered": 48,
+       "answered": 50,
        "img": 0,
        "isEssay": false
       },
@@ -3584,7 +3584,7 @@
        "short": "內外科護理學",
        "file": "114170-3.json",
        "count": 50,
-       "answered": 48,
+       "answered": 50,
        "img": 0,
        "isEssay": false
       },
@@ -3594,7 +3594,7 @@
        "short": "產兒科護理學",
        "file": "114170-4.json",
        "count": 50,
-       "answered": 48,
+       "answered": 50,
        "img": 0,
        "isEssay": false
       },
@@ -3604,7 +3604,7 @@
        "short": "精神科與社區衛生護理學",
        "file": "114170-5.json",
        "count": 50,
-       "answered": 48,
+       "answered": 50,
        "img": 0,
        "isEssay": false
       }
